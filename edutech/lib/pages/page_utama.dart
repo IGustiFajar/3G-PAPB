@@ -2,6 +2,7 @@ import 'package:edutech/pages/page_dua.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import './page_dua.dart';
+import 'package:get/get.dart';
 
 class PageUtama extends StatefulWidget {
   const PageUtama({super.key});
@@ -93,8 +94,9 @@ class _PageUtamaState extends State<PageUtama> {
               SizedBox(
                 height: 10,
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
+                  // Get.toNamed(RouteName.page_2);
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
@@ -103,9 +105,11 @@ class _PageUtamaState extends State<PageUtama> {
                     ),
                   );
                 },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0)),
-                color: Color.fromARGB(255, 62, 137, 99),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0)),
+                  primary: Color.fromARGB(255, 62, 137, 99),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
                   child: Text(

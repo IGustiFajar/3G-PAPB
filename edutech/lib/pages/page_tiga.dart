@@ -1,8 +1,9 @@
 import 'package:edutech/pages/page_dua.dart';
+import 'package:edutech/pages/page_utama.dart';
 import 'package:flutter/material.dart';
 
-class PageDua extends StatelessWidget {
-  const PageDua({super.key});
+class PageTiga extends StatelessWidget {
+  const PageTiga({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,7 @@ class PageDua extends StatelessWidget {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) {
-                                return PageDua();
+                                return PageTiga();
                               },
                             ),
                           );
