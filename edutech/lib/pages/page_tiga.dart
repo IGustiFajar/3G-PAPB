@@ -1,4 +1,4 @@
-import 'package:edutech/pages/page_utama.dart';
+import 'package:edutech/pages/page_dua.dart';
 import 'package:flutter/material.dart';
 
 class PageDua extends StatelessWidget {
