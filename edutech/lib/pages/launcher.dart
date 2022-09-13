@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import './landing.dart';
+import './page_utama.dart';
 
 class LauncherPage extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _LauncherPageState extends State<LauncherPage> {
     var duration = const Duration(seconds: 3);
     return new Timer(duration, () {
       Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (_) {
-        return new LandingPage();
+        return new PageUtama();
       }));
     });
   }
@@ -55,7 +55,7 @@ class _LauncherPageState extends State<LauncherPage> {
           children: <Widget>[
             new Center(
               child: new Image.asset(
-                "assets/Logo.png",
+                "images/Logo2.png",
                 height: 70.0,
                 width: 200.0,
               ),
