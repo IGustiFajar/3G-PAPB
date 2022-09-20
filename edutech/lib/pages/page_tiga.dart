@@ -55,7 +55,7 @@ class PageTiga extends StatelessWidget {
                       width: 10,
                     ),
                     Expanded(
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
@@ -65,8 +65,9 @@ class PageTiga extends StatelessWidget {
                             ),
                           );
                         },
+                        child: const Text('a'),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

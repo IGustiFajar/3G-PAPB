@@ -4,12 +4,48 @@ import 'package:flutter/material.dart';
 class PageDua extends StatelessWidget {
   const PageDua({super.key});
 
+  Container MyArticles(String imageVal, String heading, String subHeading) {
+    return Container(
+      width: 150,
+      height: 27,
+      child: Card(
+        elevation: 2,
+        child: Wrap(
+          children: <Widget>[
+            SizedBox(width: 15),
+            Image(
+              image: ResizeImage(AssetImage(imageVal), width: 100, height: 100),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            ListTile(
+              title: Text(heading),
+              subtitle: Text(subHeading),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(width: 15),
+                Icon(Icons.star, color: Colors.green),
+                Icon(Icons.star, color: Colors.green),
+                Icon(Icons.star, color: Colors.green),
+                const Icon(Icons.star, color: Colors.grey),
+                const Icon(Icons.star, color: Colors.grey),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(title: Text("Page Dua")),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(18),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,11 +58,7 @@ class PageDua extends StatelessWidget {
             //   ),
             // ),
             SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 36,
-              width: 294,
+              height: 150,
               child: Container(
                 child: Row(
                   children: <Widget>[
@@ -54,7 +86,7 @@ class PageDua extends StatelessWidget {
                       width: 10,
                     ),
                     Expanded(
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
@@ -64,20 +96,23 @@ class PageDua extends StatelessWidget {
                             ),
                           );
                         },
+                        child: const Text('a'),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Divider(color: Colors.grey),
             SizedBox(
-              height: 24,
+              height: 10,
             ),
             Text('Halo Gesa!'),
             SizedBox(
               height: 10,
-              width: 324,
             ),
             Container(
               decoration: BoxDecoration(
@@ -98,8 +133,7 @@ class PageDua extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 24,
-              width: 324,
+              height: 20,
             ),
             Text(
               'Kelas Berlangsung',
@@ -107,79 +141,28 @@ class PageDua extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                height: 172,
-                color: Color.fromARGB(255, 251, 251, 251),
-                child: Row(
-                  children: [
-                    Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Expanded(
-                          child: Image.asset("images/apple.png"),
-                          flex: 0,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        alignment: Alignment.topLeft,
-                        child: Column(
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: ListTile(
-                                title: Text(
-                                  "Kelas Product Management: Level Intermediate",
-                                  style: TextStyle(
-                                      fontSize: 12, fontFamily: 'InterRegular'),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 5,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  TextButton(
-                                    child: Text("8 Materi"),
-                                    onPressed: () {
-                                      Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (context) {
-                                            return PageUtama();
-                                          },
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                  SizedBox(
-                                    width: 1,
-                                  ),
-                                  TextButton(
-                                    child: Text("10 Tugas"),
-                                    onPressed: () {},
-                                  ),
-                                  SizedBox(
-                                    width: 1,
-                                  ),
-                                  TextButton(
-                                    child: Text("15 Kuis"),
-                                    onPressed: () {},
-                                  ),
-                                  SizedBox(
-                                    width: 1,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                height: 10,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    MyArticles(
+                        "images/image1.png",
+                        "Kelas Product Management : Level Intermediate",
+                        "Rp. 0"),
+                    MyArticles("images/image2.png",
+                        "Full Stack Developer : Level Beginner", "Rp. 0"),
+                    MyArticles("images/image1.png", "Pengantar UI/UX", "Rp. 0"),
+                    MyArticles("images/image1.png", "Pengantar UI/UX", "Rp. 0"),
                   ],
                 ),
               ),
-            )
+            ),
+            Text('Halo Gesa!'),
+            Text('Halo Gesa!'),
+            Text('Halo Gesa!'),
+            Text('Halo Gesa!'),
+            Text('Halo Gesa!'),
           ],
         ),
       ),
