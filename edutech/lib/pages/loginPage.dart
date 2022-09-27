@@ -1,4 +1,5 @@
 import 'package:edutech/pages/page_dua.dart';
+// import 'package:edutech/providers/auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -6,6 +7,13 @@ import './page_dua.dart';
 import './page_tiga.dart';
 import 'package:get/get.dart';
 import 'package:flutter/gestures.dart';
+import 'package:provider/provider.dart';
+// import '../providers/auth.dart';
+
+const users = const {
+  'igusti@gmail.com': 'gusti123',
+  'gesa@gmail.com': 'glen123'
+};
 
 class PageUtama extends StatefulWidget {
   const PageUtama({super.key});
@@ -15,6 +23,24 @@ class PageUtama extends StatefulWidget {
 }
 
 class _PageUtamaState extends State<PageUtama> {
+  // Duration get loginTime => Duration(milliseconds: 2250);
+
+  // Future<String> _authUserSignUp (LoginData data) {
+  //   print('Name : ${data.name}, Password : ${data.password}');
+  //   return Future.delayed(loginTime).then((_) {
+  //     // if (!users.containsKey(data.name)) {
+  //     //   return 'Username not exists';
+  //     // }
+  //     // if (!users.[data.name] != data.password) {
+  //     //   return 'Password tidak sesuai';
+  //     // }
+  //     // return null;
+
+  //   Provider.of<Auth>(context, listen: false).signup(data.name, data.password);
+  //   return null;
+  //   });
+
+  // }
   bool _secureText = true;
   @override
   Widget build(BuildContext context) {
@@ -56,6 +82,11 @@ class _PageUtamaState extends State<PageUtama> {
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.email_outlined),
                 ),
+                // validator: (value){
+
+                // },
+                // onLogin: _authUserSignUp;
+
                 keyboardType: TextInputType.emailAddress,
                 obscureText: false,
               ),

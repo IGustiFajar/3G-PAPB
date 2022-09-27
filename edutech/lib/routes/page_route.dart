@@ -1,8 +1,8 @@
-import 'package:edutech/pages/page_utama.dart';
+import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/routes/routes_name.dart';
 
 import 'package:get/get.dart';
-import '../pages/page_utama.dart';
+import '../pages/loginPage.dart';
 import '../pages/page_dua.dart';
 import '../pages/page_tiga.dart';
 

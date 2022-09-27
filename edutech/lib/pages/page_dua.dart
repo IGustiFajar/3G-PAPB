@@ -1,5 +1,5 @@
 import 'package:edutech/pages/page_tiga.dart';
-import 'package:edutech/pages/page_utama.dart';
+import 'package:edutech/pages/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
