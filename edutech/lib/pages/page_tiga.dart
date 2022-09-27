@@ -1,190 +1,136 @@
 import 'package:edutech/pages/page_dua.dart';
-import 'package:edutech/pages/page_utama.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import './page_dua.dart';
+import 'package:get/get.dart';
 
-class PageTiga extends StatelessWidget {
+class PageTiga extends StatefulWidget {
   const PageTiga({super.key});
 
   @override
+  State<PageTiga> createState() => _PageTigaState();
+}
+
+class _PageTigaState extends State<PageTiga> {
+  bool _secureText = true;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text("Page Dua")),
+      resizeToAvoidBottomInset: false,
       body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Text(
-            //   'Cari Sesuatu',
-            //   style: TextStyle(
-            //     fontSize: 15,
-            //     fontFamily: 'InterRegular',
-            //   ),
-            // ),
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 36,
-              width: 294,
-              child: Container(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 0.0, horizontal: 0.0),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                            borderSide: BorderSide(
-                                color: Color.fromARGB(255, 62, 137, 99)),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          hintText: 'Cari sesuatu',
-                          prefixIcon: Icon(Icons.search),
-                          prefixIconColor: Colors.green,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return PageTiga();
-                              },
-                            ),
-                          );
-                        },
-                        child: const Text('a'),
-                      ),
-                    ),
-                  ],
+          padding: const EdgeInsets.all(30.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 60,
+              ),
+              Image.asset(
+                'images/Thumbnail2.png',
+                width: 320,
+                height: 200,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Selamat datang 👋',
+                  style: TextStyle(fontSize: 20, fontFamily: 'InterSemiBold'),
                 ),
               ),
-            ),
-            Divider(color: Colors.grey),
-            SizedBox(
-              height: 24,
-            ),
-            Text('Halo Gesa!'),
-            SizedBox(
-              height: 10,
-              width: 324,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(249, 210, 168, 1),
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              SizedBox(
+                height: 20,
               ),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      '30 menit menuju kelas “Kelas Product Management : Level Intermediate”',
-                      style:
-                          TextStyle(fontSize: 12, fontFamily: 'InterSemiBold'),
-                      textAlign: TextAlign.center,
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Masukkan nama kamu disini',
+                  labelText: 'Nama',
+                  labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'InterRegular'),
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.person),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Masukkan e-mail kamu disini',
+                  labelText: 'E-mail',
+                  labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'InterRegular'),
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.email_outlined),
+                ),
+                keyboardType: TextInputType.emailAddress,
+                obscureText: false,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    hintText: 'Masukkan password kamu disini',
+                    labelText: 'Password',
+                    labelStyle: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontFamily: 'InterRegular'),
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                      icon: Icon(_secureText
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      onPressed: () {
+                        setState(() {
+                          _secureText = !_secureText;
+                        });
+                      },
+                    )),
+                obscureText: _secureText,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // Get.toNamed(RouteName.page_2);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return PageDua();
+                      },
                     ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0)),
+                  primary: Color.fromARGB(255, 62, 137, 99),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
+                  child: Text(
+                    "Daftar",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: 'InterSemiBold'),
                   ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 24,
-              width: 324,
-            ),
-            Text(
-              'Kelas Berlangsung',
-              style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
-            ),
-            Expanded(
-              child: Container(
-                height: 172,
-                color: Color.fromARGB(255, 251, 251, 251),
-                child: Row(
-                  children: [
-                    Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Expanded(
-                          child: Image.asset("images/apple.png"),
-                          flex: 0,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        alignment: Alignment.topLeft,
-                        child: Column(
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: ListTile(
-                                title: Text(
-                                  "Kelas Product Management: Level Intermediate",
-                                  style: TextStyle(
-                                      fontSize: 12, fontFamily: 'InterRegular'),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 5,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  TextButton(
-                                    child: Text("8 Materi"),
-                                    onPressed: () {
-                                      Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (context) {
-                                            return PageUtama();
-                                          },
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                  SizedBox(
-                                    width: 1,
-                                  ),
-                                  TextButton(
-                                    child: Text("10 Tugas"),
-                                    onPressed: () {},
-                                  ),
-                                  SizedBox(
-                                    width: 1,
-                                  ),
-                                  TextButton(
-                                    child: Text("15 Kuis"),
-                                    onPressed: () {},
-                                  ),
-                                  SizedBox(
-                                    width: 1,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
-            )
-          ],
-        ),
-      ),
+            ],
+          )),
     );
   }
 }

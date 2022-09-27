@@ -16,7 +16,7 @@ class _LauncherPageState extends State<LauncherPage> {
   }
 
   startLaunching() async {
-    var duration = const Duration(seconds: 3);
+    var duration = const Duration(seconds: 1);
     return new Timer(duration, () {
       Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (_) {
         return new PageUtama();
@@ -27,7 +27,7 @@ class _LauncherPageState extends State<LauncherPage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Color.fromARGB(255, 0, 188, 44),
+      statusBarColor: Color.fromARGB(255, 62, 137, 99),
     ));
     return Scaffold(
       body: Container(
@@ -46,8 +46,8 @@ class _LauncherPageState extends State<LauncherPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color.fromARGB(255, 0, 188, 44),
-                  Color.fromARGB(238, 218, 222, 0)
+                  Color.fromARGB(255, 62, 137, 99),
+                  Color.fromARGB(255, 31, 71, 51)
                 ])),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
