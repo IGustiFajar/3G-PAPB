@@ -3,7 +3,7 @@ import 'package:flutter_login/flutter_login.dart';
 import 'package:provider/provider.dart';
 // import './page_tiga.dart';
 import '../providers/auth.dart';
-import './page_dua.dart';
+import 'BerandaPage.dart';
 
 const users = const {
   'igusti@gmail.com': 'gusti123',
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
     print('Name: ${data.name}, Password: ${data.password}');
     return Future.delayed(loginTime).then((_) {
       Provider.of<Auths>(context, listen: false)
-          .login(data.name, data.password);
+          .signin(data.name, data.password);
       return "null";
       //   });
     });

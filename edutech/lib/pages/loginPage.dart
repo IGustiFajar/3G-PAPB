@@ -1,10 +1,10 @@
-import 'package:edutech/pages/page_dua.dart';
+import 'package:edutech/pages/BerandaPage.dart';
 // import 'package:edutech/providers/auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import './page_dua.dart';
-import './page_tiga.dart';
+import 'BerandaPage.dart';
+import 'SignUpPage.dart';
 import 'package:get/get.dart';
 import 'package:flutter/gestures.dart';
 import 'package:provider/provider.dart';
@@ -23,24 +23,35 @@ class PageUtama extends StatefulWidget {
 }
 
 class _PageUtamaState extends State<PageUtama> {
-  // Duration get loginTime => Duration(milliseconds: 2250);
+  // Buat Variable string email dan password ketika value disimpan
+  // late String emailInput;
+  // late String passInput;
 
-  // Future<String> _authUserSignUp (LoginData data) {
-  //   print('Name : ${data.name}, Password : ${data.password}');
-  //   return Future.delayed(loginTime).then((_) {
-  //     // if (!users.containsKey(data.name)) {
-  //     //   return 'Username not exists';
-  //     // }
-  //     // if (!users.[data.name] != data.password) {
-  //     //   return 'Password tidak sesuai';
-  //     // }
-  //     // return null;
+  // // buat key untuk fform
 
-  //   Provider.of<Auth>(context, listen: false).signup(data.name, data.password);
+  // // Method untuk cekInput pada saat tombol login ditekan
+  // cekInput() {
+  //   final form = _formKey.currentState;
+  //   if (form.validate()) {
+  //     form.save();
+  //     return true;
+  //   }
+
   //   return null;
-  //   });
-
   // }
+
+  // // method proses login
+  // void prosesLogin() {
+  //   try {
+  //     if (cekInput()) {
+  //       print(emailInput);
+  //       print(passInput);
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
+  final _formkey = GlobalKey<FormState>();
   bool _secureText = true;
   @override
   Widget build(BuildContext context) {
@@ -71,7 +82,9 @@ class _PageUtamaState extends State<PageUtama> {
               SizedBox(
                 height: 20,
               ),
-              TextField(
+              TextFormField(
+                validator: (value) =>
+                    GetUtils.isEmail(value!) ? null : 'Email not',
                 decoration: InputDecoration(
                   hintText: 'Masukkan e-mail kamu disini',
                   labelText: 'E-mail',
@@ -82,37 +95,50 @@ class _PageUtamaState extends State<PageUtama> {
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.email_outlined),
                 ),
-                // validator: (value){
-
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Email Kosong';
+                //   }
+                //   return null;
                 // },
-                // onLogin: _authUserSignUp;
-
+                // onSaved: (value) {
+                //   emailInput = value;
+                // },
                 keyboardType: TextInputType.emailAddress,
                 obscureText: false,
               ),
               SizedBox(
                 height: 15,
               ),
-              TextField(
+              TextFormField(
                 decoration: InputDecoration(
-                    hintText: 'Masukkan password kamu disini',
-                    labelText: 'Password',
-                    labelStyle: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        fontFamily: 'InterRegular'),
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.lock_outline_rounded),
-                    suffixIcon: IconButton(
-                      icon: Icon(_secureText
-                          ? Icons.visibility
-                          : Icons.visibility_off),
-                      onPressed: () {
-                        setState(() {
-                          _secureText = !_secureText;
-                        });
-                      },
-                    )),
+                  hintText: 'Masukkan password kamu disini',
+                  labelText: 'Password',
+                  labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontFamily: 'InterRegular'),
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.lock_outline_rounded),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                        _secureText ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _secureText = !_secureText;
+                      });
+                    },
+                  ),
+                ),
+                // validator: (value) {
+                //   if (value.isEmpty) {
+                //     return "Password Masih Kosong";
+                //   }
+                //   return null;
+                // },
+                // onSaved: (value) {
+                //   passInput = value;
+                // },
                 obscureText: _secureText,
               ),
               SizedBox(
@@ -128,9 +154,14 @@ class _PageUtamaState extends State<PageUtama> {
               SizedBox(
                 height: 10,
               ),
+
               ElevatedButton(
                 onPressed: () {
-                  // Get.toNamed(RouteName.page_2);
+                  // if (_formKey.currentState!.validate()) {
+                  //   ScaffoldMessenger.of(context).showSnackBar(
+                  //     const SnackBar(content: Text('Processing')),
+                  //   );
+                  // }
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
@@ -162,7 +193,7 @@ class _PageUtamaState extends State<PageUtama> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Belum memiliki akun?'),
-                  ElevatedButton(
+                  TextButton(
                     onPressed: () {
                       // Get.toNamed(RouteName.page_2);
                       Navigator.of(context).push(
@@ -173,7 +204,7 @@ class _PageUtamaState extends State<PageUtama> {
                         ),
                       );
                     },
-                    style: ElevatedButton.styleFrom(
+                    style: TextButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0)),
                       primary: Colors.grey,
@@ -183,7 +214,7 @@ class _PageUtamaState extends State<PageUtama> {
                       child: Text(
                         "Daftar",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 16,
                             fontFamily: 'InterSemiBold'),
                       ),

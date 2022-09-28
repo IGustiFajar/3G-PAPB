@@ -1,4 +1,4 @@
-import 'package:edutech/pages/page_tiga.dart';
+import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

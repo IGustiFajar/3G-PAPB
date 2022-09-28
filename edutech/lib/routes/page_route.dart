@@ -3,8 +3,8 @@ import 'package:edutech/routes/routes_name.dart';
 
 import 'package:get/get.dart';
 import '../pages/loginPage.dart';
-import '../pages/page_dua.dart';
-import '../pages/page_tiga.dart';
+import '../pages/BerandaPage.dart';
+import '../pages/SignUpPage.dart';
 
 class Halaman {
   static final pages = [

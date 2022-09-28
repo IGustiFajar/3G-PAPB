@@ -20,7 +20,7 @@ class _LauncherPageState extends State<LauncherPage> {
     var duration = const Duration(seconds: 1);
     return new Timer(duration, () {
       Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (_) {
-        return new LoginPage();
+        return new PageUtama();
       }));
     });
   }

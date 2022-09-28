@@ -1,7 +1,7 @@
-import 'package:edutech/pages/page_dua.dart';
+import 'package:edutech/pages/BerandaPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import './page_dua.dart';
+import 'BerandaPage.dart';
 import 'package:get/get.dart';
 
 class PageTiga extends StatefulWidget {
