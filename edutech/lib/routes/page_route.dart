@@ -14,7 +14,7 @@ class Halaman {
     ),
     GetPage(
       name: RouteName.page_2,
-      page: () => PageDua(),
+      page: () => BerandaPage(),
     ),
     GetPage(
       name: RouteName.page_3,

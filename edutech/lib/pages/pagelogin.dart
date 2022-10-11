@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
       // onSignup: _authUserSignUp,
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => PageDua(),
+          builder: (context) => BerandaPage(),
         ));
       },
       onRecoverPassword: _recoverPassword,

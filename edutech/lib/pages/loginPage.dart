@@ -153,7 +153,7 @@ class _PageUtamaState extends State<PageUtama> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return PageDua();
+                            return BerandaPage();
                           },
                         ),
                       );
@@ -282,7 +282,7 @@ class _PageUtamaState extends State<PageUtama> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return PageDua();
+                            return BerandaPage();
                           },
                         ),
                       );

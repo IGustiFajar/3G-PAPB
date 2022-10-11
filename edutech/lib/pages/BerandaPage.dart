@@ -2,9 +2,10 @@ import 'package:edutech/pages/profilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:edutech/pages/kelasPage.dart';
 
-class PageDua extends StatelessWidget {
-  const PageDua({super.key});
+class BerandaPage extends StatelessWidget {
+  const BerandaPage({super.key});
 
   Container MyArticles(String imageVal, String heading, String subHeading) {
     return Container(
@@ -498,7 +499,7 @@ class PageDua extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return ProfilePage();
+                    return PageEmpat();
                   },
                 ),
               );

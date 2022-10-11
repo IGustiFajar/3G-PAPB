@@ -121,7 +121,7 @@ class _PageTigaState extends State<PageTiga> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return PageDua();
+                            return BerandaPage();
                           },
                         ),
                       );
@@ -256,7 +256,7 @@ class _PageTigaState extends State<PageTiga> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return PageDua();
+                            return BerandaPage();
                           },
                         ),
                       );
