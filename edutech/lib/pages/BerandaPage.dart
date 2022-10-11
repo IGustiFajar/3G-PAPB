@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:edutech/pages/kelasPage.dart';
+import 'package:get/get.dart';
 
 class BerandaPage extends StatelessWidget {
   const BerandaPage({super.key});
@@ -69,7 +70,25 @@ class BerandaPage extends StatelessWidget {
         elevation: 5,
         actions: <Widget>[
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.bottomSheet(
+                Container(
+                  color: Colors.white,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Cari Sesuatu',
+                      // labelText: 'Cari Sesuatu',
+                      labelStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontFamily: 'InterRegular'),
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.search),
+                    ),
+                  ),
+                ),
+              );
+            },
             icon: SvgPicture.asset(
               'images/search.svg',
               color: Colors.white,
@@ -480,13 +499,8 @@ class BerandaPage extends StatelessWidget {
         items: <Widget>[
           IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return ProfilePage();
-                  },
-                ),
-              );
+              final data = Get.toNamed('/beranda');
+              print(data);
             },
             icon: SvgPicture.asset(
               'images/home.svg',
@@ -496,13 +510,8 @@ class BerandaPage extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return PageEmpat();
-                  },
-                ),
-              );
+              final data = Get.toNamed('/kelas');
+              print(data);
             },
             icon: SvgPicture.asset(
               'images/book.svg',
@@ -512,13 +521,8 @@ class BerandaPage extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return ProfilePage();
-                  },
-                ),
-              );
+              final data = Get.toNamed('/profil');
+              print(data);
             },
             icon: SvgPicture.asset(
               'images/user.svg',

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-class PageLima extends StatelessWidget {
-  const PageLima({super.key});
+class KelasDetail extends StatelessWidget {
+  const KelasDetail({super.key});
 
   Container MyArticles(String imageVal, String heading, String subHeading) {
     return Container(

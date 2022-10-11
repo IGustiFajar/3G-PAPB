@@ -5,14 +5,14 @@ import 'package:flutter/widgets.dart';
 import 'BerandaPage.dart';
 import 'package:get/get.dart';
 
-class PageTiga extends StatefulWidget {
-  const PageTiga({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<PageTiga> createState() => _PageTigaState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _PageTigaState extends State<PageTiga> {
+class _SignUpPageState extends State<SignUpPage> {
   bool _secureText = true;
   @override
   Widget build(BuildContext context) {
@@ -118,13 +118,7 @@ class _PageTigaState extends State<PageTiga> {
                   ElevatedButton(
                     onPressed: () {
                       // Get.toNamed(RouteName.page_2);
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return BerandaPage();
-                          },
-                        ),
-                      );
+                      Get.toNamed('/beranda');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(800, 1),
@@ -157,11 +151,8 @@ class _PageTigaState extends State<PageTiga> {
                           style: TextStyle(fontSize: 12, color: Colors.blue),
                         ),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PageUtama()),
-                          );
+                          final data = Get.toNamed('/login');
+                          print(data);
                         },
                       )
                     ],
@@ -253,13 +244,7 @@ class _PageTigaState extends State<PageTiga> {
                   ElevatedButton(
                     onPressed: () {
                       // Get.toNamed(RouteName.page_2);
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return BerandaPage();
-                          },
-                        ),
-                      );
+                      Get.toNamed('/beranda');
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(350, 50),
@@ -292,11 +277,8 @@ class _PageTigaState extends State<PageTiga> {
                           style: TextStyle(fontSize: 14, color: Colors.blue),
                         ),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PageUtama()),
-                          );
+                          final data = Get.toNamed('/login');
+                          print(data);
                         },
                       )
                     ],

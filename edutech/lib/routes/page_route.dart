@@ -10,7 +10,7 @@ class Halaman {
   static final pages = [
     GetPage(
       name: RouteName.page_1,
-      page: () => PageUtama(),
+      page: () => LoginPage(),
     ),
     GetPage(
       name: RouteName.page_2,
@@ -18,7 +18,7 @@ class Halaman {
     ),
     GetPage(
       name: RouteName.page_3,
-      page: () => PageTiga(),
+      page: () => SignUpPage(),
     ),
   ];
 }

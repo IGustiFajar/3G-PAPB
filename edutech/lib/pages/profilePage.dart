@@ -1,9 +1,10 @@
 import 'package:edutech/pages/loginPage.dart';
-import 'package:edutech/pages/pagelogin.dart';
 import 'package:flutter/material.dart';
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:get/get.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -340,12 +341,31 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               onTap: (() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => PageUtama()),
-                  ),
-                );
+                Alert(
+                  context: context,
+                  title: 'Peringatan',
+                  desc: 'Apakah anda yakin ingin keluar?',
+                  type: AlertType.warning,
+                  style: AlertStyle(backgroundColor: Colors.white),
+                  buttons: [
+                    DialogButton(
+                      child: Text(
+                        "Ya",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                      onPressed: () => Get.toNamed('/login'),
+                      width: 120,
+                    ),
+                    DialogButton(
+                      child: Text(
+                        "Tidak",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                      onPressed: () => Navigator.pop(context),
+                      width: 120,
+                    ),
+                  ],
+                ).show();
               }),
             ),
           ],
