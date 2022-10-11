@@ -1,7 +1,8 @@
+import 'package:edutech/pages/pagelogin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import './page_utama.dart';
+import 'loginPage.dart';
 
 class LauncherPage extends StatefulWidget {
   @override
