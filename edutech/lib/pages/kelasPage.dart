@@ -4,9 +4,10 @@ import 'package:edutech/pages/BerandaPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:get/get.dart';
 
-class PageEmpat extends StatelessWidget {
-  const PageEmpat({super.key});
+class kelasPage extends StatelessWidget {
+  const kelasPage({super.key});
 
   Container MyArticles(String imageVal, String heading, String subHeading) {
     return Container(
@@ -228,13 +229,8 @@ class PageEmpat extends StatelessWidget {
                         GestureDetector(
                           //UI/UX Course
                           onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return PageLima();
-                                },
-                              ),
-                            );
+                            final data = Get.toNamed('/kelas-detail');
+                            print(data);
                           },
                           child: Container(
                             child: Row(
@@ -649,13 +645,8 @@ class PageEmpat extends StatelessWidget {
                         GestureDetector(
                           //UI/UX Course
                           onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return PageLima();
-                                },
-                              ),
-                            );
+                            final data = Get.toNamed('/kelas-detail');
+                            print(data);
                           },
                           child: Container(
                             child: Row(

@@ -15,14 +15,14 @@ const users = const {
   'gesa@gmail.com': 'glen123'
 };
 
-class PageUtama extends StatefulWidget {
-  const PageUtama({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<PageUtama> createState() => _PageUtamaState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _PageUtamaState extends State<PageUtama> {
+class _LoginPageState extends State<LoginPage> {
   // Buat Variable string email dan password ketika value disimpan
   // late String emailInput;
   // late String passInput;
@@ -150,13 +150,7 @@ class _PageUtamaState extends State<PageUtama> {
                   ElevatedButton(
                     onPressed: () {
                       // Get.toNamed(RouteName.page_2);
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return BerandaPage();
-                          },
-                        ),
-                      );
+                      Get.toNamed('/beranda');
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 62, 137, 99),
@@ -188,10 +182,8 @@ class _PageUtamaState extends State<PageUtama> {
                           style: TextStyle(fontSize: 12, color: Colors.blue),
                         ),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => PageTiga()),
-                          );
+                          final data = Get.toNamed('/signup');
+                          print(data);
                         },
                       )
                     ],
@@ -279,13 +271,8 @@ class _PageUtamaState extends State<PageUtama> {
                   ElevatedButton(
                     onPressed: () {
                       // Get.toNamed(RouteName.page_2);
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return BerandaPage();
-                          },
-                        ),
-                      );
+                      final data = Get.toNamed('/beranda');
+                      print(data);
                     },
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -319,10 +306,8 @@ class _PageUtamaState extends State<PageUtama> {
                           style: TextStyle(fontSize: 14, color: Colors.blue),
                         ),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => PageTiga()),
-                          );
+                          final data = Get.toNamed('/signup');
+                          print(data);
                         },
                       )
                     ],
