@@ -420,26 +420,18 @@ class KelasDetail extends StatelessWidget {
                 ),
                 Row(
                   children: <Widget>[
-                    Container(
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            'Ulasan',
-                            style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
-                          ),
-                          Text(
-                            ' (1215 Ulasan)',
-                            style: TextStyle(fontSize: 16, color: Colors.black38),
-                          ),
-                          SizedBox(
-                            width: bodyHeight * 1.25,
-                          ),
-                          Text(
-                            'Lihat semua',
-                            style: TextStyle(fontSize: 16, color: Colors.black38, decoration: TextDecoration.underline),
-                          ),
-                        ],
-                      ),
+                    Text(
+                      'Ulasan',
+                      style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
+                    ),
+                    Text(
+                      ' (1215 Ulasan)',
+                      style: TextStyle(fontSize: 16, color: Colors.black38),
+                    ),
+                    Spacer(),
+                    Text(
+                      'Lihat semua',
+                      style: TextStyle(fontSize: 16, color: Colors.black38, decoration: TextDecoration.underline),
                     ),
                   ],
                 ),
@@ -463,15 +455,17 @@ class KelasDetail extends StatelessWidget {
                             SizedBox(
                               height: bodyHeight * 0.02,
                             ),
-                            Wrap(
-                              spacing: bodyHeight * 1.4,
+                            Row(
                               children: <Widget>[
                                 Text(
                                   'Rehan',
                                   style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
                                 ),
+                                SizedBox(
+                                  width: 10,
+                                ),
                                 Text('2 hari lalu',
-                                  style: TextStyle(fontSize: 14, color: Colors.black38),)
+                                  style: TextStyle(fontSize: 14, color: Colors.black38),),
                               ],
                             ),
                             SizedBox(
@@ -532,12 +526,14 @@ class KelasDetail extends StatelessWidget {
                             SizedBox(
                               height: bodyHeight * 0.02,
                             ),
-                            Wrap(
-                              spacing: bodyHeight * 1.4,
+                            Row(
                               children: <Widget>[
                                 Text(
                                   'Cindy',
                                   style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
+                                ),
+                                SizedBox(
+                                  width: 10,
                                 ),
                                 Text('5 hari lalu',
                                   style: TextStyle(fontSize: 14, color: Colors.black38),)
@@ -582,7 +578,7 @@ class KelasDetail extends StatelessWidget {
                     )
                 ),
                 SizedBox(
-                  height: bodyHeight * 0.02,
+                  height: bodyHeight * 0.06,
                 ),
                 Text(
                   'Kelas Terkait',
@@ -590,7 +586,7 @@ class KelasDetail extends StatelessWidget {
                       fontSize: 16, fontFamily: 'InterSemiBold'),
                 ),
                 SizedBox(
-                  height: bodyHeight * 0.02,
+                  height: bodyHeight * 0.03,
                 ),
                 GestureDetector(
                   //Intermediate
@@ -1039,26 +1035,18 @@ class KelasDetail extends StatelessWidget {
                       ),
                       Row(
                         children: <Widget>[
-                          Container(
-                            child: Row(
-                              children: <Widget>[
-                                Text(
-                                  'Ulasan',
-                                  style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
-                                ),
-                                Text(
-                                  ' (1215 Ulasan)',
-                                  style: TextStyle(fontSize: 16, color: Colors.black38),
-                                ),
-                                SizedBox(
-                                  width: bodyHeight * 0.11,
-                                ),
-                                Text(
-                                  'Lihat semua',
-                                  style: TextStyle(fontSize: 16, color: Colors.black38, decoration: TextDecoration.underline),
-                                ),
-                              ],
-                            ),
+                          Text(
+                            'Ulasan',
+                            style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
+                          ),
+                          Text(
+                            ' (1215 Ulasan)',
+                            style: TextStyle(fontSize: 16, color: Colors.black38),
+                          ),
+                          Spacer(),
+                          Text(
+                            'Lihat semua',
+                            style: TextStyle(fontSize: 16, color: Colors.black38, decoration: TextDecoration.underline),
                           ),
                         ],
                       ),
@@ -1082,15 +1070,17 @@ class KelasDetail extends StatelessWidget {
                                 SizedBox(
                                   height: bodyHeight * 0.02,
                                 ),
-                                Wrap(
-                                  spacing: bodyHeight * 0.15,
+                                Row(
                                   children: <Widget>[
                                     Text(
                                       'Rehan',
                                       style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
                                     ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
                                     Text('2 hari lalu',
-                                      style: TextStyle(fontSize: 14, color: Colors.black38),)
+                                      style: TextStyle(fontSize: 14, color: Colors.black38),),
                                   ],
                                 ),
                                 SizedBox(
@@ -1151,12 +1141,14 @@ class KelasDetail extends StatelessWidget {
                                   SizedBox(
                                     height: bodyHeight * 0.02,
                                   ),
-                                  Wrap(
-                                    spacing: bodyHeight * 0.15,
+                                  Row(
                                     children: <Widget>[
                                       Text(
                                         'Cindy',
                                         style: TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
                                       ),
                                       Text('5 hari lalu',
                                         style: TextStyle(fontSize: 14, color: Colors.black38),)
@@ -1201,7 +1193,7 @@ class KelasDetail extends StatelessWidget {
                           )
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.02,
+                        height: bodyHeight * 0.04,
                       ),
                       Text(
                         'Kelas Terkait',
