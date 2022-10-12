@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class kelasPage extends StatelessWidget {
   const kelasPage({super.key});
@@ -1037,7 +1038,33 @@ class CustomListTile extends StatelessWidget {
             border: Border(bottom: BorderSide(color: Colors.grey))),
         child: InkWell(
           splashColor: Color.fromARGB(255, 62, 137, 99),
-          onTap: () => {},
+          onTap: () => {
+            Alert(
+              context: context,
+              title: 'Peringatan',
+              desc: 'Apakah anda yakin ingin keluar?',
+              type: AlertType.warning,
+              style: AlertStyle(backgroundColor: Colors.white),
+              buttons: [
+                DialogButton(
+                  child: Text(
+                    "Ya",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () => Get.toNamed('/login'),
+                  width: 120,
+                ),
+                DialogButton(
+                  child: Text(
+                    "Tidak",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () => Navigator.pop(context),
+                  width: 120,
+                ),
+              ],
+            ).show()
+          },
           child: Container(
             height: 50,
             child: Row(
