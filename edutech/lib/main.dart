@@ -5,6 +5,7 @@ import 'package:edutech/pages/kelasPage.dart';
 import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/alert_dialog.dart';
+import 'package:edutech/pages/sertifikatPage.dart';
 import 'package:flutter/material.dart';
 import './pages/launcher.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -65,7 +66,7 @@ class MyApp extends StatelessWidget {
           page: () => const AlertDialog(),
         ),
       ],
-      home: LauncherPage(),
+      home: sertifikatPage(),
     );
   }
 }
