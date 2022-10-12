@@ -271,7 +271,7 @@ class _LoginPageState extends State<LoginPage> {
                   ElevatedButton(
                     onPressed: () {
                       // Get.toNamed(RouteName.page_2);
-                      final data = Get.toNamed('/beranda');
+                      final data = Get.off(BerandaPage());
                       print(data);
                     },
                     style: ElevatedButton.styleFrom(

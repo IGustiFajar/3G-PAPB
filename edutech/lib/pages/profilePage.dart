@@ -125,39 +125,44 @@ class _ProfilePageState extends State<ProfilePage> {
             SizedBox(
               height: bodyHeight * 0.01,
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 224, 224, 224),
-                border: Border.all(
-                    color: Color.fromARGB(255, 224, 224, 224), width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.workspace_premium_outlined,
-                      color: Colors.black,
-                    ),
-                    VerticalDivider(
-                      width: 20,
-                      thickness: 5,
-                      color: Colors.black,
-                    ),
-                    Text(
-                      'Sertifikat Saya',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'InterSemiBold',
+            GestureDetector(
+              onTap: (() {
+                Get.toNamed('/sertifikat');
+              }),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 224, 224, 224),
+                  border: Border.all(
+                      color: Color.fromARGB(255, 224, 224, 224), width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.workspace_premium_outlined,
+                        color: Colors.black,
                       ),
-                    ),
-                    Spacer(),
-                    Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.grey,
-                    ),
-                  ],
+                      VerticalDivider(
+                        width: 20,
+                        thickness: 5,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        'Sertifikat Saya',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: 'InterSemiBold',
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.arrow_drop_down,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -353,7 +358,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         "Ya",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
-                      onPressed: () => Get.toNamed('/login'),
+                      onPressed: () => Get.offAll(LoginPage()),
                       width: 120,
                     ),
                     DialogButton(

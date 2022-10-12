@@ -9,12 +9,23 @@ class sertifikatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQueryHeight = MediaQuery.of(context).size.height;
+
+    final bodyHeight = mediaQueryHeight - MediaQuery.of(context).padding.top;
+    final bool isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('ApSkil'),
         backgroundColor: Color.fromARGB(255, 62, 137, 99),
         elevation: 5,
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Get.back();
+          },
+        ),
         actions: <Widget>[
           IconButton(
             onPressed: () {
@@ -57,8 +68,37 @@ class sertifikatPage extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              children: [Text("Capaian"), Image.asset('images/download.png')],
-            )
+              children: [
+                Container(
+                    width: 260,
+                    child: Text(
+                      "Capaian",
+                      style:
+                          TextStyle(fontFamily: 'InterSemiBold', fontSize: 16),
+                    )),
+                Spacer(),
+                Container(
+                    width: 36,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey, width: 1),
+                        borderRadius: BorderRadius.all(Radius.circular(6))),
+                    child: Image.asset('images/download.png')),
+                Spacer(),
+                Container(
+                    width: 36,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey, width: 1),
+                        borderRadius: BorderRadius.all(Radius.circular(6))),
+                    child: Image.asset('images/share.png'))
+              ],
+            ),
+            SizedBox(height: bodyHeight * 0.03),
+            Text(
+              'Sertifikat kelulusan kelas UI/UX Design Level Beginner',
+              style: TextStyle(fontFamily: 'InterSemiBold', fontSize: 20),
+            ),
+            SizedBox(height: bodyHeight * 0.03),
+            Image.asset('images/sertifikat.png')
           ],
         ),
       ),

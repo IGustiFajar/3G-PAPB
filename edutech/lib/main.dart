@@ -65,8 +65,12 @@ class MyApp extends StatelessWidget {
           name: '/alert',
           page: () => const AlertDialog(),
         ),
+        GetPage(
+          name: '/sertifikat',
+          page: () => const sertifikatPage(),
+        ),
       ],
-      home: sertifikatPage(),
+      home: LauncherPage(),
     );
   }
 }

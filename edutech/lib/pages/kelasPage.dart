@@ -1,4 +1,5 @@
 import 'package:edutech/pages/detailKelasPage.dart';
+import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/profilePage.dart';
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:flutter/material.dart';
@@ -1051,7 +1052,7 @@ class CustomListTile extends StatelessWidget {
                     "Ya",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  onPressed: () => Get.toNamed('/login'),
+                  onPressed: () => Get.offAll(LoginPage()),
                   width: 120,
                 ),
                 DialogButton(
@@ -1059,7 +1060,9 @@ class CustomListTile extends StatelessWidget {
                     "Tidak",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () {
+                    Get.back();
+                  },
                   width: 120,
                 ),
               ],
