@@ -1,5 +1,6 @@
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
+import 'package:edutech/pages/materiPage.dart';
 import 'package:edutech/pages/profilePage.dart';
 import 'package:edutech/pages/kelasPage.dart';
 import 'package:edutech/pages/SignUpPage.dart';
@@ -68,6 +69,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/sertifikat',
           page: () => const sertifikatPage(),
+        ),
+        GetPage(
+          name: '/materi',
+          page: () => const MateriPage(),
         ),
       ],
       home: LauncherPage(),
