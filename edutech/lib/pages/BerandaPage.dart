@@ -1,59 +1,10 @@
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:edutech/pages/kelasPage.dart';
 import 'package:get/get.dart';
-import 'package:line_icons/line_icons.dart';
 
 class BerandaPage extends StatelessWidget {
   const BerandaPage({super.key});
-
-  Container MyArticles(String imageVal, String heading, String subHeading) {
-    return Container(
-      width: 250,
-      child: Card(
-        elevation: 2,
-        child: Wrap(
-          // direction: Axis.vertical,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Center(
-                child: Image(
-                  image:
-                      ResizeImage(AssetImage(imageVal), width: 75, height: 75),
-                  alignment: Alignment.center,
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text(heading),
-              subtitle: Text(subHeading),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(width: 15),
-                Icon(
-                  Icons.star,
-                  color: Colors.green,
-                  size: 16,
-                ),
-                Icon(
-                  Icons.star,
-                  color: Colors.green,
-                  size: 16,
-                ),
-                Icon(Icons.star, color: Colors.green, size: 16),
-                const Icon(Icons.star, color: Colors.grey, size: 16),
-                const Icon(Icons.star, color: Colors.grey, size: 16),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +47,9 @@ class BerandaPage extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: (() {
+                Get.toNamed('/notification');
+              }),
               icon: SvgPicture.asset(
                 'images/bell.svg',
                 color: Colors.white,
@@ -1342,51 +1295,11 @@ class BerandaPage extends StatelessWidget {
                     ],
                   ),
           ),
-        ),
-        bottomNavigationBar: GNav(
-            backgroundColor: Color.fromARGB(17, 107, 107, 107),
-            rippleColor: Color.fromARGB(
-                255, 62, 137, 99), // tab button ripple color when pressed
-            hoverColor:
-                Color.fromARGB(59, 62, 137, 99), // tab button hover color
-            haptic: true, // haptic feedback
-            tabBorderRadius: 15,
-            // tabActiveBorder: Border.all(
-            //     color: Color.fromARGB(255, 62, 137, 99),
-            //     width: 1), // tab button border
-            curve: Curves.easeInToLinear, // tab animation curves
-            duration: Duration(milliseconds: 100), // tab animation duration
-            gap: 10, // the tab button gap between icon and text
-            color: Color.fromARGB(255, 90, 90, 90), // unselected icon color
-            activeColor: Color.fromARGB(
-                255, 62, 137, 99), // selected icon and text color
-            iconSize: 26, // tab button icon size
-            tabBackgroundColor: Color.fromARGB(28, 76, 175, 79)
-                .withOpacity(0.2), // selected tab background color
-            padding: EdgeInsets.symmetric(
-                horizontal: 40, vertical: 15), // navigation bar padding
-            tabs: [
-              GButton(
-                onPressed: () {
-                  Get.toNamed('/beranda');
-                },
-                icon: Icons.home_outlined,
-                text: 'Beranda',
-              ),
-              GButton(
-                onPressed: () {
-                  Get.toNamed('/kelas');
-                },
-                icon: Icons.book_outlined,
-                text: 'Kelas',
-              ),
-              GButton(
-                onPressed: () {
-                  Get.toNamed('/profil');
-                },
-                icon: LineIcons.user,
-                text: 'Profil',
-              ),
-            ]));
+        ));
+    // bottomNavigationBar: SalomonBottomBar(
+    //   currentIndex: _selectedIndex,
+    //   onTap: (index) => onTapNav(index),
+    //   items: navBottomItem,
+    // ));
   }
 }

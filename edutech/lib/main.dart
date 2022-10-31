@@ -1,4 +1,5 @@
 import 'package:edutech/pages/BerandaPage.dart';
+import 'package:edutech/pages/NotificationPage.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/materiPage.dart';
 import 'package:edutech/pages/profilePage.dart';
@@ -73,6 +74,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/materi',
           page: () => const MateriPage(),
+        ),
+        GetPage(
+          name: '/notification',
+          page: () => const NotificationPage(),
         ),
       ],
       home: LauncherPage(),
