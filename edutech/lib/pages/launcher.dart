@@ -1,6 +1,6 @@
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/LoginPage.dart';
-import 'package:edutech/pages/main_page.dart';
+import 'package:edutech/Auth/main_page.dart';
 // import 'package:edutech/pages/pagelogin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
