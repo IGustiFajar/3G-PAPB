@@ -1,5 +1,6 @@
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/LoginPage.dart';
+import 'package:edutech/pages/main_page.dart';
 // import 'package:edutech/pages/pagelogin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,7 +22,7 @@ class _LauncherPageState extends State<LauncherPage> {
     var duration = const Duration(seconds: 1);
     return new Timer(duration, () {
       Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (_) {
-        return new LoginPage();
+        return new MainPage();
       }));
     });
   }

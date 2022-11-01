@@ -1,4 +1,5 @@
 import 'package:edutech/pages/loginPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,6 +13,18 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  String errorMessage = '';
+
+  Future SignOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      errorMessage = '';
+    } on FirebaseAuthException catch (error) {
+      errorMessage = error.message!;
+    }
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
@@ -358,7 +371,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         "Ya",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
-                      onPressed: () => Get.offAll(LoginPage()),
+                      onPressed: () {
+                        SignOut();
+                      },
                       width: 120,
                     ),
                     DialogButton(

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "862876914614",
+    "project_id": "g-papb-f8743",
+    "storage_bucket": "g-papb-f8743.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862876914614:android:813b03bf378dfd92e56717",
+        "android_client_info": {
+          "package_name": "com.example.tessaja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862876914614-fipsnhb753gi6ojgb82ggp52mnh7645i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBur_vFjK8VuUib2oDpfugTj0VcUm7GOLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862876914614-fipsnhb753gi6ojgb82ggp52mnh7645i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,6 +2,7 @@ import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/profilePage.dart';
 import 'package:edutech/pages/BerandaPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -1023,11 +1024,28 @@ class kelasPage extends StatelessWidget {
   }
 }
 
-class CustomListTile extends StatelessWidget {
+class CustomListTile extends StatefulWidget {
   IconData icon;
   String text;
 
   CustomListTile(this.icon, this.text);
+
+  @override
+  State<CustomListTile> createState() => _CustomListTileState();
+}
+
+class _CustomListTileState extends State<CustomListTile> {
+  String errorMessage = '';
+
+  Future SignOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      errorMessage = '';
+    } on FirebaseAuthException catch (error) {
+      errorMessage = error.message!;
+    }
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -1052,7 +1070,9 @@ class CustomListTile extends StatelessWidget {
                     "Ya",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  onPressed: () => Get.offAll(LoginPage()),
+                  onPressed: () {
+                    SignOut();
+                  },
                   width: 120,
                 ),
                 DialogButton(
@@ -1075,11 +1095,11 @@ class CustomListTile extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Icon(icon),
+                    Icon(widget.icon),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        text,
+                        widget.text,
                         style: TextStyle(fontFamily: 'Inter', fontSize: 16),
                       ),
                     )

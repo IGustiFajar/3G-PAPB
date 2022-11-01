@@ -1,10 +1,28 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:edutech/pages/kelasPage.dart';
 import 'package:get/get.dart';
 
-class BerandaPage extends StatelessWidget {
+class BerandaPage extends StatefulWidget {
   const BerandaPage({super.key});
+
+  @override
+  State<BerandaPage> createState() => _BerandaPageState();
+}
+
+class _BerandaPageState extends State<BerandaPage> {
+  String errorMessage = '';
+
+  Future SignOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      errorMessage = '';
+    } on FirebaseAuthException catch (error) {
+      errorMessage = error.message!;
+    }
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
