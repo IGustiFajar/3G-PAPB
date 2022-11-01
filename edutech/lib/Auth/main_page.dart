@@ -1,5 +1,6 @@
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/loginPage.dart';
+import 'package:edutech/pages/nav_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
@@ -14,7 +15,7 @@ class MainPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return BerandaPage();
+            return NavBar();
           } else {
             return LoginPage();
           }

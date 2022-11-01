@@ -17,6 +17,7 @@ class _SignUpPageState extends State<SignUpPage> {
   // Controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmController = TextEditingController();
   final _formkey = GlobalKey<FormState>();
   String errorMessage = '';
 
@@ -24,11 +25,12 @@ class _SignUpPageState extends State<SignUpPage> {
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
+    _confirmController.dispose();
     super.dispose();
   }
 
   Future signUp() async {
-    if (_formkey.currentState!.validate()) {
+    if (passwordConfirmed()) {
       try {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: _emailController.text.trim(),
@@ -40,7 +42,14 @@ class _SignUpPageState extends State<SignUpPage> {
       }
       setState(() {});
     }
-    setState(() {});
+  }
+
+  bool passwordConfirmed() {
+    if (_passwordController.text.trim() == _confirmController.text.trim()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   bool _secureText = true;
@@ -80,21 +89,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     SizedBox(
                       height: bodyHeight * 0.01,
-                    ),
-                    SizedBox(
-                      height: bodyHeight * 0.1,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Masukkan nama kamu disini',
-                          labelText: 'Nama',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontFamily: 'InterRegular'),
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.person),
-                        ),
-                      ),
                     ),
                     SizedBox(
                       height: bodyHeight * 0.01,
@@ -149,12 +143,28 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     SizedBox(
+                      height: bodyHeight * 0.1,
+                      child: TextFormField(
+                        controller: _confirmController,
+                        decoration: InputDecoration(
+                          hintText: 'Konfirmasi Passwordmu disini',
+                          labelText: 'Konfirmasi Password',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 12,
+                              fontFamily: 'InterRegular'),
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.person),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
                       height: bodyHeight * 0.01,
                     ),
                     ElevatedButton(
                       onPressed: () {
                         // Get.toNamed(RouteName.page_2);
-                        Get.toNamed('/beranda');
+                        signUp();
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(800, 1),
@@ -220,21 +230,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     SizedBox(
                       height: 20,
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Masukkan nama kamu disini',
-                        labelText: 'Nama',
-                        labelStyle: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontFamily: 'InterRegular'),
-                        border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.person),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
                     TextFormField(
                       validator: validateEmail,
                       controller: _emailController,
@@ -258,24 +253,52 @@ class _SignUpPageState extends State<SignUpPage> {
                       validator: validatePassword,
                       controller: _passwordController,
                       decoration: InputDecoration(
-                          hintText: 'Masukkan password kamu disini',
-                          labelText: 'Password',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontFamily: 'InterRegular'),
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.lock),
-                          suffixIcon: IconButton(
-                            icon: Icon(_secureText
-                                ? Icons.visibility
-                                : Icons.visibility_off),
-                            onPressed: () {
-                              setState(() {
-                                _secureText = !_secureText;
-                              });
-                            },
-                          )),
+                        hintText: 'Masukkan password kamu disini',
+                        labelText: 'Password',
+                        labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontFamily: 'InterRegular'),
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.lock),
+                        suffixIcon: IconButton(
+                          icon: Icon(_secureText
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              _secureText = !_secureText;
+                            });
+                          },
+                        ),
+                      ),
+                      obscureText: _secureText,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    TextFormField(
+                      controller: _confirmController,
+                      decoration: InputDecoration(
+                        hintText: 'Konfirmasi password kamu disini',
+                        labelText: 'Konfirmasi Password',
+                        labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontFamily: 'InterRegular'),
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.lock),
+                        suffixIcon: IconButton(
+                          icon: Icon(_secureText
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              _secureText = !_secureText;
+                            });
+                          },
+                        ),
+                      ),
                       obscureText: _secureText,
                     ),
                     SizedBox(
@@ -284,7 +307,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ElevatedButton(
                       onPressed: () {
                         // Get.toNamed(RouteName.page_2);
-                        Get.toNamed('/beranda');
+                        signUp();
                       },
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(350, 50),

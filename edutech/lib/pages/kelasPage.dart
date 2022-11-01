@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class kelasPage extends StatelessWidget {
@@ -1035,18 +1036,6 @@ class CustomListTile extends StatefulWidget {
 }
 
 class _CustomListTileState extends State<CustomListTile> {
-  String errorMessage = '';
-
-  Future SignOut() async {
-    try {
-      await FirebaseAuth.instance.signOut();
-      errorMessage = '';
-    } on FirebaseAuthException catch (error) {
-      errorMessage = error.message!;
-    }
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -1071,7 +1060,7 @@ class _CustomListTileState extends State<CustomListTile> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
-                    SignOut();
+                    Get.toNamed('/profile');
                   },
                   width: 120,
                 ),

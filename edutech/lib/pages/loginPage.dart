@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                     ElevatedButton(
                       onPressed: () {
                         // Get.toNamed(RouteName.page_2);
-                        Get.toNamed('/beranda');
+                        signIn();
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Color.fromARGB(255, 62, 137, 99),

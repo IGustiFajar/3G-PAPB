@@ -12,6 +12,8 @@ class BerandaPage extends StatefulWidget {
 }
 
 class _BerandaPageState extends State<BerandaPage> {
+  final user = FirebaseAuth.instance.currentUser!;
+
   String errorMessage = '';
 
   Future SignOut() async {
@@ -131,7 +133,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Halo Mangusti Zacharias!',
+                        'Halo ' + user.email!,
                         style: TextStyle(
                             fontSize: 14, fontFamily: "InterSemiBold"),
                       ),
@@ -245,7 +247,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Halo Mangusti Zacharias!',
+                        'Halo ' + user.email!,
                         style: TextStyle(
                             fontSize: 14, fontFamily: "InterSemiBold"),
                       ),

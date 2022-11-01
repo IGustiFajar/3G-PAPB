@@ -22,7 +22,6 @@ class _ProfilePageState extends State<ProfilePage> {
     } on FirebaseAuthException catch (error) {
       errorMessage = error.message!;
     }
-    setState(() {});
   }
 
   @override
