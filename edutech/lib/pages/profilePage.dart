@@ -1,3 +1,4 @@
+import 'package:cool_alert/cool_alert.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +14,13 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final user = FirebaseAuth.instance.currentUser!;
   String errorMessage = '';
 
   Future SignOut() async {
     try {
       await FirebaseAuth.instance.signOut();
+      Navigator.pop(context);
       errorMessage = '';
     } on FirebaseAuthException catch (error) {
       errorMessage = error.message!;
@@ -85,7 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Mangusti Zacharias',
+                    user.email!,
                     style: TextStyle(
                       fontFamily: "InterSemiBold",
                       fontSize: 20,
@@ -280,7 +283,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: Colors.black,
                     ),
                     Text(
-                      'mail@gmail.com',
+                      user.email!,
                       style: TextStyle(
                         fontSize: 12,
                         fontFamily: 'InterSemiBold',
@@ -358,33 +361,42 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               onTap: (() {
-                Alert(
+                CoolAlert.show(
                   context: context,
-                  title: 'Peringatan',
-                  desc: 'Apakah anda yakin ingin keluar?',
-                  type: AlertType.warning,
-                  style: AlertStyle(backgroundColor: Colors.white),
-                  buttons: [
-                    DialogButton(
-                      child: Text(
-                        "Ya",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                      onPressed: () {
-                        SignOut();
-                      },
-                      width: 120,
-                    ),
-                    DialogButton(
-                      child: Text(
-                        "Tidak",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                      onPressed: () => Navigator.pop(context),
-                      width: 120,
-                    ),
-                  ],
-                ).show();
+                  type: CoolAlertType.confirm,
+                  text: 'Do you want to logout',
+                  confirmBtnText: 'Yes',
+                  cancelBtnText: 'No',
+                  onConfirmBtnTap: SignOut,
+                  confirmBtnColor: Colors.green,
+                );
+                // Alert(
+                //   context: context,
+                //   title: 'Peringatan',
+                //   desc: 'Apakah anda yakin ingin keluar?',
+                //   type: AlertType.warning,
+                //   style: AlertStyle(backgroundColor: Colors.white),
+                //   buttons: [
+                //     DialogButton(
+                //       child: Text(
+                //         "Ya",
+                //         style: TextStyle(color: Colors.white, fontSize: 20),
+                //       ),
+                //       onPressed: () {
+                //         SignOut();
+                //       },
+                //       width: 120,
+                //     ),
+                //     DialogButton(
+                //       child: Text(
+                //         "Tidak",
+                //         style: TextStyle(color: Colors.white, fontSize: 20),
+                //       ),
+                //       onPressed: () => Navigator.pop(context),
+                //       width: 120,
+                //     ),
+                //   ],
+                // ).show();
               }),
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:cool_alert/cool_alert.dart';
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -30,15 +31,23 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Future signUp() async {
-    if (passwordConfirmed()) {
+    if (_formkey.currentState!.validate()) {
       try {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: _emailController.text.trim(),
           password: _passwordController.text.trim(),
         );
-        errorMessage = '';
+        CoolAlert.show(
+          context: context,
+          type: CoolAlertType.success,
+          text: "Berhasil Membuat Akun!",
+        );
       } on FirebaseAuthException catch (error) {
-        errorMessage = error.message!;
+        CoolAlert.show(
+          context: context,
+          type: CoolAlertType.error,
+          text: 'Gagal Membuat Akun!' + error.message!,
+        );
       }
       setState(() {});
     }
@@ -142,22 +151,22 @@ class _SignUpPageState extends State<SignUpPage> {
                         obscureText: _secureText,
                       ),
                     ),
-                    SizedBox(
-                      height: bodyHeight * 0.1,
-                      child: TextFormField(
-                        controller: _confirmController,
-                        decoration: InputDecoration(
-                          hintText: 'Konfirmasi Passwordmu disini',
-                          labelText: 'Konfirmasi Password',
-                          labelStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontFamily: 'InterRegular'),
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.person),
-                        ),
-                      ),
-                    ),
+                    // SizedBox(
+                    //   height: bodyHeight * 0.1,
+                    //   child: TextFormField(
+                    //     controller: _confirmController,
+                    //     decoration: InputDecoration(
+                    //       hintText: 'Konfirmasi Passwordmu disini',
+                    //       labelText: 'Konfirmasi Password',
+                    //       labelStyle: TextStyle(
+                    //           color: Colors.black,
+                    //           fontSize: 12,
+                    //           fontFamily: 'InterRegular'),
+                    //       border: OutlineInputBorder(),
+                    //       prefixIcon: Icon(Icons.person),
+                    //     ),
+                    //   ),
+                    // ),
                     SizedBox(
                       height: bodyHeight * 0.01,
                     ),
@@ -197,7 +206,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             style: TextStyle(fontSize: 12, color: Colors.blue),
                           ),
                           onPressed: () {
-                            final data = Get.toNamed('/login');
+                            final data = Get.offAll(LoginPage());
                             print(data);
                           },
                         )
@@ -277,30 +286,30 @@ class _SignUpPageState extends State<SignUpPage> {
                     SizedBox(
                       height: 15,
                     ),
-                    TextFormField(
-                      controller: _confirmController,
-                      decoration: InputDecoration(
-                        hintText: 'Konfirmasi password kamu disini',
-                        labelText: 'Konfirmasi Password',
-                        labelStyle: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15,
-                            fontFamily: 'InterRegular'),
-                        border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.lock),
-                        suffixIcon: IconButton(
-                          icon: Icon(_secureText
-                              ? Icons.visibility
-                              : Icons.visibility_off),
-                          onPressed: () {
-                            setState(() {
-                              _secureText = !_secureText;
-                            });
-                          },
-                        ),
-                      ),
-                      obscureText: _secureText,
-                    ),
+                    // TextFormField(
+                    //   controller: _confirmController,
+                    //   decoration: InputDecoration(
+                    //     hintText: 'Konfirmasi password kamu disini',
+                    //     labelText: 'Konfirmasi Password',
+                    //     labelStyle: TextStyle(
+                    //         color: Colors.black,
+                    //         fontSize: 15,
+                    //         fontFamily: 'InterRegular'),
+                    //     border: OutlineInputBorder(),
+                    //     prefixIcon: Icon(Icons.lock),
+                    //     suffixIcon: IconButton(
+                    //       icon: Icon(_secureText
+                    //           ? Icons.visibility
+                    //           : Icons.visibility_off),
+                    //       onPressed: () {
+                    //         setState(() {
+                    //           _secureText = !_secureText;
+                    //         });
+                    //       },
+                    //     ),
+                    //   ),
+                    //   obscureText: _secureText,
+                    // ),
                     SizedBox(
                       height: 20,
                     ),
@@ -340,7 +349,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             style: TextStyle(fontSize: 14, color: Colors.blue),
                           ),
                           onPressed: () {
-                            final data = Get.toNamed('/login');
+                            final data = Get.offAll(LoginPage());
                             print(data);
                           },
                         )

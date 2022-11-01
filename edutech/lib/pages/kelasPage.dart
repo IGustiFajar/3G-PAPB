@@ -10,9 +10,15 @@ import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-class kelasPage extends StatelessWidget {
+class kelasPage extends StatefulWidget {
   const kelasPage({super.key});
 
+  @override
+  State<kelasPage> createState() => _kelasPageState();
+}
+
+class _kelasPageState extends State<kelasPage> {
+  final user = FirebaseAuth.instance.currentUser!;
   Container MyArticles(String imageVal, String heading, String subHeading) {
     return Container(
       width: 250,
@@ -118,7 +124,7 @@ class kelasPage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'Mangusti Zacharias',
+                        user.email!,
                         style: TextStyle(
                             fontFamily: "InterSemiBold",
                             fontSize: 20,
@@ -971,55 +977,6 @@ class kelasPage extends StatelessWidget {
                   ],
                 ),
         ),
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        height: 50,
-        animationCurve: Curves.easeInOutCubic,
-        backgroundColor: Colors.white10,
-        color: Colors.white,
-        items: <Widget>[
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return BerandaPage();
-                  },
-                ),
-              );
-            },
-            icon: SvgPicture.asset(
-              'images/home.svg',
-              color: Colors.grey,
-              alignment: Alignment.center,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'images/book.svg',
-              color: Colors.grey,
-              alignment: Alignment.center,
-            ),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return ProfilePage();
-                  },
-                ),
-              );
-            },
-            icon: SvgPicture.asset(
-              'images/user.svg',
-              color: Colors.grey,
-              alignment: Alignment.center,
-            ),
-          ),
-        ],
-        onTap: (index) {},
       ),
     );
   }

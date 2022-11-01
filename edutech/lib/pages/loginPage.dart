@@ -188,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                             style: TextStyle(fontSize: 12, color: Colors.blue),
                           ),
                           onPressed: () {
-                            final data = Get.toNamed('/signup');
+                            final data = Get.offAll(SignUpPage());
                             print(data);
                           },
                         )
@@ -317,7 +317,7 @@ class _LoginPageState extends State<LoginPage> {
                             style: TextStyle(fontSize: 14, color: Colors.blue),
                           ),
                           onPressed: () {
-                            final data = Get.toNamed('/signup');
+                            final data = Get.offAll(SignUpPage());
                             print(data);
                           },
                         )

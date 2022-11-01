@@ -108,7 +108,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          'Mangusti Zacharias',
+                          user.email!,
                           style: TextStyle(
                               fontFamily: "InterSemiBold",
                               fontSize: 20,
