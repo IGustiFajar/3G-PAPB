@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,6 +16,7 @@ class BerandaPage extends StatefulWidget {
 
 class _BerandaPageState extends State<BerandaPage> {
   final user = FirebaseAuth.instance.currentUser!;
+  final _searchController = TextEditingController();
 
   String errorMessage = '';
 
@@ -40,32 +44,43 @@ class _BerandaPageState extends State<BerandaPage> {
           backgroundColor: Color.fromARGB(255, 62, 137, 99),
           elevation: 5,
           actions: <Widget>[
-            IconButton(
-              onPressed: () {
-                Get.bottomSheet(
-                  Container(
-                    color: Colors.white,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Cari Sesuatu',
-                        // labelText: 'Cari Sesuatu',
-                        labelStyle: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontFamily: 'InterRegular'),
-                        border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.search),
-                      ),
-                    ),
-                  ),
-                );
+            AnimSearchBar(
+              width: 300,
+              style: TextStyle(color: Colors.white),
+              color: Color.fromARGB(255, 62, 137, 99),
+              textController: _searchController,
+              onSuffixTap: () {
+                setState(() {
+                  _searchController.clear();
+                });
               },
-              icon: SvgPicture.asset(
-                'images/search.svg',
-                color: Colors.white,
-                alignment: Alignment.center,
-              ),
             ),
+            // IconButton(
+            //   onPressed: () {
+            //     Get.bottomSheet(
+            //       Container(
+            //         color: Colors.white,
+            //         child: TextField(
+            //           decoration: InputDecoration(
+            //             hintText: 'Cari Sesuatu',
+            //             // labelText: 'Cari Sesuatu',
+            //             labelStyle: TextStyle(
+            //                 color: Colors.black,
+            //                 fontSize: 14,
+            //                 fontFamily: 'InterRegular'),
+            //             border: OutlineInputBorder(),
+            //             prefixIcon: Icon(Icons.search),
+            //           ),
+            //         ),
+            //       ),
+            //     );
+            //   },
+            //   icon: SvgPicture.asset(
+            //     'images/search.svg',
+            //     color: Colors.white,
+            //     alignment: Alignment.center,
+            //   ),
+            // ),
             IconButton(
               onPressed: (() {
                 Get.toNamed('/notification');

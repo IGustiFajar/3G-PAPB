@@ -206,7 +206,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             style: TextStyle(fontSize: 12, color: Colors.blue),
                           ),
                           onPressed: () {
-                            final data = Get.offAll(LoginPage());
+                            final data = Get.off(LoginPage());
                             print(data);
                           },
                         )
@@ -349,7 +349,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             style: TextStyle(fontSize: 14, color: Colors.blue),
                           ),
                           onPressed: () {
-                            final data = Get.offAll(LoginPage());
+                            final data = Get.off(LoginPage());
                             print(data);
                           },
                         )

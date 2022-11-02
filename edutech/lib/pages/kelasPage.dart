@@ -1,3 +1,4 @@
+import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/profilePage.dart';
@@ -19,6 +20,7 @@ class kelasPage extends StatefulWidget {
 
 class _kelasPageState extends State<kelasPage> {
   final user = FirebaseAuth.instance.currentUser!;
+  final _searchController = TextEditingController();
   Container MyArticles(String imageVal, String heading, String subHeading) {
     return Container(
       width: 250,
@@ -76,13 +78,16 @@ class _kelasPageState extends State<kelasPage> {
         backgroundColor: Color.fromARGB(255, 62, 137, 99),
         elevation: 5,
         actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'images/search.svg',
-              color: Colors.white,
-              alignment: Alignment.center,
-            ),
+          AnimSearchBar(
+            width: 300,
+            style: TextStyle(color: Colors.white),
+            color: Color.fromARGB(255, 62, 137, 99),
+            textController: _searchController,
+            onSuffixTap: () {
+              setState(() {
+                _searchController.clear();
+              });
+            },
           ),
           IconButton(
             onPressed: () {},
