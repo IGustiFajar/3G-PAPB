@@ -1,12 +1,15 @@
 import 'package:cool_alert/cool_alert.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:get/get.dart';
+import 'dart:io';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -16,6 +19,26 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   final user = FirebaseAuth.instance.currentUser!;
   String errorMessage = '';
+  String ImageUrl = " ";
+
+  void pickUploadImage() async {
+    final image = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+      maxWidth: 120,
+      maxHeight: 120,
+      imageQuality: 75,
+    );
+
+    Reference ref = FirebaseStorage.instance.ref().child("profilepic.jpg");
+
+    await ref.putFile(File(image!.path));
+    ref.getDownloadURL().then((value) {
+      print(value);
+      setState(() {
+        ImageUrl = value;
+      });
+    });
+  }
 
   Future SignOut() async {
     try {
@@ -69,16 +92,27 @@ class _ProfilePageState extends State<ProfilePage> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Material(
-                  borderRadius: BorderRadius.all(Radius.circular(100.0)),
-                  elevation: 10,
-                  color: Color.fromARGB(78, 62, 137, 99),
-                  child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage('images/rehan.jpg'),
-                      minRadius: 50,
-                      maxRadius: 75,
+                GestureDetector(
+                  onTap: () {
+                    pickUploadImage();
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: 24),
+                    width: 120,
+                    height: 120,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(0)),
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: ImageUrl == " "
+                          ? Icon(
+                              Icons.person,
+                              size: 80,
+                              color: Colors.white,
+                            )
+                          : Image.network(ImageUrl),
                     ),
                   ),
                 ),
