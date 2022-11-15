@@ -47,9 +47,12 @@ dependencies:
   # Firebase Database
   cloud_firestore: ^4.0.3
 
+  firebase_storage: ^11.0.5
   firebase_auth: ^4.1.0
   firebase_core: ^2.1.1
   firebase_crashlytics: ^3.0.3
+
+  image_picker: ^0.8.6
 
   convex_bottom_bar: ^3.1.0+1
   anim_search_bar: ^2.0.2
