@@ -20,12 +20,13 @@ class _ProfilePageState extends State<ProfilePage> {
   final user = FirebaseAuth.instance.currentUser!;
   String errorMessage = '';
   String ImageUrl = " ";
+  bool isObscurePassword = true;
 
   void pickUploadImage() async {
     final image = await ImagePicker().pickImage(
       source: ImageSource.gallery,
-      maxWidth: 120,
-      maxHeight: 120,
+      maxWidth: 512,
+      maxHeight: 512,
       imageQuality: 75,
     );
 
@@ -60,7 +61,7 @@ class _ProfilePageState extends State<ProfilePage> {
         title: Text('Profile'),
         backgroundColor: Color.fromARGB(255, 62, 137, 99),
         elevation: 5,
-        actions: <Widget>[
+        actions: [
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
@@ -71,10 +72,9 @@ class _ProfilePageState extends State<ProfilePage> {
           )
         ],
       ),
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -89,33 +89,45 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ],
             ),
+            Center(
+              child: Stack(
+                children: [
+                  CircleAvatar(
+                    radius: 80,
+                    child: ClipOval(
+                      child: ImageUrl == " "
+                          ? Image.asset('images/rehan.jpg')
+                          : Image.network(ImageUrl,
+                              height: 200, width: 200, fit: BoxFit.fill),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    left: 120,
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(width: 4, color: Colors.white),
+                          color: Colors.green),
+                      child: GestureDetector(
+                        onTap: () {
+                          pickUploadImage();
+                        },
+                        child: Icon(
+                          Icons.photo_camera,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    pickUploadImage();
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(top: 24),
-                    width: 120,
-                    height: 120,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(0)),
-                      color: Colors.white,
-                    ),
-                    child: Center(
-                      child: ImageUrl == " "
-                          ? Icon(
-                              Icons.person,
-                              size: 80,
-                              color: Colors.white,
-                            )
-                          : Image.network(ImageUrl),
-                    ),
-                  ),
-                ),
                 SizedBox(
                   height: bodyHeight * 0.01,
                 ),
@@ -131,9 +143,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ],
-            ),
-            SizedBox(
-              height: bodyHeight * 0.01,
             ),
             Container(
               decoration: BoxDecoration(
@@ -371,7 +380,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
             ),
-            Spacer(),
+            SizedBox(
+              height: bodyHeight * 0.05,
+            ),
             InkWell(
               child: Container(
                 height: bodyHeight * 0.05,
@@ -435,7 +446,22 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ],
         ),
+        // crossAxisAlignment: CrossAxisAlignment.start,
       ),
     );
   }
+
+  // Widget buildTextField(
+  //     String labeltext, String placeholder, bool isPasswordTextField) {
+  //   return Padding(
+  //     padding: EdgeInsets.only(bottom: 30),
+  //     child: TextField(
+  //       obscureText: isPasswordTextField ? isObscurePassword : false,
+  //       decoration : InputDecoration(
+  //         suffixIcon: isPasswordTextField ?
+  //          IconButton(onPressed: () {}, icon: Icon(Icons.remove))
+  //         ),
+  //     ),
+  //   );
+  // }
 }
