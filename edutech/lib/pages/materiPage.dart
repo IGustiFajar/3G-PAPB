@@ -428,19 +428,24 @@ class MateriPage extends StatelessWidget {
               SizedBox(
                 height: bodyHeight * 0.124,
               ),
-              Container(
-                alignment: Alignment.center,
-                height: bodyHeight * 0.06,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(6)),
-                  color: Color(0xff3E8964),
-                ),
-                child: Text(
-                  'Beli kelas',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'InterSemiBold',
-                      fontSize: 14),
+              GestureDetector(
+                onTap: (() {
+                  Get.toNamed('/checkout');
+                }),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: bodyHeight * 0.06,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(6)),
+                    color: Color(0xff3E8964),
+                  ),
+                  child: Text(
+                    'Beli kelas',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'InterSemiBold',
+                        fontSize: 14),
+                  ),
                 ),
               ),
             ],
