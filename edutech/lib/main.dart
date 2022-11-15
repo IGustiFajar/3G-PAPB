@@ -1,3 +1,5 @@
+import 'package:edutech/Crud/Crud.dart';
+import 'package:edutech/editprofile/editprofile.dart';
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/NotificationPage.dart';
 import 'package:edutech/pages/checkoutPage.dart';
@@ -90,6 +92,14 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/checkout',
           page: () => const CheckoutPage(),
+        ),
+        GetPage(
+          name: '/crud',
+          page: () => const crud(),
+        ),
+        GetPage(
+          name: '/editprofile',
+          page: () => const editProfile(),
         ),
       ],
       home: LauncherPage(),
