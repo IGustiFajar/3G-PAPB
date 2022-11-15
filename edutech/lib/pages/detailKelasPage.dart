@@ -1459,6 +1459,79 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: bodyHeight * 0.07,
+                      ),
+                      Divider(height: 1, thickness: 1, color: Colors.grey),
+                      SizedBox(
+                        height: bodyHeight * 0.024,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: bodyHeight * 0.06,
+                              width: bodyHeight * 0.2,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.grey),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(6)),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    'Lihat Materi',
+                                    style: TextStyle(
+                                        fontFamily: 'InterSemiBold',
+                                        fontSize: 14),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Image(image: AssetImage('images/eyeeye.png')),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: bodyHeight * 0.05,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              height: bodyHeight * 0.06,
+                              width: bodyHeight * 0.2,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(6)),
+                                color: Color(0xff3E8964),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    'Daftar Kelas',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'InterSemiBold',
+                                        fontSize: 14),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Image(
+                                      image:
+                                          AssetImage('images/checklistt.png')),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
