@@ -1,7 +1,10 @@
 import 'dart:ui';
 
+import 'package:cool_alert/cool_alert.dart';
+import 'package:edutech/pages/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LupaPassword extends StatefulWidget {
   const LupaPassword({super.key});
@@ -23,13 +26,12 @@ class _LupaPasswordState extends State<LupaPassword> {
     try {
       await FirebaseAuth.instance
           .sendPasswordResetEmail(email: _emailController.text.trim());
-      showDialog(
+      return CoolAlert.show(
         context: context,
-        builder: (context) {
-          return AlertDialog(
-            content: Text(
-                'Link Reset Password telah terkirim! Silahkan cek di email'),
-          );
+        type: CoolAlertType.success,
+        text: "Link Reset Password telah terkirim! Silahkan cek di email",
+        onConfirmBtnTap: () {
+          Get.off(LoginPage());
         },
       );
     } on FirebaseAuthException catch (e) {
