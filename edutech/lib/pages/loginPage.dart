@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 // import 'package:provider/provider.dart';
 // import '../providers/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 const users = const {
   'igusti@gmail.com': 'gusti123',
@@ -320,7 +321,11 @@ class _LoginPageState extends State<LoginPage> {
                             final data = Get.off(SignUpPage());
                             print(data);
                           },
-                        )
+                        ),
+                        // TextButton(
+                        //   onPressed: () => throw Exception(),
+                        //   child: const Text("Throw Test Exception"),
+                        // ),
                       ],
                       mainAxisAlignment: MainAxisAlignment.center,
                     ),

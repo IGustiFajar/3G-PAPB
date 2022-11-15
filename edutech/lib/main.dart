@@ -8,6 +8,7 @@ import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/alert_dialog.dart';
 import 'package:edutech/pages/sertifikatPage.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import './pages/launcher.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +21,7 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   runApp(const MyApp());
 }
 
