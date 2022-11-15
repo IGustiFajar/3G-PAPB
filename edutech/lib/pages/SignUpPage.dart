@@ -41,6 +41,9 @@ class _SignUpPageState extends State<SignUpPage> {
           context: context,
           type: CoolAlertType.success,
           text: "Berhasil Membuat Akun!",
+          onConfirmBtnTap: () {
+            Get.off(LoginPage());
+          },
         );
       } on FirebaseAuthException catch (error) {
         CoolAlert.show(

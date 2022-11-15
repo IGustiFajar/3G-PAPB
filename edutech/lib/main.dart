@@ -1,9 +1,10 @@
-import 'package:edutech/Crud/Crud.dart';
-import 'package:edutech/editprofile/editprofile.dart';
+// import 'package:edutech/Crud/Crud.dart';
+
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/NotificationPage.dart';
 import 'package:edutech/pages/checkoutPage.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
+import 'package:edutech/pages/lupapassword.dart';
 import 'package:edutech/pages/materiPage.dart';
 import 'package:edutech/pages/profilePage.dart';
 import 'package:edutech/pages/kelasPage.dart';
@@ -94,12 +95,8 @@ class MyApp extends StatelessWidget {
           page: () => const CheckoutPage(),
         ),
         GetPage(
-          name: '/crud',
-          page: () => const crud(),
-        ),
-        GetPage(
-          name: '/editprofile',
-          page: () => const editProfile(),
+          name: '/lupapassword',
+          page: () => const LupaPassword(),
         ),
       ],
       home: LauncherPage(),

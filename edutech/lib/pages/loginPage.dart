@@ -145,10 +145,15 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Container(
                       alignment: Alignment.centerRight,
-                      child: Text(
-                        'Lupa Password?',
-                        style:
-                            TextStyle(fontSize: 12, fontFamily: 'InterRegular'),
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/lupapassword');
+                        },
+                        child: Text(
+                          'Lupa Password?',
+                          style: TextStyle(
+                              fontSize: 12, fontFamily: 'InterRegular'),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -273,10 +278,15 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Container(
                       alignment: Alignment.centerRight,
-                      child: Text(
-                        'Lupa Password?',
-                        style:
-                            TextStyle(fontSize: 12, fontFamily: 'InterRegular'),
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/lupapassword');
+                        },
+                        child: Text(
+                          'Lupa Password?',
+                          style: TextStyle(
+                              fontSize: 12, fontFamily: 'InterRegular'),
+                        ),
                       ),
                     ),
                     SizedBox(
