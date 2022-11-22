@@ -167,8 +167,7 @@ class _kelasPageState extends State<kelasPage> {
                       }),
                       child: Container(
                           height: bodyHeight * 0.21,
-                          child: Expanded(
-                            child: ListView(
+                          child: ListView(
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 children: <Widget>[
@@ -850,8 +849,7 @@ class _kelasPageState extends State<kelasPage> {
                       }),
                       child: Container(
                           height: bodyHeight * 0.21,
-                          child: Expanded(
-                            child: ListView(
+                          child: ListView(
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 children: <Widget>[
