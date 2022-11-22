@@ -950,7 +950,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         CrossAxisAlignment.start,
                                     children: <Widget>[
                                       SizedBox(
-                                        height: bodyHeight * 0.01,
+                                        height: bodyHeight * 0.012,
                                       ),
                                       Container(
                                         alignment: Alignment.center,
@@ -972,7 +972,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         ),
                                       ),
                                       SizedBox(
-                                        height: bodyHeight * 0.01,
+                                        height: bodyHeight * 0.015,
                                       ),
                                       Container(
                                         width: 175,
@@ -986,33 +986,8 @@ class _BerandaPageState extends State<BerandaPage> {
                                       SizedBox(
                                         height: bodyHeight * 0.01,
                                       ),
-                                      Row(
-                                        children: <Widget>[
-                                          Container(
-                                            child: Text(
-                                              'Rp. 0',
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  color: Colors.redAccent),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            width: bodyHeight * 0.01,
-                                          ),
-                                          Container(
-                                            child: Text(
-                                              'Rp. 599.000',
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  color: Colors.black54,
-                                                  decoration: TextDecoration
-                                                      .lineThrough),
-                                            ),
-                                          )
-                                        ],
-                                      ),
                                       SizedBox(
-                                        height: bodyHeight * 0.01,
+                                        height: bodyHeight * 0.015,
                                       ),
                                       IntrinsicHeight(
                                         child: Row(
