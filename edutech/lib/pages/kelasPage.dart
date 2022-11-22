@@ -445,7 +445,7 @@ class _kelasPageState extends State<kelasPage> {
                                     ),
                                   ),
                                 ]),
-                          )),
+                          ),
                     ),
                     SizedBox(
                       height: bodyHeight * 0.03,
@@ -1127,7 +1127,7 @@ class _kelasPageState extends State<kelasPage> {
                                     ),
                                   ),
                                 ]),
-                          )),
+                          ),
                     ),
                     SizedBox(
                       height: bodyHeight * 0.03,
