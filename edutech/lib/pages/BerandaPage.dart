@@ -617,7 +617,7 @@ class _BerandaPageState extends State<BerandaPage> {
                         height: bodyHeight * 0.03,
                       ),
                       Container(
-                        height: bodyHeight * 0.5,
+                        height: bodyHeight * 0.48,
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
@@ -641,7 +641,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                               'images/imagePop.png'))),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 10),
                                     child: Container(
                                       alignment: Alignment.center,
                                       height: bodyHeight * 0.04,
@@ -664,7 +664,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   ),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 10),
                                     child: Text(
                                       'Kelas Full Stack Developer : Level Beginner',
                                       style: TextStyle(
@@ -674,7 +674,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   ),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 14),
                                     child: IntrinsicHeight(
                                       child: Row(
                                         children: [
@@ -696,21 +696,6 @@ class _BerandaPageState extends State<BerandaPage> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 10,
-                                      top: 8,
-                                      bottom: 8,
-                                    ),
-                                    child: Text(
-                                      'Rp. 0',
-                                      style: TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 255, 62, 62),
-                                          fontFamily: "InterSemiBold",
-                                          fontSize: 16),
-                                    ),
-                                  )
                                 ],
                               ),
                             ),
@@ -737,7 +722,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                           ))),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 10),
                                     child: Container(
                                       alignment: Alignment.center,
                                       height: bodyHeight * 0.04,
@@ -758,7 +743,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   ),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 10),
                                     child: Text(
                                       'Kelas Product Management : Level Beginner',
                                       style: TextStyle(
@@ -768,7 +753,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   ),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 14),
                                     child: IntrinsicHeight(
                                       child: Row(
                                         children: [
@@ -790,21 +775,6 @@ class _BerandaPageState extends State<BerandaPage> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 10,
-                                      top: 8,
-                                      bottom: 8,
-                                    ),
-                                    child: Text(
-                                      'Rp. 0',
-                                      style: TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 255, 62, 62),
-                                          fontFamily: "InterSemiBold",
-                                          fontSize: 16),
-                                    ),
-                                  )
                                 ],
                               ),
                             ),
@@ -832,7 +802,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                           ))),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 10),
                                     child: Container(
                                       alignment: Alignment.center,
                                       height: bodyHeight * 0.04,
@@ -855,7 +825,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   ),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 10),
                                     child: Text(
                                       'Kelas Product Management : Level Beginner',
                                       style: TextStyle(
@@ -865,7 +835,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                   ),
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 10, top: 8),
+                                        const EdgeInsets.only(left: 10, top: 14),
                                     child: IntrinsicHeight(
                                       child: Row(
                                         children: [
@@ -887,21 +857,6 @@ class _BerandaPageState extends State<BerandaPage> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 10,
-                                      top: 8,
-                                      bottom: 8,
-                                    ),
-                                    child: Text(
-                                      'Rp. 0',
-                                      style: TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 255, 62, 62),
-                                          fontFamily: "InterSemiBold",
-                                          fontSize: 16),
-                                    ),
-                                  )
                                 ],
                               ),
                             ),
