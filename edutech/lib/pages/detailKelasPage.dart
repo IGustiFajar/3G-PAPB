@@ -1360,35 +1360,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: bodyHeight * 0.01,
-                                    ),
-                                    Row(
-                                      children: <Widget>[
-                                        Container(
-                                          child: Text(
-                                            'Rp. 1.750.000',
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: Colors.redAccent),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: bodyHeight * 0.01,
-                                        ),
-                                        Container(
-                                          child: Text(
-                                            'Rp. 1.900.000',
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: Colors.black54,
-                                                decoration:
-                                                    TextDecoration.lineThrough),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: bodyHeight * 0.01,
+                                      height: bodyHeight * 0.025,
                                     ),
                                     IntrinsicHeight(
                                       child: Row(
