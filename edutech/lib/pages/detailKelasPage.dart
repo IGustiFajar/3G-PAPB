@@ -1523,9 +1523,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                         fontSize: 14),
                                   ),
                                   SizedBox(width: 10),
-                                  Image(
-                                      image:
-                                          AssetImage('images/checklistt.png')),
+                                  Image(image: AssetImage('images/cl.png')),
                                 ],
                               ),
                             ),
