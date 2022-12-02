@@ -1,14 +1,11 @@
 import 'package:anim_search_bar/anim_search_bar.dart';
-import 'package:edutech/pages/detailKelasPage.dart';
-import 'package:edutech/pages/loginPage.dart';
-import 'package:edutech/pages/profilePage.dart';
-import 'package:edutech/pages/BerandaPage.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
 import 'package:get/get.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class kelasPage extends StatefulWidget {
@@ -166,286 +163,274 @@ class _kelasPageState extends State<kelasPage> {
                         Get.toNamed('/materi');
                       }),
                       child: Container(
-                          height: bodyHeight * 0.21,
-                          child: ListView(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                children: <Widget>[
-                                  Container(
-                                    padding: EdgeInsets.all(8),
-                                    width: 255,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.grey, width: 1),
-                                        borderRadius: BorderRadius.circular(8)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          width: 400,
-                                          child: Row(
+                        height: bodyHeight * 0.21,
+                        child: ListView(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                width: 255,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.grey, width: 1),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 400,
+                                      child: Row(
+                                        children: [
+                                          Image.asset('images/kelasBer2.png'),
+                                          SizedBox(width: 12),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Image.asset(
-                                                  'images/kelasBer2.png'),
-                                              SizedBox(width: 12),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Full Stack Developer : ',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                  Text(
-                                                    'Level Beginner',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                ],
+                                              Text(
+                                                'Full Stack Developer : ',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
+                                              ),
+                                              Text(
+                                                'Level Beginner',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Image.asset('images/progressBar.png'),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Row(
-                                          children: [
-                                            Text('5 materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14)),
-                                            Spacer(),
-                                            Text('16 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14,
-                                                    color: Color.fromARGB(
-                                                        255, 112, 112, 112))),
-                                          ],
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.02),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text('16 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset(
-                                              'images/separator.png',
-                                            ),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('7 Tugas',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset('images/separator.png'),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('15 Kuis',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12))
-                                          ],
-                                        )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Image.asset('images/progressBar.png'),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Row(
+                                      children: [
+                                        Text('5 materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14)),
+                                        Spacer(),
+                                        Text('16 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    255, 112, 112, 112))),
                                       ],
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.all(8),
-                                    width: 255,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.grey, width: 1),
-                                        borderRadius: BorderRadius.circular(8)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                    SizedBox(height: bodyHeight * 0.02),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 400,
-                                          child: Row(
+                                        Text('16 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset(
+                                          'images/separator.png',
+                                        ),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('7 Tugas',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset('images/separator.png'),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('15 Kuis',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                width: 255,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.grey, width: 1),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 400,
+                                      child: Row(
+                                        children: [
+                                          Image.asset('images/kelasBer.png'),
+                                          SizedBox(width: 12),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Image.asset(
-                                                  'images/kelasBer.png'),
-                                              SizedBox(width: 12),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Kelas Product Management : ',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                  Text(
-                                                    'Level Intermediate',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                ],
+                                              Text(
+                                                'Kelas Product Management : ',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
+                                              ),
+                                              Text(
+                                                'Level Intermediate',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Image.asset('images/progressBar.png'),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Row(
-                                          children: [
-                                            Text('4 materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14)),
-                                            Spacer(),
-                                            Text('8 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14,
-                                                    color: Color.fromARGB(
-                                                        255, 112, 112, 112))),
-                                          ],
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.02),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text('8 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset(
-                                              'images/separator.png',
-                                            ),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('10 Tugas',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset('images/separator.png'),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('15 Kuis',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12))
-                                          ],
-                                        )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Image.asset('images/progressBar.png'),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Row(
+                                      children: [
+                                        Text('4 materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14)),
+                                        Spacer(),
+                                        Text('8 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    255, 112, 112, 112))),
                                       ],
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.all(8),
-                                    width: 255,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.grey, width: 1),
-                                        borderRadius: BorderRadius.circular(8)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                    SizedBox(height: bodyHeight * 0.02),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 400,
-                                          child: Row(
+                                        Text('8 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset(
+                                          'images/separator.png',
+                                        ),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('10 Tugas',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset('images/separator.png'),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('15 Kuis',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                width: 255,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.grey, width: 1),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 400,
+                                      child: Row(
+                                        children: [
+                                          Image.asset('images/kelasBer3.png'),
+                                          SizedBox(width: 12),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Image.asset(
-                                                  'images/kelasBer3.png'),
-                                              SizedBox(width: 12),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Kelas Product Management : ',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                  Text(
-                                                    'Level Intermediate',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                ],
+                                              Text(
+                                                'Kelas Product Management : ',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
+                                              ),
+                                              Text(
+                                                'Level Intermediate',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Image.asset('images/progressBar.png'),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Row(
-                                          children: [
-                                            Text('4 materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14)),
-                                            Spacer(),
-                                            Text('8 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14,
-                                                    color: Color.fromARGB(
-                                                        255, 112, 112, 112))),
-                                          ],
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.02),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text('8 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset(
-                                              'images/separator.png',
-                                            ),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('10 Tugas',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset('images/separator.png'),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('15 Kuis',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12))
-                                          ],
-                                        )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Image.asset('images/progressBar.png'),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Row(
+                                      children: [
+                                        Text('4 materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14)),
+                                        Spacer(),
+                                        Text('8 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    255, 112, 112, 112))),
                                       ],
                                     ),
-                                  ),
-                                ]),
-                          ),
+                                    SizedBox(height: bodyHeight * 0.02),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text('8 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset(
+                                          'images/separator.png',
+                                        ),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('10 Tugas',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset('images/separator.png'),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('15 Kuis',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ]),
+                      ),
                     ),
                     SizedBox(
                       height: bodyHeight * 0.03,
@@ -792,286 +777,274 @@ class _kelasPageState extends State<kelasPage> {
                         Get.toNamed('/materi');
                       }),
                       child: Container(
-                          height: bodyHeight * 0.21,
-                          child: ListView(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                children: <Widget>[
-                                  Container(
-                                    padding: EdgeInsets.all(8),
-                                    width: 255,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.grey, width: 1),
-                                        borderRadius: BorderRadius.circular(8)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          width: 400,
-                                          child: Row(
+                        height: bodyHeight * 0.21,
+                        child: ListView(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                width: 255,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.grey, width: 1),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 400,
+                                      child: Row(
+                                        children: [
+                                          Image.asset('images/kelasBer2.png'),
+                                          SizedBox(width: 12),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Image.asset(
-                                                  'images/kelasBer2.png'),
-                                              SizedBox(width: 12),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Full Stack Developer : ',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                  Text(
-                                                    'Level Beginner',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                ],
+                                              Text(
+                                                'Full Stack Developer : ',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
+                                              ),
+                                              Text(
+                                                'Level Beginner',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Image.asset('images/progressBar.png'),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Row(
-                                          children: [
-                                            Text('5 materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14)),
-                                            Spacer(),
-                                            Text('16 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14,
-                                                    color: Color.fromARGB(
-                                                        255, 112, 112, 112))),
-                                          ],
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.02),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text('16 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset(
-                                              'images/separator.png',
-                                            ),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('7 Tugas',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset('images/separator.png'),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('15 Kuis',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12))
-                                          ],
-                                        )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Image.asset('images/progressBar.png'),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Row(
+                                      children: [
+                                        Text('5 materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14)),
+                                        Spacer(),
+                                        Text('16 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    255, 112, 112, 112))),
                                       ],
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.all(8),
-                                    width: 255,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.grey, width: 1),
-                                        borderRadius: BorderRadius.circular(8)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                    SizedBox(height: bodyHeight * 0.02),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 400,
-                                          child: Row(
+                                        Text('16 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset(
+                                          'images/separator.png',
+                                        ),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('7 Tugas',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset('images/separator.png'),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('15 Kuis',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                width: 255,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.grey, width: 1),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 400,
+                                      child: Row(
+                                        children: [
+                                          Image.asset('images/kelasBer.png'),
+                                          SizedBox(width: 12),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Image.asset(
-                                                  'images/kelasBer.png'),
-                                              SizedBox(width: 12),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Kelas Product Management : ',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                  Text(
-                                                    'Level Intermediate',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                ],
+                                              Text(
+                                                'Kelas Product Management : ',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
+                                              ),
+                                              Text(
+                                                'Level Intermediate',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Image.asset('images/progressBar.png'),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Row(
-                                          children: [
-                                            Text('4 materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14)),
-                                            Spacer(),
-                                            Text('8 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14,
-                                                    color: Color.fromARGB(
-                                                        255, 112, 112, 112))),
-                                          ],
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.02),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text('8 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset(
-                                              'images/separator.png',
-                                            ),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('10 Tugas',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset('images/separator.png'),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('15 Kuis',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12))
-                                          ],
-                                        )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Image.asset('images/progressBar.png'),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Row(
+                                      children: [
+                                        Text('4 materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14)),
+                                        Spacer(),
+                                        Text('8 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    255, 112, 112, 112))),
                                       ],
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.all(8),
-                                    width: 255,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.grey, width: 1),
-                                        borderRadius: BorderRadius.circular(8)),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                    SizedBox(height: bodyHeight * 0.02),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 400,
-                                          child: Row(
+                                        Text('8 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset(
+                                          'images/separator.png',
+                                        ),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('10 Tugas',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset('images/separator.png'),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('15 Kuis',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                width: 255,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.grey, width: 1),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 400,
+                                      child: Row(
+                                        children: [
+                                          Image.asset('images/kelasBer3.png'),
+                                          SizedBox(width: 12),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Image.asset(
-                                                  'images/kelasBer3.png'),
-                                              SizedBox(width: 12),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Kelas Product Management : ',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                  Text(
-                                                    'Level Intermediate',
-                                                    style: TextStyle(
-                                                        fontFamily:
-                                                            'InterSemiBold',
-                                                        fontSize: 12),
-                                                  ),
-                                                ],
+                                              Text(
+                                                'Kelas Product Management : ',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
+                                              ),
+                                              Text(
+                                                'Level Intermediate',
+                                                style: TextStyle(
+                                                    fontFamily: 'InterSemiBold',
+                                                    fontSize: 12),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Image.asset('images/progressBar.png'),
-                                        SizedBox(height: bodyHeight * 0.01),
-                                        Row(
-                                          children: [
-                                            Text('4 materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14)),
-                                            Spacer(),
-                                            Text('8 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 14,
-                                                    color: Color.fromARGB(
-                                                        255, 112, 112, 112))),
-                                          ],
-                                        ),
-                                        SizedBox(height: bodyHeight * 0.02),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text('8 Materi',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset(
-                                              'images/separator.png',
-                                            ),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('10 Tugas',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12)),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Image.asset('images/separator.png'),
-                                            SizedBox(width: bodyHeight * 0.01),
-                                            Text('15 Kuis',
-                                                style: TextStyle(
-                                                    fontFamily: 'InterRegular',
-                                                    fontSize: 12))
-                                          ],
-                                        )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Image.asset('images/progressBar.png'),
+                                    SizedBox(height: bodyHeight * 0.01),
+                                    Row(
+                                      children: [
+                                        Text('4 materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14)),
+                                        Spacer(),
+                                        Text('8 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    255, 112, 112, 112))),
                                       ],
                                     ),
-                                  ),
-                                ]),
-                          ),
+                                    SizedBox(height: bodyHeight * 0.02),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text('8 Materi',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset(
+                                          'images/separator.png',
+                                        ),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('10 Tugas',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12)),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Image.asset('images/separator.png'),
+                                        SizedBox(width: bodyHeight * 0.01),
+                                        Text('15 Kuis',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 12))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ]),
+                      ),
                     ),
                     SizedBox(
                       height: bodyHeight * 0.03,
@@ -1089,20 +1062,21 @@ class _kelasPageState extends State<kelasPage> {
                         GestureDetector(
                           onTap: () {},
                           child: Container(
+                            padding: EdgeInsets.only(
+                                top: 4, bottom: 4, left: 8, right: 8),
                             child: Text(
                               'UI/UX',
                               style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontFamily: 'InterSemiBold',
-                                  color: Colors.green),
+                                  color: Color.fromARGB(255, 62, 137, 99)),
                             ),
-                            height: 30,
-                            width: 75,
                             alignment: Alignment.center,
                             decoration: new BoxDecoration(
-                              color: Colors.greenAccent,
-                              border: Border.all(color: Colors.green),
-                              borderRadius: BorderRadius.circular(15),
+                              color: Color.fromARGB(50, 62, 137, 99),
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 62, 137, 99)),
+                              borderRadius: BorderRadius.circular(32),
                             ),
                           ),
                         ),
@@ -1110,17 +1084,18 @@ class _kelasPageState extends State<kelasPage> {
                         GestureDetector(
                           onTap: () {},
                           child: Container(
+                            padding: EdgeInsets.only(
+                                top: 4, bottom: 4, left: 8, right: 8),
                             child: Text(
                               'Product Management',
                               style: TextStyle(
-                                  fontSize: 16, fontFamily: 'InterSemiBold'),
+                                  fontSize: 14, fontFamily: 'InterRegular'),
                             ),
-                            height: 30,
-                            width: 200,
                             alignment: Alignment.center,
                             decoration: new BoxDecoration(
-                              border: Border.all(color: Colors.black),
-                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(
+                                  color: Color.fromARGB(200, 158, 158, 158)),
+                              borderRadius: BorderRadius.circular(32),
                             ),
                           ),
                         ),
@@ -1129,276 +1104,185 @@ class _kelasPageState extends State<kelasPage> {
                     SizedBox(
                       height: bodyHeight * 0.03,
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        GestureDetector(
-                          //UI/UX Course
-                          onTap: () {
-                            final data = Get.toNamed('/kelas-detail');
-                            print(data);
-                          },
-                          child: Container(
-                            child: Row(
-                              children: <Widget>[
-                                Container(
-                                  height: 130,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage('images/image3.png')),
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        bottomLeft: Radius.circular(10)),
+                    GestureDetector(
+                      onTap: (() {
+                        Get.toNamed('kelas-detail');
+                      }),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    bottomLeft: Radius.circular(8)),
+                                child: Image.asset(
+                                    'images/Thumbnailbeginner.png')),
+                            SizedBox(width: bodyHeight * 0.016),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.only(
+                                        top: 4, bottom: 4, right: 8, left: 8),
+                                    decoration: BoxDecoration(
+                                        color: Color.fromARGB(50, 33, 149, 243),
+                                        border: Border.all(color: Colors.blue),
+                                        borderRadius: BorderRadius.circular(6)),
+                                    child: Text(
+                                      'UI/UX',
+                                      style: TextStyle(
+                                          fontSize: 12, color: Colors.blue),
+                                    ),
                                   ),
-                                ),
-                                SizedBox(width: bodyHeight * 0.01),
-                                Container(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      SizedBox(
-                                        height: bodyHeight * 0.012,
-                                      ),
-                                      Container(
-                                        child: Text(
-                                          'UI/UX Course',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontFamily: 'InterSemiBold',
-                                              color: Colors.blue),
-                                        ),
-                                        height: 25,
-                                        width: 100,
-                                        alignment: Alignment.center,
-                                        decoration: new BoxDecoration(
-                                          border:
-                                              Border.all(color: Colors.blue),
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: bodyHeight * 0.012,
-                                      ),
-                                      Container(
-                                        width: 175,
-                                        child: Text(
-                                          'Kelas UI/UX Designer : level Beginner',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontFamily: 'InterSemiBold'),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: bodyHeight * 0.025,
-                                      ),
-                                      IntrinsicHeight(
-                                        child: Row(
-                                          children: <Widget>[
-                                            Container(
-                                              child: Row(
-                                                children: <Widget>[
-                                                  Container(
-                                                    height: 10,
-                                                    width: 15,
-                                                    decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: AssetImage(
-                                                              'images/Pathstar.png')),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: bodyHeight * 0.005,
-                                                  ),
-                                                  Text(
-                                                    '4.5',
-                                                    style:
-                                                        TextStyle(fontSize: 14),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            VerticalDivider(
-                                              color: Colors.black26,
-                                              thickness: 1,
-                                            ),
-                                            Container(
-                                              child: Row(
-                                                children: <Widget>[
-                                                  Container(
-                                                    height: 10,
-                                                    width: 15,
-                                                    decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: AssetImage(
-                                                              'images/usersuser.png')),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: bodyHeight * 0.005,
-                                                  ),
-                                                  Text(
-                                                    '1,2k',
-                                                    style:
-                                                        TextStyle(fontSize: 14),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Text(
+                                    'Kelas UI/UX Designer :',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'InterSemiBold'),
                                   ),
-                                )
-                              ],
-                            ),
-                            height: 130,
-                            width: 350,
-                            decoration: new BoxDecoration(
-                              border: Border.all(color: Colors.black),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: bodyHeight * 0.01,
-                        ),
-                        GestureDetector(
-                          //Intermediate
-                          onTap: () {},
-                          child: Container(
-                            child: Row(
-                              children: <Widget>[
-                                Container(
-                                  height: 130,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage('images/image3.png')),
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        bottomLeft: Radius.circular(10)),
+                                  Text(
+                                    'Level Beginner',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'InterSemiBold'),
                                   ),
-                                ),
-                                SizedBox(width: bodyHeight * 0.01),
-                                Container(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Row(
+                                    children: [
+                                      Text('Rp. 0'),
                                       SizedBox(
-                                        height: bodyHeight * 0.012,
+                                        width: bodyHeight * 0.012,
                                       ),
-                                      Container(
-                                        child: Text(
-                                          'UI/UX Course',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontFamily: 'InterSemiBold',
-                                              color: Colors.blue),
-                                        ),
-                                        height: 25,
-                                        width: 100,
-                                        alignment: Alignment.center,
-                                        decoration: new BoxDecoration(
-                                          border:
-                                              Border.all(color: Colors.blue),
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: bodyHeight * 0.012,
-                                      ),
-                                      Container(
-                                        width: 175,
-                                        child: Text(
-                                          'Kelas UI/UX Designer : level Intermediate',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontFamily: 'InterSemiBold'),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: bodyHeight * 0.025,
-                                      ),
-                                      IntrinsicHeight(
-                                        child: Row(
-                                          children: <Widget>[
-                                            Container(
-                                              child: Row(
-                                                children: <Widget>[
-                                                  Container(
-                                                    height: 10,
-                                                    width: 15,
-                                                    decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: AssetImage(
-                                                              'images/Pathstar.png')),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: bodyHeight * 0.005,
-                                                  ),
-                                                  Text(
-                                                    '4.5',
-                                                    style:
-                                                        TextStyle(fontSize: 14),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            VerticalDivider(
-                                              color: Colors.black26,
-                                              thickness: 1,
-                                            ),
-                                            Container(
-                                              child: Row(
-                                                children: <Widget>[
-                                                  Container(
-                                                    height: 10,
-                                                    width: 15,
-                                                    decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: AssetImage(
-                                                              'images/usersuser.png')),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: bodyHeight * 0.005,
-                                                  ),
-                                                  Text(
-                                                    '1,2k',
-                                                    style:
-                                                        TextStyle(fontSize: 14),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                                      Text(
+                                        'Rp. 199.000',
+                                        style: TextStyle(color: Colors.grey),
                                       )
                                     ],
                                   ),
-                                )
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Row(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Image.asset('images/yellowstar.png'),
+                                          SizedBox(width: bodyHeight * 0.008),
+                                          Text('4.5')
+                                        ],
+                                      ),
+                                      SizedBox(width: bodyHeight * 0.008),
+                                      Image.asset(
+                                          'images/separatorvertikal.png'),
+                                      SizedBox(width: bodyHeight * 0.008),
+                                      Row(
+                                        children: [
+                                          Image.asset('images/usersuser.png'),
+                                          SizedBox(width: bodyHeight * 0.008),
+                                          Text('1,2k')
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: bodyHeight * 0.012),
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Row(
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(8),
+                                  bottomLeft: Radius.circular(8)),
+                              child:
+                                  Image.asset('images/Thumbnailbeginner2.png')),
+                          SizedBox(width: bodyHeight * 0.016),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.only(
+                                      top: 4, bottom: 4, right: 8, left: 8),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(50, 33, 149, 243),
+                                      border: Border.all(color: Colors.blue),
+                                      borderRadius: BorderRadius.circular(6)),
+                                  child: Text(
+                                    'UI/UX',
+                                    style: TextStyle(
+                                        fontSize: 12, color: Colors.blue),
+                                  ),
+                                ),
+                                SizedBox(height: bodyHeight * 0.008),
+                                Text(
+                                  'Kelas UI/UX Designer :',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: 'InterSemiBold'),
+                                ),
+                                Text(
+                                  'Level Intermediate',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: 'InterSemiBold'),
+                                ),
+                                SizedBox(height: bodyHeight * 0.008),
+                                Row(
+                                  children: [
+                                    Text('Rp. 0'),
+                                    SizedBox(
+                                      width: bodyHeight * 0.012,
+                                    ),
+                                    Text(
+                                      'Rp. 249.000',
+                                      style: TextStyle(color: Colors.grey),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(height: bodyHeight * 0.008),
+                                Row(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Image.asset('images/yellowstar.png'),
+                                        SizedBox(width: bodyHeight * 0.008),
+                                        Text('4.0')
+                                      ],
+                                    ),
+                                    SizedBox(width: bodyHeight * 0.008),
+                                    Image.asset('images/separatorvertikal.png'),
+                                    SizedBox(width: bodyHeight * 0.008),
+                                    Row(
+                                      children: [
+                                        Image.asset('images/usersuser.png'),
+                                        SizedBox(width: bodyHeight * 0.008),
+                                        Text('1k')
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
-                            height: 130,
-                            width: 350,
-                            decoration: new BoxDecoration(
-                              border: Border.all(color: Colors.black),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
                           ),
-                        ),
-                      ],
-                    )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
         ),

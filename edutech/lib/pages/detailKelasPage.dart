@@ -1,8 +1,6 @@
-import 'package:edutech/pages/kelasPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class KelasDetail extends StatefulWidget {
   const KelasDetail({super.key});
@@ -19,7 +17,6 @@ class _KelasDetailState extends State<KelasDetail> {
       child: Card(
         elevation: 2,
         child: Wrap(
-          // direction: Axis.vertical,
           children: <Widget>[
             Center(
               child: Image(
@@ -88,55 +85,9 @@ class _KelasDetailState extends State<KelasDetail> {
           )
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.centerRight,
-                    end: Alignment.centerLeft,
-                    colors: <Color>[
-                      Color.fromARGB(255, 62, 137, 99),
-                      Color.fromARGB(255, 31, 71, 51)
-                    ]),
-              ),
-              child: Container(
-                child: Column(
-                  children: <Widget>[
-                    Material(
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                        elevation: 10,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'images/rehan.jpg',
-                            height: 80,
-                            width: 80,
-                          ),
-                        )),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        user.email!,
-                        style: TextStyle(
-                            fontFamily: "InterSemiBold",
-                            fontSize: 20,
-                            color: Colors.white),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            CustomListTile(Icons.settings_outlined, 'Pengaturan'),
-            CustomListTile(Icons.logout_outlined, 'Keluar'),
-          ],
-        ),
-      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(24.0),
           child: (isLandscape)
               ? IntrinsicWidth(
                   child: Column(
@@ -646,7 +597,6 @@ class _KelasDetailState extends State<KelasDetail> {
                         height: bodyHeight * 0.03,
                       ),
                       GestureDetector(
-                        //Intermediate
                         onTap: () {},
                         child: Container(
                           child: Row(
@@ -793,7 +743,8 @@ class _KelasDetailState extends State<KelasDetail> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage('images/Thumbnailbeginner.png'),
+                            image:
+                                AssetImage('images/ThumbnailbeginnerMain.png'),
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
@@ -1167,10 +1118,9 @@ class _KelasDetailState extends State<KelasDetail> {
                               ),
                             ],
                           ),
-                          height: 130,
-                          width: 350,
+                          height: bodyHeight * 0.15,
                           decoration: new BoxDecoration(
-                            border: Border.all(color: Colors.black38),
+                            border: Border.all(color: Colors.grey),
                             borderRadius: BorderRadius.circular(10),
                           )),
                       SizedBox(
@@ -1260,10 +1210,9 @@ class _KelasDetailState extends State<KelasDetail> {
                               ),
                             ],
                           ),
-                          height: 130,
-                          width: 350,
+                          height: bodyHeight * 0.15,
                           decoration: new BoxDecoration(
-                            border: Border.all(color: Colors.black38),
+                            border: Border.all(color: Colors.grey),
                             borderRadius: BorderRadius.circular(10),
                           )),
                       SizedBox(
@@ -1275,132 +1224,283 @@ class _KelasDetailState extends State<KelasDetail> {
                             fontSize: 16, fontFamily: 'InterSemiBold'),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.02,
+                        height: bodyHeight * 0.024,
                       ),
-                      GestureDetector(
-                        //Intermediate
-                        onTap: () {},
-                        child: Container(
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                height: 130,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('images/image3.png')),
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      bottomLeft: Radius.circular(10)),
-                                ),
-                              ),
-                              SizedBox(width: bodyHeight * 0.01),
-                              Container(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      height: bodyHeight * 0.01,
-                                    ),
-                                    Container(
-                                      child: Text(
-                                        'UI/UX Course',
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'InterSemiBold',
-                                            color: Colors.blue),
-                                      ),
-                                      height: 25,
-                                      width: 100,
-                                      alignment: Alignment.center,
-                                      decoration: new BoxDecoration(
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    bottomLeft: Radius.circular(8)),
+                                child: Image.asset(
+                                    'images/Thumbnailbeginner.png')),
+                            SizedBox(width: bodyHeight * 0.016),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.only(
+                                        top: 4, bottom: 4, right: 8, left: 8),
+                                    decoration: BoxDecoration(
+                                        color: Color.fromARGB(50, 33, 149, 243),
                                         border: Border.all(color: Colors.blue),
-                                        borderRadius: BorderRadius.circular(5),
+                                        borderRadius: BorderRadius.circular(6)),
+                                    child: Text(
+                                      'UI/UX',
+                                      style: TextStyle(
+                                          fontSize: 12, color: Colors.blue),
+                                    ),
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Text(
+                                    'Kelas UI/UX Designer :',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'InterSemiBold'),
+                                  ),
+                                  Text(
+                                    'Level Intermediate',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'InterSemiBold'),
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Row(
+                                    children: [
+                                      Text('Rp. 0'),
+                                      SizedBox(
+                                        width: bodyHeight * 0.012,
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: bodyHeight * 0.01,
-                                    ),
-                                    Container(
-                                      width: 175,
-                                      child: Text(
-                                        'Kelas UI/UX Designer : level Intermediate',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontFamily: 'InterSemiBold'),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: bodyHeight * 0.025,
-                                    ),
-                                    IntrinsicHeight(
-                                      child: Row(
-                                        children: <Widget>[
-                                          Container(
-                                            child: Row(
-                                              children: <Widget>[
-                                                Container(
-                                                  height: 10,
-                                                  width: 15,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: AssetImage(
-                                                            'images/Pathstar.png')),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: bodyHeight * 0.005,
-                                                ),
-                                                Text(
-                                                  '4.5',
-                                                  style:
-                                                      TextStyle(fontSize: 14),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          VerticalDivider(
-                                            color: Colors.black26,
-                                            thickness: 1,
-                                          ),
-                                          Container(
-                                            child: Row(
-                                              children: <Widget>[
-                                                Container(
-                                                  height: 10,
-                                                  width: 15,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: AssetImage(
-                                                            'images/usersuser.png')),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: bodyHeight * 0.005,
-                                                ),
-                                                Text(
-                                                  '1,2k',
-                                                  style:
-                                                      TextStyle(fontSize: 14),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
+                                      Text(
+                                        'Rp. 199.000',
+                                        style: TextStyle(color: Colors.grey),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Row(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Image.asset('images/yellowstar.png'),
+                                          SizedBox(width: bodyHeight * 0.008),
+                                          Text('4.5')
                                         ],
                                       ),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                          height: 130,
-                          width: 350,
-                          decoration: new BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                                      SizedBox(width: bodyHeight * 0.008),
+                                      Image.asset(
+                                          'images/separatorvertikal.png'),
+                                      SizedBox(width: bodyHeight * 0.008),
+                                      Row(
+                                        children: [
+                                          Image.asset('images/usersuser.png'),
+                                          SizedBox(width: bodyHeight * 0.008),
+                                          Text('1.2k')
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: bodyHeight * 0.012,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    bottomLeft: Radius.circular(8)),
+                                child: Image.asset(
+                                    'images/Thumbnailbeginner2.png')),
+                            SizedBox(width: bodyHeight * 0.016),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.only(
+                                        top: 4, bottom: 4, right: 8, left: 8),
+                                    decoration: BoxDecoration(
+                                        color: Color.fromARGB(50, 62, 137, 99),
+                                        border: Border.all(
+                                          color:
+                                              Color.fromARGB(255, 62, 137, 99),
+                                        ),
+                                        borderRadius: BorderRadius.circular(6)),
+                                    child: Text(
+                                      'Product Management',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color:
+                                              Color.fromARGB(255, 62, 137, 99)),
+                                    ),
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Text(
+                                    'Kelas Product',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'InterSemiBold'),
+                                  ),
+                                  Text(
+                                    'Management : Level... ',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'InterSemiBold'),
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Row(
+                                    children: [
+                                      Text('Rp. 0'),
+                                      SizedBox(
+                                        width: bodyHeight * 0.012,
+                                      ),
+                                      Text(
+                                        'Rp. 259.000',
+                                        style: TextStyle(color: Colors.grey),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Row(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Image.asset('images/yellowstar.png'),
+                                          SizedBox(width: bodyHeight * 0.008),
+                                          Text('4.5')
+                                        ],
+                                      ),
+                                      SizedBox(width: bodyHeight * 0.008),
+                                      Image.asset(
+                                          'images/separatorvertikal.png'),
+                                      SizedBox(width: bodyHeight * 0.008),
+                                      Row(
+                                        children: [
+                                          Image.asset('images/usersuser.png'),
+                                          SizedBox(width: bodyHeight * 0.008),
+                                          Text('1.2k')
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: bodyHeight * 0.012,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    bottomLeft: Radius.circular(8)),
+                                child: Image.asset(
+                                    'images/Thumbnailbeginner2.png')),
+                            SizedBox(width: bodyHeight * 0.016),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.only(
+                                        top: 4, bottom: 4, right: 8, left: 8),
+                                    decoration: BoxDecoration(
+                                        color: Color.fromARGB(49, 255, 187, 85),
+                                        border: Border.all(
+                                          color:
+                                              Color.fromARGB(255, 255, 187, 85),
+                                        ),
+                                        borderRadius: BorderRadius.circular(6)),
+                                    child: Text(
+                                      'Product Management',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Color.fromARGB(
+                                              255, 255, 187, 85)),
+                                    ),
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Text(
+                                    'Kelas Full Stack',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'InterSemiBold'),
+                                  ),
+                                  Text(
+                                    'Developer : Level... ',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'InterSemiBold'),
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Row(
+                                    children: [
+                                      Text('Rp. 0'),
+                                      SizedBox(
+                                        width: bodyHeight * 0.012,
+                                      ),
+                                      Text(
+                                        'Rp. 259.000',
+                                        style: TextStyle(color: Colors.grey),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(height: bodyHeight * 0.008),
+                                  Row(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Image.asset('images/yellowstar.png'),
+                                          SizedBox(width: bodyHeight * 0.008),
+                                          Text('4.5')
+                                        ],
+                                      ),
+                                      SizedBox(width: bodyHeight * 0.008),
+                                      Image.asset(
+                                          'images/separatorvertikal.png'),
+                                      SizedBox(width: bodyHeight * 0.008),
+                                      Row(
+                                        children: [
+                                          Image.asset('images/usersuser.png'),
+                                          SizedBox(width: bodyHeight * 0.008),
+                                          Text('1.2k')
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(

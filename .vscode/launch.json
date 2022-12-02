@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "edutech",
+            "cwd": "edutech",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "edutech (profile mode)",
+            "cwd": "edutech",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "edutech (release mode)",
+            "cwd": "edutech",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "mysample",
+            "cwd": "edutech\\mysample",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "mysample (profile mode)",
+            "cwd": "edutech\\mysample",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "mysample (release mode)",
+            "cwd": "edutech\\mysample",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

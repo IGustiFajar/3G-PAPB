@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:edutech/pages/kelasPage.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:get/get.dart';
 
 class MateriPage extends StatelessWidget {
@@ -106,11 +105,13 @@ class MateriPage extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                         border:
-                            Border.all(color: Color.fromARGB(255, 255, 62, 62)),
-                        color: Color.fromARGB(34, 255, 62, 62)),
+                            Border.all(color: Color.fromARGB(255, 62, 137, 99)),
+                        color: Color.fromARGB(34, 62, 137, 99)),
                     child: Text(
                       'UI/UX Course',
-                      style: TextStyle(color: Color.fromARGB(255, 255, 62, 62)),
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 62, 137, 99),
+                          fontSize: 14),
                     ),
                   ),
                 ],
@@ -174,8 +175,9 @@ class MateriPage extends StatelessWidget {
                     height: bodyHeight * 0.1,
                     padding: EdgeInsets.all(bodyHeight * 0.016),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(87, 158, 158, 158),
-                        border: Border.all(color: Colors.grey),
+                        color: Color.fromARGB(85, 62, 137, 99),
+                        border:
+                            Border.all(color: Color.fromARGB(5, 158, 158, 158)),
                         borderRadius: BorderRadius.all(Radius.circular(8))),
                     child: Row(
                       children: [
@@ -194,7 +196,7 @@ class MateriPage extends StatelessWidget {
                           ],
                         ),
                         Spacer(),
-                        Image.asset('images/lock.png'),
+                        Image.asset('images/benar.png'),
                         SizedBox(
                           width: bodyHeight * 0.012,
                         ),
@@ -207,8 +209,9 @@ class MateriPage extends StatelessWidget {
                     height: bodyHeight * 0.1,
                     padding: EdgeInsets.all(bodyHeight * 0.016),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(87, 158, 158, 158),
-                        border: Border.all(color: Colors.grey),
+                        color: Color.fromARGB(85, 62, 137, 99),
+                        border:
+                            Border.all(color: Color.fromARGB(5, 158, 158, 158)),
                         borderRadius: BorderRadius.all(Radius.circular(8))),
                     child: Row(
                       children: [
@@ -227,7 +230,7 @@ class MateriPage extends StatelessWidget {
                           ],
                         ),
                         Spacer(),
-                        Image.asset('images/lock.png'),
+                        Image.asset('images/benar.png'),
                         SizedBox(
                           width: bodyHeight * 0.012,
                         ),
@@ -240,8 +243,9 @@ class MateriPage extends StatelessWidget {
                     height: bodyHeight * 0.1,
                     padding: EdgeInsets.all(bodyHeight * 0.016),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(87, 158, 158, 158),
-                        border: Border.all(color: Colors.grey),
+                        color: Color.fromARGB(85, 62, 137, 99),
+                        border:
+                            Border.all(color: Color.fromARGB(5, 158, 158, 158)),
                         borderRadius: BorderRadius.all(Radius.circular(8))),
                     child: Row(
                       children: [
@@ -260,7 +264,7 @@ class MateriPage extends StatelessWidget {
                           ],
                         ),
                         Spacer(),
-                        Image.asset('images/lock.png'),
+                        Image.asset('images/benar.png'),
                         SizedBox(
                           width: bodyHeight * 0.012,
                         ),
@@ -273,8 +277,9 @@ class MateriPage extends StatelessWidget {
                     height: bodyHeight * 0.1,
                     padding: EdgeInsets.all(bodyHeight * 0.016),
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(87, 158, 158, 158),
-                        border: Border.all(color: Colors.grey),
+                        color: Color.fromARGB(85, 62, 137, 99),
+                        border:
+                            Border.all(color: Color.fromARGB(5, 158, 158, 158)),
                         borderRadius: BorderRadius.all(Radius.circular(8))),
                     child: Row(
                       children: [
@@ -293,7 +298,112 @@ class MateriPage extends StatelessWidget {
                           ],
                         ),
                         Spacer(),
-                        Image.asset('images/lock.png'),
+                        Image.asset('images/benar.png'),
+                        SizedBox(
+                          width: bodyHeight * 0.012,
+                        ),
+                        Image.asset('images/chevron.png')
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: bodyHeight * 0.012),
+                  GestureDetector(
+                    onTap: (() {
+                      Get.toNamed('/detailmateri');
+                    }),
+                    child: Container(
+                      height: bodyHeight * 0.1,
+                      padding: EdgeInsets.all(bodyHeight * 0.016),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(0, 62, 137, 99),
+                          border: Border.all(
+                              color: Color.fromARGB(100, 158, 158, 158)),
+                          borderRadius: BorderRadius.all(Radius.circular(8))),
+                      child: Row(
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('5. Peralatan UI/UX',
+                                  style: TextStyle(
+                                      fontFamily: 'InterSemiBold',
+                                      fontSize: 14)),
+                              SizedBox(height: bodyHeight * 0.004),
+                              Text(
+                                '24 menit',
+                                style: TextStyle(color: Colors.black54),
+                              )
+                            ],
+                          ),
+                          Spacer(),
+                          SizedBox(
+                            width: bodyHeight * 0.012,
+                          ),
+                          Image.asset('images/chevron.png')
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: bodyHeight * 0.012),
+                  Container(
+                    height: bodyHeight * 0.1,
+                    padding: EdgeInsets.all(bodyHeight * 0.016),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(0, 62, 137, 99),
+                        border: Border.all(
+                            color: Color.fromARGB(100, 158, 158, 158)),
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                    child: Row(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('6. User persona & user journey map',
+                                style: TextStyle(
+                                    fontFamily: 'InterSemiBold', fontSize: 14)),
+                            SizedBox(height: bodyHeight * 0.004),
+                            Text(
+                              '24 menit',
+                              style: TextStyle(color: Colors.black54),
+                            )
+                          ],
+                        ),
+                        Spacer(),
+                        SizedBox(
+                          width: bodyHeight * 0.012,
+                        ),
+                        Image.asset('images/chevron.png')
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: bodyHeight * 0.012),
+                  Container(
+                    height: bodyHeight * 0.1,
+                    padding: EdgeInsets.all(bodyHeight * 0.016),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(0, 62, 137, 99),
+                        border: Border.all(
+                            color: Color.fromARGB(100, 158, 158, 158)),
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                    child: Row(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('7. Final project',
+                                style: TextStyle(
+                                    fontFamily: 'InterSemiBold', fontSize: 14)),
+                            SizedBox(height: bodyHeight * 0.004),
+                            Text(
+                              '43 menit',
+                              style: TextStyle(color: Colors.black54),
+                            )
+                          ],
+                        ),
+                        Spacer(),
                         SizedBox(
                           width: bodyHeight * 0.012,
                         ),
@@ -304,150 +414,181 @@ class MateriPage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: bodyHeight * 0.016,
+                height: bodyHeight * 0.024,
               ),
-              Container(
-                alignment: Alignment.center,
-                height: bodyHeight * 0.04,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(6)),
-                  color: Color.fromARGB(181, 62, 137, 99),
-                ),
-                child: Text(
-                  'Muat lainnya',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'InterSemiBold',
-                      fontSize: 14),
-                ),
-              ),
+              Image.asset('images/sepparator.png'),
               SizedBox(
                 height: bodyHeight * 0.024,
               ),
-              Text(
-                "Persyaratan umum",
-                style: TextStyle(fontFamily: 'InterSemiBold', fontSize: 16),
-              ),
-              SizedBox(height: bodyHeight * 0.016),
-              Column(
-                children: [
-                  Container(
-                    height: bodyHeight * 0.06,
-                    padding: EdgeInsets.all(bodyHeight * 0.016),
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(87, 158, 158, 158),
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(8),
-                            topRight: Radius.circular(8))),
-                    child: Row(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('1. Pengenalan UI/UX dari 0',
-                                style: TextStyle(
-                                    fontFamily: 'InterSemiBold', fontSize: 14)),
-                          ],
-                        ),
-                        Spacer(),
-                        Image.asset('images/chevronbottom.png')
-                      ],
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                          left: BorderSide(color: Colors.grey),
-                          right: BorderSide(color: Colors.grey),
-                          bottom: BorderSide(color: Colors.grey)),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(bodyHeight * 0.016),
-                      child: Text(
-                        'Ya, materi ini merupakan materi yang sangat dasar. Mentor akan menjelaskan dari 0 terkait materi yang dipaparkan. Jadi, jangan takut untuk mengikuti kelas!',
-                        style: TextStyle(color: Colors.black45),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: bodyHeight * 0.008,
-              ),
-              Container(
-                height: bodyHeight * 0.06,
-                padding: EdgeInsets.all(bodyHeight * 0.016),
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(87, 158, 158, 158),
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.all(Radius.circular(8))),
-                child: Row(
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Bagaimana jika saya tidak mengerti?',
-                            style: TextStyle(
-                                fontFamily: 'InterSemiBold', fontSize: 14)),
-                      ],
-                    ),
-                    Spacer(),
-                    Image.asset('images/chevron.png')
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: bodyHeight * 0.008,
-              ),
-              Container(
-                height: bodyHeight * 0.06,
-                padding: EdgeInsets.all(bodyHeight * 0.016),
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(87, 158, 158, 158),
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.all(Radius.circular(8))),
-                child: Row(
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Apakah bisa konsultasi terkait materi?',
-                            style: TextStyle(
-                                fontFamily: 'InterSemiBold', fontSize: 14)),
-                      ],
-                    ),
-                    Spacer(),
-                    Image.asset('images/chevron.png')
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: bodyHeight * 0.124,
-              ),
-              GestureDetector(
-                onTap: (() {
-                  Get.toNamed('/checkout');
-                }),
+              DottedBorder(
+                radius: Radius.circular(6),
+                color: Color.fromARGB(100, 158, 158, 158),
+                dashPattern: [12, 4],
+                strokeWidth: 2,
                 child: Container(
                   alignment: Alignment.center,
-                  height: bodyHeight * 0.06,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(6)),
-                    color: Color(0xff3E8964),
-                  ),
-                  child: Text(
-                    'Beli kelas',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'InterSemiBold',
-                        fontSize: 14),
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Image.asset('images/buttonUpload.png'),
+                      SizedBox(height: bodyHeight * 0.01),
+                      Text(
+                        'Upload final project',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontFamily: 'InterRegular'),
+                      )
+                    ],
                   ),
                 ),
               ),
+              SizedBox(
+                height: bodyHeight * 0.05,
+              ),
+
+              // Container(
+              //   alignment: Alignment.center,
+              //   height: bodyHeight * 0.05,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.all(Radius.circular(6)),
+              //     color: Color.fromARGB(221, 62, 137, 99),
+              //   ),
+              //   child: Text(
+              //     'Muat lainnya',
+              //     style: TextStyle(
+              //         color: Colors.white,
+              //         fontFamily: 'InterSemiBold',
+              //         fontSize: 14),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: bodyHeight * 0.024,
+              // ),
+              // // Text(
+              // //   "Persyaratan umum",
+              // //   style: TextStyle(fontFamily: 'InterSemiBold', fontSize: 16),
+              // // ),
+              // // SizedBox(height: bodyHeight * 0.016),
+              // // Column(
+              // //   children: [
+              // //     Container(
+              // //       height: bodyHeight * 0.06,
+              // //       padding: EdgeInsets.all(bodyHeight * 0.016),
+              // //       decoration: BoxDecoration(
+              // //           color: Color.fromARGB(87, 158, 158, 158),
+              // //           border: Border.all(color: Colors.grey),
+              // //           borderRadius: BorderRadius.only(
+              // //               topLeft: Radius.circular(8),
+              // //               topRight: Radius.circular(8))),
+              // //       child: Row(
+              // //         children: [
+              // //           Column(
+              // //             mainAxisAlignment: MainAxisAlignment.center,
+              // //             crossAxisAlignment: CrossAxisAlignment.start,
+              // //             children: [
+              // //               Text('1. Pengenalan UI/UX dari 0',
+              // //                   style: TextStyle(
+              // //                       fontFamily: 'InterSemiBold', fontSize: 14)),
+              // //             ],
+              // //           ),
+              // //           Spacer(),
+              // //           Image.asset('images/chevronbottom.png')
+              // //         ],
+              // //       ),
+              // //     ),
+              // //     Container(
+              // //       decoration: BoxDecoration(
+              // //         border: Border(
+              // //             left: BorderSide(color: Colors.grey),
+              // //             right: BorderSide(color: Colors.grey),
+              // //             bottom: BorderSide(color: Colors.grey)),
+              // //       ),
+              // //       child: Padding(
+              // //         padding: EdgeInsets.all(bodyHeight * 0.016),
+              // //         child: Text(
+              // //           'Ya, materi ini merupakan materi yang sangat dasar. Mentor akan menjelaskan dari 0 terkait materi yang dipaparkan. Jadi, jangan takut untuk mengikuti kelas!',
+              // //           style: TextStyle(color: Colors.black45),
+              // //         ),
+              // //       ),
+              // //     )
+              // //   ],
+              // // ),
+              // SizedBox(
+              //   height: bodyHeight * 0.008,
+              // ),
+              // // Container(
+              // //   height: bodyHeight * 0.06,
+              // //   padding: EdgeInsets.all(bodyHeight * 0.016),
+              // //   decoration: BoxDecoration(
+              // //       color: Color.fromARGB(87, 158, 158, 158),
+              // //       border: Border.all(color: Colors.grey),
+              // //       borderRadius: BorderRadius.all(Radius.circular(8))),
+              // //   child: Row(
+              // //     children: [
+              // //       Column(
+              // //         mainAxisAlignment: MainAxisAlignment.center,
+              // //         crossAxisAlignment: CrossAxisAlignment.start,
+              // //         children: [
+              // //           Text('Bagaimana jika saya tidak mengerti?',
+              // //               style: TextStyle(
+              // //                   fontFamily: 'InterSemiBold', fontSize: 14)),
+              // //         ],
+              // //       ),
+              // //       Spacer(),
+              // //       Image.asset('images/chevron.png')
+              // //     ],
+              // //   ),
+              // // ),
+              // SizedBox(
+              //   height: bodyHeight * 0.008,
+              // ),
+              // // Container(
+              // //   height: bodyHeight * 0.06,
+              // //   padding: EdgeInsets.all(bodyHeight * 0.016),
+              // //   decoration: BoxDecoration(
+              // //       color: Color.fromARGB(87, 158, 158, 158),
+              // //       border: Border.all(color: Colors.grey),
+              // //       borderRadius: BorderRadius.all(Radius.circular(8))),
+              // //   child: Row(
+              // //     children: [
+              // //       Column(
+              // //         mainAxisAlignment: MainAxisAlignment.center,
+              // //         crossAxisAlignment: CrossAxisAlignment.start,
+              // //         children: [
+              // //           Text('Apakah bisa konsultasi terkait materi?',
+              // //               style: TextStyle(
+              // //                   fontFamily: 'InterSemiBold', fontSize: 14)),
+              // //         ],
+              // //       ),
+              // //       Spacer(),
+              // //       Image.asset('images/chevron.png')
+              // //     ],
+              // //   ),
+              // // ),
+              // SizedBox(
+              //   height: bodyHeight * 0.124,
+              // ),
+              // GestureDetector(
+              //   onTap: (() {
+              //     Get.toNamed('/checkout');
+              //   }),
+              //   child: Container(
+              //     alignment: Alignment.center,
+              //     height: bodyHeight * 0.06,
+              //     decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.all(Radius.circular(6)),
+              //       color: Color(0xff3E8964),
+              //     ),
+              //     child: Text(
+              //       'Beli kelas',
+              //       style: TextStyle(
+              //           color: Colors.white,
+              //           fontFamily: 'InterSemiBold',
+              //           fontSize: 14),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),

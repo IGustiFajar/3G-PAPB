@@ -1,24 +1,18 @@
-// import 'package:edutech/Crud/Crud.dart';
-
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/NotificationPage.dart';
 import 'package:edutech/pages/checkoutPage.dart';
-import 'package:edutech/pages/detailKelasPage.dart';
+import 'package:edutech/pages/detailMateri.dart';
 import 'package:edutech/pages/lupapassword.dart';
 import 'package:edutech/pages/materiPage.dart';
 import 'package:edutech/pages/profilePage.dart';
 import 'package:edutech/pages/kelasPage.dart';
 import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
-import 'package:edutech/pages/alert_dialog.dart';
+import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/sertifikatPage.dart';
-import 'package:edutech/pages/checkoutPage.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import './pages/launcher.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import 'providers/auth.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -97,6 +91,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/lupapassword',
           page: () => const LupaPassword(),
+        ),
+        GetPage(
+          name: '/detailmateri',
+          page: () => const DetailMateri(),
         ),
       ],
       home: LauncherPage(),
