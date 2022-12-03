@@ -113,7 +113,7 @@ class _BerandaPageState extends State<BerandaPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(24.0),
           child: (isLandscape)
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.start,

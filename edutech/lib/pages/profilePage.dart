@@ -119,7 +119,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(24.0),
         child: ListView(
           children: [
             Row(
