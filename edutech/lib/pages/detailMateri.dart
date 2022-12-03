@@ -87,7 +87,7 @@ class DetailMateri extends StatelessWidget {
                     ),
                     SizedBox(height: bodyHeight * 0.024),
                     Text(
-                      '5. UX Research',
+                      '5. Peralatan UI/UX',
                       style:
                           TextStyle(fontSize: 20, fontFamily: 'InterSemiBold'),
                     ),

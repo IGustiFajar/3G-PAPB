@@ -69,8 +69,54 @@ class _ProfilePageState extends State<ProfilePage> {
               color: Colors.white,
               alignment: Alignment.center,
             ),
-          )
+          ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerRight,
+                    end: Alignment.centerLeft,
+                    colors: <Color>[
+                      Color.fromARGB(255, 62, 137, 99),
+                      Color.fromARGB(255, 31, 71, 51)
+                    ]),
+              ),
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Material(
+                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                        elevation: 10,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'images/rehan.jpg',
+                            height: 80,
+                            width: 80,
+                          ),
+                        )),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        user.email!,
+                        style: TextStyle(
+                            fontFamily: "InterSemiBold",
+                            fontSize: 20,
+                            color: Colors.white),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            CustomListTile(Icons.settings_outlined, 'Pengaturan'),
+            CustomListTile(Icons.logout_outlined, 'Keluar'),
+          ],
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.all(15.0),
@@ -79,13 +125,9 @@ class _ProfilePageState extends State<ProfilePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Icon(
-                  Icons.edit_outlined,
-                  color: Colors.grey,
-                ),
                 Text(
                   'Edit Profil',
-                  style: TextStyle(color: Colors.black54),
+                  style: TextStyle(color: Colors.black54, fontSize: 14),
                 ),
               ],
             ),
@@ -247,11 +289,16 @@ class _ProfilePageState extends State<ProfilePage> {
                       thickness: 5,
                       color: Colors.black,
                     ),
-                    Text(
-                      'Kelas Saya',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'InterSemiBold',
+                    GestureDetector(
+                      onTap: (() {
+                        Get.toNamed('/kelas');
+                      }),
+                      child: Text(
+                        'Kelas berlangsung',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: 'InterSemiBold',
+                        ),
                       ),
                     ),
                     Spacer(),
@@ -365,7 +412,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: Colors.black,
                     ),
                     Text(
-                      'Riwayat Pembelian',
+                      'Riwayat daftar kelas',
                       style: TextStyle(
                         fontSize: 12,
                         fontFamily: 'InterSemiBold',
@@ -415,53 +462,89 @@ class _ProfilePageState extends State<ProfilePage> {
                   onConfirmBtnTap: SignOut,
                   confirmBtnColor: Colors.green,
                 );
-                // Alert(
-                //   context: context,
-                //   title: 'Peringatan',
-                //   desc: 'Apakah anda yakin ingin keluar?',
-                //   type: AlertType.warning,
-                //   style: AlertStyle(backgroundColor: Colors.white),
-                //   buttons: [
-                //     DialogButton(
-                //       child: Text(
-                //         "Ya",
-                //         style: TextStyle(color: Colors.white, fontSize: 20),
-                //       ),
-                //       onPressed: () {
-                //         SignOut();
-                //       },
-                //       width: 120,
-                //     ),
-                //     DialogButton(
-                //       child: Text(
-                //         "Tidak",
-                //         style: TextStyle(color: Colors.white, fontSize: 20),
-                //       ),
-                //       onPressed: () => Navigator.pop(context),
-                //       width: 120,
-                //     ),
-                //   ],
-                // ).show();
               }),
             ),
           ],
         ),
-        // crossAxisAlignment: CrossAxisAlignment.start,
       ),
     );
   }
+}
 
-  // Widget buildTextField(
-  //     String labeltext, String placeholder, bool isPasswordTextField) {
-  //   return Padding(
-  //     padding: EdgeInsets.only(bottom: 30),
-  //     child: TextField(
-  //       obscureText: isPasswordTextField ? isObscurePassword : false,
-  //       decoration : InputDecoration(
-  //         suffixIcon: isPasswordTextField ?
-  //          IconButton(onPressed: () {}, icon: Icon(Icons.remove))
-  //         ),
-  //     ),
-  //   );
-  // }
+class CustomListTile extends StatefulWidget {
+  IconData icon;
+  String text;
+
+  CustomListTile(this.icon, this.text);
+
+  @override
+  State<CustomListTile> createState() => _CustomListTileState();
+}
+
+class _CustomListTileState extends State<CustomListTile> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0),
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: Colors.grey))),
+        child: InkWell(
+          splashColor: Color.fromARGB(255, 62, 137, 99),
+          onTap: () => {
+            Alert(
+              context: context,
+              title: 'Peringatan',
+              desc: 'Apakah anda yakin ingin keluar?',
+              type: AlertType.warning,
+              style: AlertStyle(backgroundColor: Colors.white),
+              buttons: [
+                DialogButton(
+                  child: Text(
+                    "Ya",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Get.toNamed('/profile');
+                  },
+                  width: 120,
+                ),
+                DialogButton(
+                  child: Text(
+                    "Tidak",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Get.back();
+                  },
+                  width: 120,
+                ),
+              ],
+            ).show()
+          },
+          child: Container(
+            height: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Icon(widget.icon),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        widget.text,
+                        style: TextStyle(fontFamily: 'Inter', fontSize: 16),
+                      ),
+                    )
+                  ],
+                ),
+                Icon(Icons.arrow_right_outlined)
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

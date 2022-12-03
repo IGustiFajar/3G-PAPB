@@ -21,6 +21,8 @@ class _NavBarState extends State<NavBar> {
     return Scaffold(
       body: pages[_currentindex],
       bottomNavigationBar: ConvexAppBar(
+          color: Colors.white,
+          style: TabStyle.reactCircle,
           backgroundColor: Color.fromARGB(255, 62, 137, 99),
           items: [
             TabItem(icon: Icons.home_outlined, title: 'Beranda'),

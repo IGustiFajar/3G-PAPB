@@ -129,9 +129,7 @@ class _KelasDetailState extends State<KelasDetail> {
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Container(
                         child: Text(
                           'Kelas UI/UX Designer : Level Beginner',
@@ -216,7 +214,7 @@ class _KelasDetailState extends State<KelasDetail> {
                             fontSize: 16, fontFamily: 'InterSemiBold'),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.03,
+                        height: bodyHeight * 0.016,
                       ),
                       Text(
                         'Kelas User Interface/User experience merupakan bidang studi yang mempelajari aspek-aspek yang mempengaruhi interaksi antara manusia/user dan komputer serta cara-cara untuk meningkatkan kemudahan penggunaan komputer oleh user (usability).',
@@ -226,9 +224,7 @@ class _KelasDetailState extends State<KelasDetail> {
                         'Pada level beginner ini students akan mempelajari pengenalan UI/UX dari Nol (0), Penerapan Design Thinking, dan Dasar-dasar UX research sebagai dasar untuk user dalam mempelajari bidang UI maupun UX.',
                         style: TextStyle(fontSize: 14, color: Colors.black38),
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -274,25 +270,19 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Container(
                           alignment: Alignment.center,
                           child: Image(
                               image:
                                   AssetImage('images/Thumbnailmateri1.png'))),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Text(
                         'Key Points',
                         style: TextStyle(
                             fontSize: 16, fontFamily: 'InterSemiBold'),
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Column(
                         children: <Widget>[
                           Row(
@@ -339,9 +329,7 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -375,9 +363,7 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Row(
                         children: <Widget>[
                           Text(
@@ -442,9 +428,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
-                                    height: bodyHeight * 0.03,
-                                  ),
+                                  SizedBox(height: bodyHeight * 0.024),
                                   Row(
                                     children: <Widget>[
                                       Image(
@@ -471,9 +455,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                       )
                                     ],
                                   ),
-                                  SizedBox(
-                                    height: bodyHeight * 0.03,
-                                  ),
+                                  SizedBox(height: bodyHeight * 0.024),
                                   Container(
                                     width: 500,
                                     child: Text(
@@ -535,9 +517,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                       )
                                     ],
                                   ),
-                                  SizedBox(
-                                    height: bodyHeight * 0.03,
-                                  ),
+                                  SizedBox(height: bodyHeight * 0.024),
                                   Row(
                                     children: <Widget>[
                                       Image(
@@ -564,9 +544,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                       )
                                     ],
                                   ),
-                                  SizedBox(
-                                    height: bodyHeight * 0.03,
-                                  ),
+                                  SizedBox(height: bodyHeight * 0.024),
                                   Container(
                                     width: 500,
                                     child: Text(
@@ -593,9 +571,7 @@ class _KelasDetailState extends State<KelasDetail> {
                         style: TextStyle(
                             fontSize: 16, fontFamily: 'InterSemiBold'),
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       GestureDetector(
                         onTap: () {},
                         child: Container(
@@ -735,38 +711,29 @@ class _KelasDetailState extends State<KelasDetail> {
                             fontSize: 16, fontFamily: 'InterSemiBold'),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.00005,
+                        height: bodyHeight * 0.012,
                       ),
-                      Container(
-                        height: bodyHeight * 0.5,
-                        width: bodyHeight * 0.5,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image:
-                                AssetImage('images/ThumbnailbeginnerMain.png'),
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      ),
+                      Image.asset('images/ThumbnailbeginnerMain.png'),
+                      SizedBox(height: bodyHeight * 0.024),
                       Container(
                         child: Text(
                           'UI/UX Course',
                           style: TextStyle(
                               fontSize: 12,
                               fontFamily: 'InterSemiBold',
-                              color: Colors.blue),
+                              color: Color.fromARGB(255, 1, 133, 241)),
                         ),
                         height: 25,
                         width: 100,
                         alignment: Alignment.center,
                         decoration: new BoxDecoration(
+                          color: Color.fromARGB(50, 33, 149, 243),
                           border: Border.all(color: Colors.blue),
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.03,
+                        height: bodyHeight * 0.012,
                       ),
                       Container(
                         child: Text(
@@ -776,7 +743,7 @@ class _KelasDetailState extends State<KelasDetail> {
                         ),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.01,
+                        height: bodyHeight * 0.012,
                       ),
                       IntrinsicHeight(
                         child: Row(
@@ -794,15 +761,17 @@ class _KelasDetailState extends State<KelasDetail> {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: bodyHeight * 0.005,
+                                    width: bodyHeight * 0.008,
                                   ),
                                   Text(
                                     '4.5',
-                                    style: TextStyle(fontSize: 14),
+                                    style: TextStyle(fontSize: 12),
                                   ),
+                                  SizedBox(width: bodyHeight * 0.005),
                                   Text(
-                                    '  (1215 Ulasan)',
-                                    style: TextStyle(fontSize: 10),
+                                    '(1215 Ulasan)',
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 12),
                                   ),
                                 ],
                               ),
@@ -812,39 +781,85 @@ class _KelasDetailState extends State<KelasDetail> {
                               thickness: 1,
                             ),
                             Container(
-                              child: Row(
-                                children: <Widget>[
-                                  Container(
-                                    height: 10,
-                                    width: 15,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              'images/usersuser.png')),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: bodyHeight * 0.005,
-                                  ),
-                                  Text(
-                                    '1,2k',
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ],
+                              height: 10,
+                              width: 15,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('images/usersuser.png')),
                               ),
+                            ),
+                            SizedBox(
+                              width: bodyHeight * 0.008,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '1,2k',
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                                SizedBox(
+                                  width: bodyHeight * 0.005,
+                                ),
+                                Text('pelajar',
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 12))
+                              ],
                             ),
                           ],
                         ),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.01,
+                        height: bodyHeight * 0.012,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Rp. 0',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                          SizedBox(
+                            width: bodyHeight * 0.008,
+                          ),
+                          Text(
+                            'Rp. 599.000',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 12,
+                                decoration: TextDecoration.lineThrough),
+                          ),
+                        ],
                       ),
                       Divider(
                         color: Colors.black26,
                         thickness: 1,
                       ),
+                      SizedBox(height: bodyHeight * 0.024),
+                      Container(
+                        padding: EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color.fromARGB(215, 33, 149, 243),
+                            ),
+                            color: Color.fromARGB(50, 33, 149, 243),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            Image.asset('images/idea.png'),
+                            SizedBox(
+                              width: bodyHeight * 0.012,
+                            ),
+                            Text(
+                              'Ketahui tentang alur belajar yang baik',
+                              style: TextStyle(
+                                  color: Color.fromARGB(215, 33, 149, 243)),
+                            ),
+                            Spacer(),
+                            Image.asset('images/chevronblue.png')
+                          ],
+                        ),
+                      ),
                       SizedBox(
-                        height: bodyHeight * 0.01,
+                        height: bodyHeight * 0.024,
                       ),
                       Text(
                         'Tentang Kelas',
@@ -852,7 +867,7 @@ class _KelasDetailState extends State<KelasDetail> {
                             fontSize: 16, fontFamily: 'InterSemiBold'),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.03,
+                        height: bodyHeight * 0.016,
                       ),
                       Text(
                         'Kelas User Interface/User experience merupakan bidang studi yang mempelajari aspek-aspek yang mempengaruhi interaksi antara manusia/user dan komputer serta cara-cara untuk meningkatkan kemudahan penggunaan komputer oleh user (usability).',
@@ -862,9 +877,7 @@ class _KelasDetailState extends State<KelasDetail> {
                         'Pada level beginner ini students akan mempelajari pengenalan UI/UX dari Nol (0), Penerapan Design Thinking, dan Dasar-dasar UX research sebagai dasar untuk user dalam mempelajari bidang UI maupun UX.',
                         style: TextStyle(fontSize: 14, color: Colors.black38),
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -910,21 +923,15 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Image(image: AssetImage('images/Thumbnailmateri1.png')),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Text(
                         'Key Points',
                         style: TextStyle(
                             fontSize: 16, fontFamily: 'InterSemiBold'),
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Column(
                         children: <Widget>[
                           Row(
@@ -971,9 +978,7 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -1007,9 +1012,7 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: bodyHeight * 0.03,
-                      ),
+                      SizedBox(height: bodyHeight * 0.024),
                       Row(
                         children: <Widget>[
                           Text(
@@ -1017,17 +1020,18 @@ class _KelasDetailState extends State<KelasDetail> {
                             style: TextStyle(
                                 fontSize: 16, fontFamily: 'InterSemiBold'),
                           ),
+                          SizedBox(width: bodyHeight * 0.005),
                           Text(
                             ' (1215 Ulasan)',
                             style:
-                                TextStyle(fontSize: 16, color: Colors.black38),
+                                TextStyle(fontSize: 14, color: Colors.black38),
                           ),
                           Spacer(),
                           Text(
                             'Lihat semua',
                             style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black38,
+                                fontSize: 14,
+                                color: Colors.grey,
                                 decoration: TextDecoration.underline),
                           ),
                         ],
@@ -1506,7 +1510,10 @@ class _KelasDetailState extends State<KelasDetail> {
                       SizedBox(
                         height: bodyHeight * 0.07,
                       ),
-                      Divider(height: 1, thickness: 1, color: Colors.grey),
+                      Divider(
+                          height: 1,
+                          thickness: 2,
+                          color: Color.fromARGB(100, 158, 158, 158)),
                       SizedBox(
                         height: bodyHeight * 0.024,
                       ),

@@ -71,7 +71,7 @@ class _kelasPageState extends State<kelasPage> {
         MediaQuery.of(context).orientation == Orientation.landscape;
     return Scaffold(
       appBar: AppBar(
-        title: Text('ApSkil'),
+        title: Text('Kelas'),
         backgroundColor: Color.fromARGB(255, 62, 137, 99),
         elevation: 5,
         actions: <Widget>[
@@ -87,7 +87,9 @@ class _kelasPageState extends State<kelasPage> {
             },
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: (() {
+              Get.toNamed('/notification');
+            }),
             icon: SvgPicture.asset(
               'images/bell.svg',
               color: Colors.white,
@@ -144,7 +146,7 @@ class _kelasPageState extends State<kelasPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(24.0),
           child: (isLandscape)
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1283,6 +1285,31 @@ class _kelasPageState extends State<kelasPage> {
                         ],
                       ),
                     ),
+                    SizedBox(height: bodyHeight * 0.024),
+                    Container(
+                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color.fromARGB(215, 33, 149, 243),
+                          ),
+                          color: Color.fromARGB(50, 33, 149, 243),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Row(
+                        children: [
+                          Image.asset('images/idea.png'),
+                          SizedBox(
+                            width: bodyHeight * 0.012,
+                          ),
+                          Text(
+                            'Ketahui tentang alur belajar yang baik',
+                            style: TextStyle(
+                                color: Color.fromARGB(215, 33, 149, 243)),
+                          ),
+                          Spacer(),
+                          Image.asset('images/chevronblue.png')
+                        ],
+                      ),
+                    )
                   ],
                 ),
         ),
