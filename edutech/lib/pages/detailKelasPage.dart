@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class KelasDetail extends StatefulWidget {
   const KelasDetail({super.key});
@@ -1552,7 +1553,9 @@ class _KelasDetailState extends State<KelasDetail> {
                             width: bodyHeight * 0.05,
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: (() {
+                              Get.toNamed('/enrol');
+                            }),
                             child: Container(
                               height: bodyHeight * 0.06,
                               width: bodyHeight * 0.2,

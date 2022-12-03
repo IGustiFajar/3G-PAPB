@@ -1,6 +1,6 @@
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/NotificationPage.dart';
-import 'package:edutech/pages/checkoutPage.dart';
+import 'package:edutech/pages/enrolKelas.dart';
 import 'package:edutech/pages/detailMateri.dart';
 import 'package:edutech/pages/lupapassword.dart';
 import 'package:edutech/pages/materiPage.dart';
@@ -10,6 +10,7 @@ import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/sertifikatPage.dart';
+import 'package:edutech/pages/enrolKelas.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import './pages/launcher.dart';
@@ -85,8 +86,8 @@ class MyApp extends StatelessWidget {
           page: () => const NotificationPage(),
         ),
         GetPage(
-          name: '/checkout',
-          page: () => const CheckoutPage(),
+          name: '/enrol',
+          page: () => const EnrolKelas(),
         ),
         GetPage(
           name: '/lupapassword',
