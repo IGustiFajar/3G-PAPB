@@ -772,7 +772,7 @@ class _kelasPageState extends State<kelasPage> {
                           TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.02,
+                      height: bodyHeight * 0.012,
                     ),
                     GestureDetector(
                       onTap: (() {
@@ -1049,7 +1049,7 @@ class _kelasPageState extends State<kelasPage> {
                       ),
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.03,
+                      height: bodyHeight * 0.024,
                     ),
                     Text(
                       'Jelajahi Kursus atau materi sesuai minat & bakat yang kamu inginkan!',
@@ -1057,7 +1057,7 @@ class _kelasPageState extends State<kelasPage> {
                           TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.03,
+                      height: bodyHeight * 0.012,
                     ),
                     Row(
                       children: <Widget>[
@@ -1104,7 +1104,7 @@ class _kelasPageState extends State<kelasPage> {
                       ],
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.03,
+                      height: bodyHeight * 0.012,
                     ),
                     GestureDetector(
                       onTap: (() {

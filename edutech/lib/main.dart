@@ -4,13 +4,13 @@ import 'package:edutech/pages/enrolKelas.dart';
 import 'package:edutech/pages/detailMateri.dart';
 import 'package:edutech/pages/lupapassword.dart';
 import 'package:edutech/pages/materiPage.dart';
+import 'package:edutech/pages/editprofilePage.dart';
 import 'package:edutech/pages/profilePage.dart';
 import 'package:edutech/pages/kelasPage.dart';
 import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/sertifikatPage.dart';
-import 'package:edutech/pages/enrolKelas.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import './pages/launcher.dart';
@@ -96,6 +96,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/detailmateri',
           page: () => const DetailMateri(),
+        ),
+        GetPage(
+          name: '/editprofile',
+          page: () => const EditProfilePage(),
         ),
       ],
       home: LauncherPage(),

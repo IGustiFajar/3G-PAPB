@@ -122,7 +122,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     Text(
                       'Halo ' + user.email!,
                       style:
-                          TextStyle(fontSize: 14, fontFamily: "InterSemiBold"),
+                          TextStyle(fontSize: 16, fontFamily: "InterSemiBold"),
                     ),
                     SizedBox(
                       height: bodyHeight * 0.01,
@@ -233,13 +233,13 @@ class _BerandaPageState extends State<BerandaPage> {
                     Text(
                       'Halo ' + user.email!,
                       style:
-                          TextStyle(fontSize: 14, fontFamily: "InterSemiBold"),
+                          TextStyle(fontSize: 16, fontFamily: "InterSemiBold"),
                     ),
                     SizedBox(
                       height: bodyHeight * 0.01,
                     ),
                     Container(
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(14),
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 253, 237, 220),
                         border: Border.all(
@@ -860,61 +860,68 @@ class _BerandaPageState extends State<BerandaPage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: bodyHeight * 0.02),
+                    SizedBox(height: bodyHeight * 0.024),
                     Text(
                       'Cari lebih banyak kelas',
                       style:
                           TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
                     ),
-                    SizedBox(height: bodyHeight * 0.03),
+                    SizedBox(height: bodyHeight * 0.012),
+                    Chip(
+                      backgroundColor: Color.fromARGB(50, 62, 137, 99),
+                      avatar: CircleAvatar(
+                        backgroundColor: Color.fromARGB(255, 99, 99, 99),
+                        child: const Text('AB'),
+                      ),
+                      label: const Text(
+                        'UI/UX',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 62, 137, 99),
+                        ),
+                      ),
+                    ),
                     Row(
-                      children: <Widget>[
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            padding: EdgeInsets.only(
-                                top: 4, bottom: 4, left: 8, right: 8),
-                            child: Text(
-                              'UI/UX',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontFamily: 'InterSemiBold',
-                                  color: Color.fromARGB(255, 62, 137, 99)),
-                            ),
-                            alignment: Alignment.center,
-                            decoration: new BoxDecoration(
-                              color: Color.fromARGB(50, 62, 137, 99),
-                              border: Border.all(
-                                  color: Color.fromARGB(255, 62, 137, 99)),
-                              borderRadius: BorderRadius.circular(32),
-                            ),
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, left: 8, right: 8),
+                          child: Text(
+                            'UI/UX',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: 'InterSemiBold',
+                                color: Color.fromARGB(255, 62, 137, 99)),
+                          ),
+                          alignment: Alignment.center,
+                          decoration: new BoxDecoration(
+                            color: Color.fromARGB(50, 62, 137, 99),
+                            border: Border.all(
+                                color: Color.fromARGB(255, 62, 137, 99)),
+                            borderRadius: BorderRadius.circular(32),
                           ),
                         ),
                         SizedBox(width: bodyHeight * 0.01),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            padding: EdgeInsets.only(
-                                top: 4, bottom: 4, left: 8, right: 8),
-                            child: Text(
-                              'Product Management',
-                              style: TextStyle(
-                                  fontSize: 14, fontFamily: 'InterRegular'),
-                            ),
-                            alignment: Alignment.center,
-                            decoration: new BoxDecoration(
-                              border: Border.all(
-                                  color: Color.fromARGB(200, 158, 158, 158)),
-                              borderRadius: BorderRadius.circular(32),
-                            ),
+                        Container(
+                          padding: EdgeInsets.only(
+                              top: 4, bottom: 4, left: 8, right: 8),
+                          child: Text(
+                            'Product Management',
+                            style: TextStyle(
+                                fontSize: 14, fontFamily: 'InterRegular'),
+                          ),
+                          alignment: Alignment.center,
+                          decoration: new BoxDecoration(
+                            border: Border.all(
+                                color: Color.fromARGB(200, 158, 158, 158)),
+                            borderRadius: BorderRadius.circular(32),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: bodyHeight * 0.03),
+                    SizedBox(height: bodyHeight * 0.012),
                     GestureDetector(
                       onTap: (() {
-                        Get.toNamed('kelas-detail');
+                        Get.toNamed('/kelas-detail');
                       }),
                       child: Container(
                         decoration: BoxDecoration(

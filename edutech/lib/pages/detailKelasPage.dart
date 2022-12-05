@@ -1525,7 +1525,8 @@ class _KelasDetailState extends State<KelasDetail> {
                           GestureDetector(
                             onTap: () {},
                             child: Container(
-                              padding: EdgeInsets.all(16.0),
+                              padding: EdgeInsets.only(
+                                  top: 8, bottom: 8, right: 16, left: 16),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey),
@@ -1556,7 +1557,8 @@ class _KelasDetailState extends State<KelasDetail> {
                               Get.toNamed('/enrol');
                             }),
                             child: Container(
-                              padding: EdgeInsets.all(16),
+                              padding: EdgeInsets.only(
+                                  top: 8, bottom: 8, right: 16, left: 16),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 borderRadius:

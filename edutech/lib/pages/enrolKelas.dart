@@ -166,7 +166,7 @@ class EnrolKelas extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: (() {
-                  Get.toNamed('/detailmateri');
+                  Get.toNamed('/materi');
                 }),
                 child: Container(
                     alignment: Alignment.center,

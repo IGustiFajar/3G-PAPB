@@ -57,143 +57,164 @@ class _ProfilePageState extends State<ProfilePage> {
 
     final bodyHeight = mediaQueryHeight - MediaQuery.of(context).padding.top;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-        backgroundColor: Color.fromARGB(255, 62, 137, 99),
-        elevation: 5,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'images/bell.svg',
-              color: Colors.white,
-              alignment: Alignment.center,
-            ),
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.centerRight,
-                    end: Alignment.centerLeft,
-                    colors: <Color>[
-                      Color.fromARGB(255, 62, 137, 99),
-                      Color.fromARGB(255, 31, 71, 51)
-                    ]),
+        appBar: AppBar(
+          title: Text('Profile'),
+          backgroundColor: Color.fromARGB(255, 62, 137, 99),
+          elevation: 5,
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                'images/bell.svg',
+                color: Colors.white,
+                alignment: Alignment.center,
               ),
-              child: Container(
-                child: Column(
-                  children: <Widget>[
-                    Material(
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                        elevation: 10,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'images/rehan.jpg',
-                            height: 80,
-                            width: 80,
-                          ),
-                        )),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        user.email!,
-                        style: TextStyle(
-                            fontFamily: "InterSemiBold",
-                            fontSize: 20,
-                            color: Colors.white),
-                      ),
-                    )
+            ),
+          ],
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.centerRight,
+                      end: Alignment.centerLeft,
+                      colors: <Color>[
+                        Color.fromARGB(255, 62, 137, 99),
+                        Color.fromARGB(255, 31, 71, 51)
+                      ]),
+                ),
+                child: Container(
+                  child: Column(
+                    children: <Widget>[
+                      Material(
+                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                          elevation: 10,
+                          child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              'images/rehan.jpg',
+                              height: 80,
+                              width: 80,
+                            ),
+                          )),
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          user.email!,
+                          style: TextStyle(
+                              fontFamily: "InterSemiBold",
+                              fontSize: 20,
+                              color: Colors.white),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              CustomListTile(Icons.settings_outlined, 'Pengaturan'),
+              CustomListTile(Icons.logout_outlined, 'Keluar'),
+            ],
+          ),
+        ),
+        body: Container(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: (() {
+                  Get.toNamed('/editprofile');
+                }),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Edit Profil',
+                      style: TextStyle(color: Colors.black54, fontSize: 14),
+                    ),
                   ],
                 ),
               ),
-            ),
-            CustomListTile(Icons.settings_outlined, 'Pengaturan'),
-            CustomListTile(Icons.logout_outlined, 'Keluar'),
-          ],
-        ),
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(24.0),
-        child: ListView(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'Edit Profil',
-                  style: TextStyle(color: Colors.black54, fontSize: 14),
-                ),
-              ],
-            ),
-            Center(
-              child: Stack(
-                children: [
-                  CircleAvatar(
-                    radius: 80,
-                    child: ClipOval(
-                      child: ImageUrl == " "
-                          ? Image.asset('images/rehan.jpg')
-                          : Image.network(ImageUrl,
-                              height: 200, width: 200, fit: BoxFit.fill),
+              Center(
+                child: Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 80,
+                      child: ClipOval(
+                        child: ImageUrl == " "
+                            ? Image.asset('images/rehan.jpg')
+                            : Image.network(ImageUrl,
+                                height: 200, width: 200, fit: BoxFit.fill),
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    left: 120,
-                    child: Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(width: 4, color: Colors.white),
-                          color: Colors.green),
-                      child: GestureDetector(
-                        onTap: () {
-                          pickUploadImage();
-                        },
-                        child: Icon(
-                          Icons.photo_camera,
-                          color: Colors.white,
+                    Positioned(
+                      bottom: 0,
+                      left: 120,
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(width: 4, color: Colors.white),
+                            color: Colors.green),
+                        child: GestureDetector(
+                          onTap: () {
+                            pickUploadImage();
+                          },
+                          child: Icon(
+                            Icons.photo_camera,
+                            color: Colors.white,
+                          ),
                         ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: bodyHeight * 0.01,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      user.email!,
+                      style: TextStyle(
+                        fontFamily: "InterSemiBold",
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 62, 137, 99),
                       ),
                     ),
                   ),
                 ],
               ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: bodyHeight * 0.01,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    user.email!,
-                    style: TextStyle(
-                      fontFamily: "InterSemiBold",
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 62, 137, 99),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.person_outline_rounded,
+                      color: Colors.black,
                     ),
-                  ),
+                    VerticalDivider(
+                      width: 20,
+                      thickness: 5,
+                      color: Colors.black,
+                    ),
+                    Text(
+                      'User Admin Geming',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'InterSemiBold',
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 224, 224, 224),
-                border: Border.all(
-                    color: Color.fromARGB(255, 224, 224, 224), width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
-              child: Padding(
+              Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
@@ -213,114 +234,13 @@ class _ProfilePageState extends State<ProfilePage> {
                         fontFamily: 'InterSemiBold',
                       ),
                     ),
-                    Spacer(),
-                    Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.grey,
-                    ),
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: bodyHeight * 0.01,
-            ),
-            GestureDetector(
-              onTap: (() {
-                Get.toNamed('/sertifikat');
-              }),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 224, 224, 224),
-                  border: Border.all(
-                      color: Color.fromARGB(255, 224, 224, 224), width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.workspace_premium_outlined,
-                        color: Colors.black,
-                      ),
-                      VerticalDivider(
-                        width: 20,
-                        thickness: 5,
-                        color: Colors.black,
-                      ),
-                      Text(
-                        'Sertifikat Saya',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'InterSemiBold',
-                        ),
-                      ),
-                      Spacer(),
-                      Icon(
-                        Icons.arrow_drop_down,
-                        color: Colors.grey,
-                      ),
-                    ],
-                  ),
-                ),
+              SizedBox(
+                height: bodyHeight * 0.01,
               ),
-            ),
-            SizedBox(
-              height: bodyHeight * 0.01,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 224, 224, 224),
-                border: Border.all(
-                    color: Color.fromARGB(255, 224, 224, 224), width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.book_outlined,
-                      color: Colors.black,
-                    ),
-                    VerticalDivider(
-                      width: 20,
-                      thickness: 5,
-                      color: Colors.black,
-                    ),
-                    GestureDetector(
-                      onTap: (() {
-                        Get.toNamed('/kelas');
-                      }),
-                      child: Text(
-                        'Kelas berlangsung',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'InterSemiBold',
-                        ),
-                      ),
-                    ),
-                    Spacer(),
-                    Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.grey,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: bodyHeight * 0.01,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 224, 224, 224),
-                border: Border.all(
-                    color: Color.fromARGB(255, 224, 224, 224), width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
-              ),
-              child: Padding(
+              Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
@@ -340,134 +260,183 @@ class _ProfilePageState extends State<ProfilePage> {
                         fontFamily: 'InterSemiBold',
                       ),
                     ),
-                    Spacer(),
-                    Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.grey,
-                    ),
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: bodyHeight * 0.01,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 224, 224, 224),
-                border: Border.all(
-                    color: Color.fromARGB(255, 224, 224, 224), width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+              SizedBox(
+                height: bodyHeight * 0.024,
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.mail_outline_rounded,
-                      color: Colors.black,
-                    ),
-                    VerticalDivider(
-                      width: 20,
-                      thickness: 5,
-                      color: Colors.black,
-                    ),
-                    Text(
-                      user.email!,
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'InterSemiBold',
-                      ),
-                    ),
-                    Spacer(),
-                    Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.grey,
-                    ),
-                  ],
-                ),
+              Divider(
+                thickness: 1,
+                height: 1,
               ),
-            ),
-            SizedBox(
-              height: bodyHeight * 0.01,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 224, 224, 224),
-                border: Border.all(
-                    color: Color.fromARGB(255, 224, 224, 224), width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+              SizedBox(
+                height: bodyHeight * 0.024,
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.history_outlined,
-                      color: Colors.black,
-                    ),
-                    VerticalDivider(
-                      width: 20,
-                      thickness: 5,
-                      color: Colors.black,
-                    ),
-                    Text(
-                      'Riwayat daftar kelas',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'InterSemiBold',
-                      ),
-                    ),
-                    Spacer(),
-                    Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.grey,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: bodyHeight * 0.05,
-            ),
-            InkWell(
-              child: Container(
-                height: bodyHeight * 0.05,
-                width: 370,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(87, 255, 4, 4),
-                  border: Border.all(
-                      color: Color.fromARGB(255, 255, 132, 132), width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'Keluar',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'InterSemiBold',
+              GestureDetector(
+                onTap: (() {
+                  Get.toNamed('/sertifikat');
+                }),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 224, 224, 224),
+                    border: Border.all(
+                        color: Color.fromARGB(255, 224, 224, 224), width: 1),
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.workspace_premium_outlined,
+                          color: Colors.black,
+                        ),
+                        VerticalDivider(
+                          width: 20,
+                          thickness: 5,
+                          color: Colors.black,
+                        ),
+                        Text(
+                          'Sertifikat Saya',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'InterSemiBold',
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.arrow_right,
+                          color: Colors.grey,
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ),
-              onTap: (() {
-                CoolAlert.show(
-                  context: context,
-                  type: CoolAlertType.confirm,
-                  text: 'Do you want to logout',
-                  confirmBtnText: 'Yes',
-                  cancelBtnText: 'No',
-                  onConfirmBtnTap: SignOut,
-                  confirmBtnColor: Colors.green,
-                );
-              }),
-            ),
-          ],
-        ),
-      ),
-    );
+              SizedBox(
+                height: bodyHeight * 0.01,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 224, 224, 224),
+                  border: Border.all(
+                      color: Color.fromARGB(255, 224, 224, 224), width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.book_outlined,
+                        color: Colors.black,
+                      ),
+                      VerticalDivider(
+                        width: 20,
+                        thickness: 5,
+                        color: Colors.black,
+                      ),
+                      GestureDetector(
+                        onTap: (() {
+                          Get.toNamed('/kelas');
+                        }),
+                        child: Text(
+                          'Kelas berlangsung',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'InterSemiBold',
+                          ),
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.arrow_right,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: bodyHeight * 0.01,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 224, 224, 224),
+                  border: Border.all(
+                      color: Color.fromARGB(255, 224, 224, 224), width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.history_outlined,
+                        color: Colors.black,
+                      ),
+                      VerticalDivider(
+                        width: 20,
+                        thickness: 5,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        'Riwayat daftar kelas',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: 'InterSemiBold',
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.arrow_right,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: bodyHeight * 0.024,
+              ),
+              InkWell(
+                child: Container(
+                  height: bodyHeight * 0.05,
+                  width: 370,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(87, 255, 4, 4),
+                    border: Border.all(
+                        color: Color.fromARGB(255, 255, 132, 132), width: 1),
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Keluar',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'InterSemiBold',
+                      ),
+                    ),
+                  ),
+                ),
+                onTap: (() {
+                  CoolAlert.show(
+                    context: context,
+                    type: CoolAlertType.confirm,
+                    text: 'Do you want to logout',
+                    confirmBtnText: 'Yes',
+                    cancelBtnText: 'No',
+                    onConfirmBtnTap: SignOut,
+                    confirmBtnColor: Color.fromARGB(255, 62, 137, 99),
+                  );
+                }),
+              ),
+            ],
+          ),
+        ));
   }
 }
 
