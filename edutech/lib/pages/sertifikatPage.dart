@@ -4,8 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:edutech/pages/kelasPage.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
@@ -36,7 +34,7 @@ class _sertifikatPageState extends State<sertifikatPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('ApSkil'),
+        title: Text('Sertifikat'),
         backgroundColor: Color.fromARGB(255, 62, 137, 99),
         elevation: 5,
         leading: new IconButton(
@@ -85,6 +83,7 @@ class _sertifikatPageState extends State<sertifikatPage> {
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -95,33 +94,30 @@ class _sertifikatPageState extends State<sertifikatPage> {
                       style:
                           TextStyle(fontFamily: 'InterSemiBold', fontSize: 16),
                     )),
-                Spacer(),
-                // Container(
-                //   width: 36,
-                //   decoration: BoxDecoration(
-                //     border: Border.all(color: Colors.grey, width: 1),
-                //     borderRadius: BorderRadius.all(
-                //       Radius.circular(6),
-                //     ),
-                //   ),
-                // ),
-                // Image.asset('images/download.png')),
-                Spacer(),
-                Container(
-                    width: 36,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 1),
-                        borderRadius: BorderRadius.all(Radius.circular(6))),
-                    child: Image.asset('images/share.png'))
               ],
             ),
-            SizedBox(height: bodyHeight * 0.03),
+            SizedBox(height: bodyHeight * 0.024),
             Text(
-              'Sertifikat kelulusan kelas UI/UX Design Level Beginner',
+              'Sertifikat kelulusan kelas 📜',
               style: TextStyle(fontFamily: 'InterSemiBold', fontSize: 20),
             ),
-            SizedBox(height: bodyHeight * 0.03),
-            Image.asset('images/sertifikat.png'),
+            SizedBox(
+              height: bodyHeight * 0.008,
+            ),
+            Text(
+              'Silahkan unduh untuk melihat detail sertifikat',
+              style: TextStyle(
+                  fontFamily: 'InterSemiBold',
+                  fontSize: 12,
+                  color: Colors.grey),
+            ),
+            SizedBox(height: bodyHeight * 0.024),
+            Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                'images/certificate.png',
+              ),
+            ),
             FutureBuilder<ListResult>(
               future: futureFiles,
               builder: (context, snapshot) {
@@ -133,11 +129,14 @@ class _sertifikatPageState extends State<sertifikatPage> {
                     itemCount: files.length,
                     itemBuilder: (context, index) {
                       final file = files[index];
-                      return ListTile(
-                        title: Text(file.name),
-                        trailing: GestureDetector(
-                          child: Image.asset('images/download.png'),
-                          onTap: () => downloadFile(file),
+                      return Card(
+                        child: ListTile(
+                          title: Text(file.name),
+                          subtitle: Text('Certificate'),
+                          trailing: GestureDetector(
+                            child: Image.asset('images/download.png'),
+                            onTap: () => downloadFile(file),
+                          ),
                         ),
                       );
                     },
@@ -147,9 +146,18 @@ class _sertifikatPageState extends State<sertifikatPage> {
                     child: Text('Error nih'),
                   );
                 } else {
-                  return const Center(child: CircularProgressIndicator());
+                  return const Center(
+                      child: CircularProgressIndicator(
+                    backgroundColor: Colors.white,
+                    valueColor: AlwaysStoppedAnimation(
+                      Color.fromARGB(255, 62, 137, 99),
+                    ),
+                  ));
                 }
               },
+            ),
+            SizedBox(
+              height: bodyHeight * 0.024,
             ),
           ],
         ),
