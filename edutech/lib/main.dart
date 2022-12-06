@@ -11,6 +11,7 @@ import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/sertifikatPage.dart';
+import 'package:edutech/pages/panduanPage.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import './pages/launcher.dart';
@@ -100,6 +101,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/editprofile',
           page: () => const EditProfilePage(),
+        ),
+        GetPage(
+          name: '/panduan',
+          page: () => const PanduanPage(),
         ),
       ],
       home: LauncherPage(),

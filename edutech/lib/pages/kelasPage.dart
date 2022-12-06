@@ -18,49 +18,6 @@ class kelasPage extends StatefulWidget {
 class _kelasPageState extends State<kelasPage> {
   final user = FirebaseAuth.instance.currentUser!;
   final _searchController = TextEditingController();
-  Container MyArticles(String imageVal, String heading, String subHeading) {
-    return Container(
-      width: 250,
-      child: Card(
-        elevation: 2,
-        child: Wrap(
-          // direction: Axis.vertical,
-          children: <Widget>[
-            Center(
-              child: Image(
-                image:
-                    ResizeImage(AssetImage(imageVal), width: 100, height: 100),
-                alignment: Alignment.center,
-              ),
-            ),
-            ListTile(
-              title: Text(heading),
-              subtitle: Text(subHeading),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(width: 15),
-                Icon(
-                  Icons.star,
-                  color: Colors.green,
-                  size: 16,
-                ),
-                Icon(
-                  Icons.star,
-                  color: Colors.green,
-                  size: 16,
-                ),
-                Icon(Icons.star, color: Colors.green, size: 16),
-                const Icon(Icons.star, color: Colors.grey, size: 16),
-                const Icon(Icons.star, color: Colors.grey, size: 16),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -1285,31 +1242,108 @@ class _kelasPageState extends State<kelasPage> {
                         ],
                       ),
                     ),
-                    SizedBox(height: bodyHeight * 0.024),
+                    SizedBox(
+                      height: bodyHeight * 0.024,
+                    ),
+                    Text(
+                      'Ketahui tentang alur belajar yang baik',
+                      style:
+                          TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
+                    ),
+                    SizedBox(
+                      height: bodyHeight * 0.012,
+                    ),
+                    GestureDetector(
+                      onTap: (() {
+                        Get.toNamed('/panduan');
+                      }),
+                      child: Container(
+                        padding: EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color.fromARGB(100, 33, 149, 243),
+                            ),
+                            color: Color.fromARGB(50, 33, 149, 243),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            Image.asset('images/idea.png'),
+                            SizedBox(
+                              width: bodyHeight * 0.012,
+                            ),
+                            Text(
+                              'Flutter Developer',
+                              style: TextStyle(
+                                  color: Color.fromARGB(215, 33, 149, 243)),
+                            ),
+                            Spacer(),
+                            Image.asset('images/chevronblue.png')
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: bodyHeight * 0.008),
                     Container(
                       padding: EdgeInsets.all(16),
                       decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color.fromARGB(215, 33, 149, 243),
+                            color: Color.fromARGB(100, 62, 137, 99),
                           ),
-                          color: Color.fromARGB(50, 33, 149, 243),
+                          color: Color.fromARGB(50, 62, 137, 99),
                           borderRadius: BorderRadius.circular(8)),
                       child: Row(
                         children: [
-                          Image.asset('images/idea.png'),
+                          Image.asset(
+                            'images/idea.png',
+                            color: Color.fromARGB(255, 62, 137, 99),
+                          ),
                           SizedBox(
                             width: bodyHeight * 0.012,
                           ),
                           Text(
-                            'Ketahui tentang alur belajar yang baik',
+                            'UI/UX Designer',
                             style: TextStyle(
-                                color: Color.fromARGB(215, 33, 149, 243)),
+                                color: Color.fromARGB(255, 62, 137, 99)),
                           ),
                           Spacer(),
-                          Image.asset('images/chevronblue.png')
+                          Image.asset(
+                            'images/chevronblue.png',
+                            color: Color.fromARGB(255, 62, 137, 99),
+                          )
                         ],
                       ),
-                    )
+                    ),
+                    SizedBox(height: bodyHeight * 0.008),
+                    Container(
+                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color.fromARGB(100, 255, 106, 96),
+                          ),
+                          color: Color.fromARGB(50, 255, 106, 96),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'images/idea.png',
+                            color: Color.fromARGB(255, 255, 106, 96),
+                          ),
+                          SizedBox(
+                            width: bodyHeight * 0.012,
+                          ),
+                          Text(
+                            'Fullstack Developer',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 106, 96)),
+                          ),
+                          Spacer(),
+                          Image.asset(
+                            'images/chevronblue.png',
+                            color: Color.fromARGB(255, 255, 106, 96),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
         ),
