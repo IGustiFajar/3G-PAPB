@@ -867,19 +867,6 @@ class _BerandaPageState extends State<BerandaPage> {
                           TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
                     ),
                     SizedBox(height: bodyHeight * 0.012),
-                    Chip(
-                      backgroundColor: Color.fromARGB(50, 62, 137, 99),
-                      avatar: CircleAvatar(
-                        backgroundColor: Color.fromARGB(255, 99, 99, 99),
-                        child: const Text('AB'),
-                      ),
-                      label: const Text(
-                        'UI/UX',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 62, 137, 99),
-                        ),
-                      ),
-                    ),
                     Row(
                       children: [
                         Container(
