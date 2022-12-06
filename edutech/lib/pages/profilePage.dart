@@ -58,15 +58,9 @@ class _ProfilePageState extends State<ProfilePage> {
       _firstname = userDoc.get('first_name');
       _lastname = userDoc.get('last_name');
       _email = user!.email!;
-<<<<<<< Updated upstream
       _age = userDoc.get('age').toString();
       _telepon = userDoc.get('telepon').toString();
       // _image = userDoc.get('imageURL');
-=======
-      _age = userDoc.get('age');
-      _telepon = userDoc.get('telepon');
-      // _image = userDoc.get('image');
->>>>>>> Stashed changes
     });
 
     // print('nama : $_firstname');
