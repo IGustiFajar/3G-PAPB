@@ -64,7 +64,7 @@ class _KelasDetailState extends State<KelasDetail> {
         MediaQuery.of(context).orientation == Orientation.landscape;
     return Scaffold(
       appBar: AppBar(
-        title: Text('ApSkil'),
+        title: Text('Kelas'),
         backgroundColor: Color.fromARGB(255, 62, 137, 99),
         elevation: 5,
         actions: <Widget>[
@@ -729,7 +729,8 @@ class _KelasDetailState extends State<KelasDetail> {
                         alignment: Alignment.center,
                         decoration: new BoxDecoration(
                           color: Color.fromARGB(50, 33, 149, 243),
-                          border: Border.all(color: Colors.blue),
+                          border: Border.all(
+                              color: Color.fromARGB(100, 33, 149, 243)),
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
@@ -839,7 +840,7 @@ class _KelasDetailState extends State<KelasDetail> {
                         padding: EdgeInsets.all(16),
                         decoration: BoxDecoration(
                             border: Border.all(
-                              color: Color.fromARGB(215, 33, 149, 243),
+                              color: Color.fromARGB(50, 33, 149, 243),
                             ),
                             color: Color.fromARGB(50, 33, 149, 243),
                             borderRadius: BorderRadius.circular(8)),
@@ -847,12 +848,12 @@ class _KelasDetailState extends State<KelasDetail> {
                           children: [
                             Image.asset('images/idea.png'),
                             SizedBox(
-                              width: bodyHeight * 0.012,
+                              width: bodyHeight * 0.008,
                             ),
                             Text(
                               'Ketahui tentang alur belajar yang baik',
                               style: TextStyle(
-                                  color: Color.fromARGB(215, 33, 149, 243)),
+                                  color: Color.fromARGB(255, 33, 149, 243)),
                             ),
                             Spacer(),
                             Image.asset('images/chevronblue.png')
@@ -1007,7 +1008,8 @@ class _KelasDetailState extends State<KelasDetail> {
                             alignment: Alignment.center,
                             decoration: new BoxDecoration(
                               color: Color.fromARGB(100, 245, 174, 171),
-                              border: Border.all(color: Colors.red),
+                              border: Border.all(
+                                  color: Color.fromARGB(100, 244, 67, 54)),
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
@@ -1021,7 +1023,7 @@ class _KelasDetailState extends State<KelasDetail> {
                             style: TextStyle(
                                 fontSize: 16, fontFamily: 'InterSemiBold'),
                           ),
-                          SizedBox(width: bodyHeight * 0.005),
+                          SizedBox(width: bodyHeight * 0.008),
                           Text(
                             ' (1215 Ulasan)',
                             style:
@@ -1038,7 +1040,7 @@ class _KelasDetailState extends State<KelasDetail> {
                         ],
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.02,
+                        height: bodyHeight * 0.012,
                       ),
                       Container(
                           child: Row(
@@ -1125,11 +1127,13 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                           height: bodyHeight * 0.15,
                           decoration: new BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Color.fromARGB(50, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(10),
                           )),
                       SizedBox(
-                        height: bodyHeight * 0.02,
+                        height: bodyHeight * 0.008,
                       ),
                       Container(
                           child: Row(
@@ -1217,11 +1221,13 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                           height: bodyHeight * 0.15,
                           decoration: new BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Color.fromARGB(50, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(10),
                           )),
                       SizedBox(
-                        height: bodyHeight * 0.04,
+                        height: bodyHeight * 0.024,
                       ),
                       Text(
                         'Kelas Terkait',
@@ -1229,11 +1235,13 @@ class _KelasDetailState extends State<KelasDetail> {
                             fontSize: 16, fontFamily: 'InterSemiBold'),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.024,
+                        height: bodyHeight * 0.012,
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Color.fromARGB(50, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(8)),
                         child: Row(
                           children: [
@@ -1319,11 +1327,13 @@ class _KelasDetailState extends State<KelasDetail> {
                         ),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.012,
+                        height: bodyHeight * 0.008,
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Color.fromARGB(50, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(8)),
                         child: Row(
                           children: [
@@ -1414,11 +1424,13 @@ class _KelasDetailState extends State<KelasDetail> {
                         ),
                       ),
                       SizedBox(
-                        height: bodyHeight * 0.012,
+                        height: bodyHeight * 0.008,
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Color.fromARGB(50, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(8)),
                         child: Row(
                           children: [
@@ -1446,7 +1458,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                         ),
                                         borderRadius: BorderRadius.circular(6)),
                                     child: Text(
-                                      'Product Management',
+                                      'Fullstack Developer',
                                       style: TextStyle(
                                           fontSize: 12,
                                           color: Color.fromARGB(
@@ -1455,7 +1467,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                   ),
                                   SizedBox(height: bodyHeight * 0.008),
                                   Text(
-                                    'Kelas Full Stack',
+                                    'Kelas Fullstack',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontFamily: 'InterSemiBold'),
@@ -1523,13 +1535,17 @@ class _KelasDetailState extends State<KelasDetail> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           GestureDetector(
-                            onTap: () {},
+                            onTap: (() {
+                              Get.toNamed('/lihatmaterienrol');
+                            }),
                             child: Container(
                               padding: EdgeInsets.only(
                                   top: 8, bottom: 8, right: 16, left: 16),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
+                                color: Colors.white,
+                                border: Border.all(
+                                    color: Color.fromARGB(100, 158, 158, 158)),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(6)),
                               ),
@@ -1570,7 +1586,7 @@ class _KelasDetailState extends State<KelasDetail> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    'Daftar Kelas',
+                                    'Daftar kelas',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'InterSemiBold',

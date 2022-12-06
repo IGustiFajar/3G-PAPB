@@ -80,7 +80,9 @@ class EnrolKelas extends StatelessWidget {
               SizedBox(height: bodyHeight * 0.024),
               Container(
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
+                    color: Colors.white,
+                    border:
+                        Border.all(color: Color.fromARGB(50, 158, 158, 158)),
                     borderRadius: BorderRadius.circular(8)),
                 child: Row(
                   children: [
@@ -180,7 +182,8 @@ class EnrolKelas extends StatelessWidget {
                         )),
                     child: Text(
                       'Akses kelas',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white, fontFamily: 'InterSemiBold'),
                     )),
               ),
               SizedBox(
@@ -205,11 +208,8 @@ class EnrolKelas extends StatelessWidget {
                 height: bodyHeight * 0.016,
               ),
               Text(
-                'Kelas User Interface/User experience merupakan bidang studi yang mempelajari aspek-aspek yang mempengaruhi interaksi antara manusia/user dan komputer serta cara-cara untuk meningkatkan kemudahan penggunaan komputer oleh user (usability).',
-                style: TextStyle(fontSize: 14, color: Colors.black38),
-              ),
-              Text(
-                'Pada level beginner ini students akan mempelajari pengenalan UI/UX dari Nol (0), Penerapan Design Thinking, dan Dasar-dasar UX research sebagai dasar untuk user dalam mempelajari bidang UI maupun UX.',
+                'Kelas User Interface/User experience merupakan bidang studi yang mempelajari aspek-aspek yang mempengaruhi interaksi antara manusia/user dan komputer serta cara-cara untuk meningkatkan kemudahan penggunaan komputer oleh user (usability). Pada level beginner ini students akan mempelajari pengenalan UI/UX dari Nol (0), Penerapan Design Thinking, dan Dasar-dasar UX research sebagai dasar untuk user dalam mempelajari bidang UI maupun UX.',
+                textAlign: TextAlign.justify,
                 style: TextStyle(fontSize: 14, color: Colors.black38),
               ),
               SizedBox(
@@ -219,7 +219,7 @@ class EnrolKelas extends StatelessWidget {
                 padding: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                     color: Color.fromARGB(50, 62, 137, 99),
-                    border: Border.all(color: Color.fromARGB(255, 62, 137, 99)),
+                    border: Border.all(color: Color.fromARGB(50, 62, 137, 99)),
                     borderRadius: BorderRadius.circular(6)),
                 child: Row(
                   children: [

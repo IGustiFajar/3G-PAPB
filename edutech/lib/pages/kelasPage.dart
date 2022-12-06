@@ -745,8 +745,10 @@ class _kelasPageState extends State<kelasPage> {
                                 padding: EdgeInsets.all(8),
                                 width: 255,
                                 decoration: BoxDecoration(
+                                    color: Colors.white,
                                     border: Border.all(
-                                        color: Colors.grey, width: 1),
+                                        color:
+                                            Color.fromARGB(50, 158, 158, 158)),
                                     borderRadius: BorderRadius.circular(8)),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -833,8 +835,10 @@ class _kelasPageState extends State<kelasPage> {
                                 padding: EdgeInsets.all(8),
                                 width: 255,
                                 decoration: BoxDecoration(
+                                    color: Colors.white,
                                     border: Border.all(
-                                        color: Colors.grey, width: 1),
+                                        color:
+                                            Color.fromARGB(50, 158, 158, 158)),
                                     borderRadius: BorderRadius.circular(8)),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -921,8 +925,10 @@ class _kelasPageState extends State<kelasPage> {
                                 padding: EdgeInsets.all(8),
                                 width: 255,
                                 decoration: BoxDecoration(
+                                    color: Colors.white,
                                     border: Border.all(
-                                        color: Colors.grey, width: 1),
+                                        color:
+                                            Color.fromARGB(50, 158, 158, 158)),
                                     borderRadius: BorderRadius.circular(8)),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1034,7 +1040,7 @@ class _kelasPageState extends State<kelasPage> {
                             decoration: new BoxDecoration(
                               color: Color.fromARGB(50, 62, 137, 99),
                               border: Border.all(
-                                  color: Color.fromARGB(255, 62, 137, 99)),
+                                  color: Color.fromARGB(100, 62, 137, 99)),
                               borderRadius: BorderRadius.circular(32),
                             ),
                           ),
@@ -1052,8 +1058,9 @@ class _kelasPageState extends State<kelasPage> {
                             ),
                             alignment: Alignment.center,
                             decoration: new BoxDecoration(
+                              color: Colors.white,
                               border: Border.all(
-                                  color: Color.fromARGB(200, 158, 158, 158)),
+                                  color: Color.fromARGB(100, 158, 158, 158)),
                               borderRadius: BorderRadius.circular(32),
                             ),
                           ),
@@ -1069,7 +1076,9 @@ class _kelasPageState extends State<kelasPage> {
                       }),
                       child: Container(
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Color.fromARGB(50, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(8)),
                         child: Row(
                           children: [
@@ -1158,7 +1167,9 @@ class _kelasPageState extends State<kelasPage> {
                     SizedBox(height: bodyHeight * 0.012),
                     Container(
                       decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          color: Colors.white,
+                          border: Border.all(
+                              color: Color.fromARGB(50, 158, 158, 158)),
                           borderRadius: BorderRadius.circular(8)),
                       child: Row(
                         children: [

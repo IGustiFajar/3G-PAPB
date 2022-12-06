@@ -1,5 +1,6 @@
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/NotificationPage.dart';
+import 'package:edutech/pages/lihatMateriPage.dart';
 import 'package:edutech/pages/enrolKelas.dart';
 import 'package:edutech/pages/detailMateri.dart';
 import 'package:edutech/pages/lupapassword.dart';
@@ -9,6 +10,7 @@ import 'package:edutech/pages/profilePage.dart';
 import 'package:edutech/pages/kelasPage.dart';
 import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
+import 'package:edutech/pages/lihatMateriPage.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/sertifikatPage.dart';
 import 'package:edutech/pages/panduanPage.dart';
@@ -105,6 +107,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/panduan',
           page: () => const PanduanPage(),
+        ),
+        GetPage(
+          name: '/lihatmaterienrol',
+          page: () => const LihatMateriPage(),
         ),
       ],
       home: LauncherPage(),
