@@ -1,15 +1,6 @@
-import 'package:cool_alert/cool_alert.dart';
-import 'package:edutech/pages/loginPage.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:edutech/pages/BerandaPage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:get/get.dart';
-import 'dart:io';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -56,13 +47,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.person),
-                  // hintText: 'What do people call you?',
                   labelText: 'Nama lengkap',
                 ),
-                onSaved: (String? value) {
-                  // This optional block of code can be used to run
-                  // code when the user saves the form.
-                },
+                onSaved: (String? value) {},
                 validator: (String? value) {
                   return (value != null && value.contains('@'))
                       ? 'Do not use the @ char.'
@@ -72,13 +59,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.phone_android_outlined),
-                  // hintText: 'What do people call you?',
                   labelText: 'No Handphone',
                 ),
-                onSaved: (String? value) {
-                  // This optional block of code can be used to run
-                  // code when the user saves the form.
-                },
+                onSaved: (String? value) {},
                 validator: (String? value) {
                   return (value != null && value.contains('@'))
                       ? 'Do not use the @ char.'
@@ -88,13 +71,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.badge_outlined),
-                  // hintText: 'What do people call you?',
                   labelText: 'Tanggal lahir',
                 ),
-                onSaved: (String? value) {
-                  // This optional block of code can be used to run
-                  // code when the user saves the form.
-                },
+                onSaved: (String? value) {},
                 validator: (String? value) {
                   return (value != null && value.contains('@'))
                       ? 'Do not use the @ char.'

@@ -1390,7 +1390,7 @@ class _CustomListTileState extends State<CustomListTile> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
-                    Get.toNamed('/login');
+                    Get.offAllNamed('/login');
                   },
                   width: 120,
                 ),

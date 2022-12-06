@@ -1,20 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cool_alert/cool_alert.dart';
-import 'package:edutech/Database/get_users.dart';
-import 'package:edutech/pages/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:edutech/pages/BerandaPage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:get/get.dart';
 import 'dart:io';
-
-import 'package:video_player/video_player.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -37,21 +30,15 @@ class _ProfilePageState extends State<ProfilePage> {
   String ImageUrl = " ";
   bool isObscurePassword = true;
 
-  // late VideoPlayerController _controller;
-
   @override
   void initState() {
-    // _controller = VideoPlayerController.network(
-    //     'https://www.youtube.com/embed/SJAVdeRIuKA.mp4')
-    //   ..initialize().then((_) {});
-    // TODO: implement initState
     super.initState();
     getData();
   }
 
   void getData() async {
     _uid = user!.uid;
-    // print('user.email ${user!.email}');
+
     final DocumentSnapshot userDoc =
         await FirebaseFirestore.instance.collection('users').doc(_uid).get();
     setState(() {
@@ -60,34 +47,8 @@ class _ProfilePageState extends State<ProfilePage> {
       _email = user!.email!;
       _age = userDoc.get('age').toString();
       _telepon = userDoc.get('telepon').toString();
-      // _image = userDoc.get('imageURL');
     });
-
-    // print('nama : $_firstname');
   }
-
-  // // Document ID
-  // List<String> docIDs = [];
-
-  // // Get DocIDS
-  // Future getDocIDs() async {
-  //   await FirebaseFirestore.instance
-  //       .collection('users')
-  //       .where('email', isEqualTo: user?.email)
-  //       .get()
-  //       .then(
-  //         (snapshot) => snapshot.docs.forEach((document) {
-  //           print(document.reference);
-  //           docIDs.add(document.reference.id);
-  //         }),
-  //       );
-  // }
-
-  // @override
-  // void initState() {
-  //   getDocIDs();
-  //   super.initState();
-  // }
 
   void pickUploadImage() async {
     final image = await ImagePicker().pickImage(
@@ -208,14 +169,15 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     Positioned(
                       bottom: 0,
-                      left: 120,
+                      right: 0,
                       child: Container(
                         height: 40,
                         width: 40,
                         decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(width: 4, color: Colors.white),
-                            color: Colors.green),
+                          shape: BoxShape.circle,
+                          border: Border.all(width: 4, color: Colors.white),
+                          color: Color.fromARGB(255, 62, 137, 99),
+                        ),
                         child: GestureDetector(
                           onTap: () {
                             pickUploadImage();
@@ -285,21 +247,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         fontFamily: 'InterSemiBold',
                       ),
                     ),
-
-                    // FutureBuilder(
-                    //   future: getDocIDs(),
-                    //   builder: (context, snapshot) {
-                    //     return ListView.builder(
-                    //         scrollDirection: Axis.vertical,
-                    //         shrinkWrap: true,
-                    //         itemCount: docIDs.length,
-                    //         itemBuilder: (context, index) {
-                    //           return ListTile(
-                    //             title: GetUsersName(documentID: docIDs[index]),
-                    //           );
-                    //         });
-                    //   },
-                    // ),
                   ],
                 ),
               ),
@@ -326,7 +273,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                         SizedBox(
-                          width: bodyHeight * 0.004,
+                          width: bodyHeight * 0.008,
                         ),
                         Text(
                           'Tahun',
@@ -341,7 +288,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               SizedBox(
-                height: bodyHeight * 0.01,
+                height: bodyHeight * 0.008,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -588,7 +535,7 @@ class _CustomListTileState extends State<CustomListTile> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
-                    Get.toNamed('/profile');
+                    Get.offAllNamed('/login');
                   },
                   width: 120,
                 ),

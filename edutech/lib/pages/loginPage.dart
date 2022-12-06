@@ -1,16 +1,7 @@
-import 'package:edutech/pages/BerandaPage.dart';
-// import 'package:edutech/providers/auth.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'BerandaPage.dart';
 import 'SignUpPage.dart';
 import 'package:get/get.dart';
-// import 'package:flutter/gestures.dart';
-// import 'package:provider/provider.dart';
-// import '../providers/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 const users = const {
   'igusti@gmail.com': 'gusti123',
@@ -25,7 +16,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // Controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   String errorMessage = '';
@@ -162,7 +152,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          // Get.toNamed(RouteName.page_2);
                           signIn();
                         },
                         style: ElevatedButton.styleFrom(
@@ -308,7 +297,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             "Login",
                             style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: 16,
                                 fontFamily: 'InterSemiBold'),
                           ),
@@ -335,10 +324,6 @@ class _LoginPageState extends State<LoginPage> {
                               print(data);
                             },
                           ),
-                          // TextButton(
-                          //   onPressed: () => throw Exception(),
-                          //   child: const Text("Throw Test Exception"),
-                          // ),
                         ],
                         mainAxisAlignment: MainAxisAlignment.center,
                       ),
@@ -365,15 +350,6 @@ String? validateEmail(String? formEmail) {
 String? validatePassword(String? formPassword) {
   if (formPassword == null || formPassword.isEmpty)
     return 'Password Harus Diisi!';
-
-  // String pattern =
-  //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-  // RegExp regex = RegExp(pattern);
-  // if (!regex.hasMatch(formPassword))
-  //   return '''
-  //     Password must be at least 8 characters,
-  //     include an uppercase letter, number and symbol.
-  //     ''';
 
   return null;
 }

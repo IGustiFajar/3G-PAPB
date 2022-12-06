@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:dotted_border/dotted_border.dart';
 
 class LihatMateriPage extends StatefulWidget {
   const LihatMateriPage({super.key});
@@ -28,32 +27,6 @@ class _LihatMateriPageState extends State<LihatMateriPage> {
           },
         ),
         actions: <Widget>[
-          IconButton(
-            onPressed: () {
-              Get.bottomSheet(
-                Container(
-                  color: Colors.white,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Cari Sesuatu',
-                      // labelText: 'Cari Sesuatu',
-                      labelStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontFamily: 'InterRegular'),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.search),
-                    ),
-                  ),
-                ),
-              );
-            },
-            icon: SvgPicture.asset(
-              'images/search.svg',
-              color: Colors.white,
-              alignment: Alignment.center,
-            ),
-          ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(

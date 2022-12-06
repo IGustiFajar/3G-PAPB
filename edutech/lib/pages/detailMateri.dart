@@ -13,7 +13,7 @@ class DetailMateri extends StatelessWidget {
     final bodyHeight = mediaQueryHeight - MediaQuery.of(context).padding.top;
     return Scaffold(
         appBar: AppBar(
-          title: Text('ApSkil'),
+          title: Text('Detail Materi'),
           backgroundColor: Color.fromARGB(255, 62, 137, 99),
           elevation: 5,
           leading: new IconButton(
@@ -23,32 +23,6 @@ class DetailMateri extends StatelessWidget {
             },
           ),
           actions: <Widget>[
-            IconButton(
-              onPressed: () {
-                Get.bottomSheet(
-                  Container(
-                    color: Colors.white,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Cari Sesuatu',
-                        // labelText: 'Cari Sesuatu',
-                        labelStyle: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontFamily: 'InterRegular'),
-                        border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.search),
-                      ),
-                    ),
-                  ),
-                );
-              },
-              icon: SvgPicture.asset(
-                'images/search.svg',
-                color: Colors.white,
-                alignment: Alignment.center,
-              ),
-            ),
             IconButton(
               onPressed: () {},
               icon: SvgPicture.asset(

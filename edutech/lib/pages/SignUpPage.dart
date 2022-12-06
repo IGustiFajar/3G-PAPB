@@ -16,7 +16,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  // Controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmController = TextEditingController();
@@ -39,7 +38,6 @@ class _SignUpPageState extends State<SignUpPage> {
     super.dispose();
   }
 
-  // Authentitcate Users
   Future signUp() async {
     final User? user = FirebaseAuth.instance.currentUser;
     final uid = user?.uid;
@@ -66,7 +64,6 @@ class _SignUpPageState extends State<SignUpPage> {
       }
       setState(() {});
 
-      // Add Users Details
       addUsersDetails(
         _firstnameController.text.trim(),
         _lastnameController.text.trim(),
@@ -195,28 +192,11 @@ class _SignUpPageState extends State<SignUpPage> {
                           obscureText: _secureText,
                         ),
                       ),
-                      // SizedBox(
-                      //   height: bodyHeight * 0.1,
-                      //   child: TextFormField(
-                      //     controller: _confirmController,
-                      //     decoration: InputDecoration(
-                      //       hintText: 'Konfirmasi Passwordmu disini',
-                      //       labelText: 'Konfirmasi Password',
-                      //       labelStyle: TextStyle(
-                      //           color: Colors.black,
-                      //           fontSize: 12,
-                      //           fontFamily: 'InterRegular'),
-                      //       border: OutlineInputBorder(),
-                      //       prefixIcon: Icon(Icons.person),
-                      //     ),
-                      //   ),
-                      // ),
                       SizedBox(
                         height: bodyHeight * 0.01,
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          // Get.toNamed(RouteName.page_2);
                           signUp();
                         },
                         style: ElevatedButton.styleFrom(
@@ -403,36 +383,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       SizedBox(
                         height: 15,
                       ),
-                      // TextFormField(
-                      //   controller: _confirmController,
-                      //   decoration: InputDecoration(
-                      //     hintText: 'Konfirmasi password kamu disini',
-                      //     labelText: 'Konfirmasi Password',
-                      //     labelStyle: TextStyle(
-                      //         color: Colors.black,
-                      //         fontSize: 15,
-                      //         fontFamily: 'InterRegular'),
-                      //     border: OutlineInputBorder(),
-                      //     prefixIcon: Icon(Icons.lock),
-                      //     suffixIcon: IconButton(
-                      //       icon: Icon(_secureText
-                      //           ? Icons.visibility
-                      //           : Icons.visibility_off),
-                      //       onPressed: () {
-                      //         setState(() {
-                      //           _secureText = !_secureText;
-                      //         });
-                      //       },
-                      //     ),
-                      //   ),
-                      //   obscureText: _secureText,
-                      // ),
-                      SizedBox(
-                        height: 5,
-                      ),
                       ElevatedButton(
                         onPressed: () {
-                          // Get.toNamed(RouteName.page_2);
                           signUp();
                         },
                         style: ElevatedButton.styleFrom(

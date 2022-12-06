@@ -43,7 +43,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   BoxShadow(
                     color: Colors.grey,
                     blurRadius: 2,
-                    offset: Offset(1, 2), // Shadow position
+                    offset: Offset(1, 2),
                   ),
                 ],
               ),
@@ -86,7 +86,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   BoxShadow(
                     color: Colors.grey,
                     blurRadius: 2,
-                    offset: Offset(1, 2), // Shadow position
+                    offset: Offset(1, 2),
                   ),
                 ],
               ),

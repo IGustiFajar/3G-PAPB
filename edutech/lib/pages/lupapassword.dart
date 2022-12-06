@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:cool_alert/cool_alert.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -72,7 +70,6 @@ class _LupaPasswordState extends State<LupaPassword> {
             padding: const EdgeInsets.all(15.0),
             child: TextFormField(
               controller: _emailController,
-              // validator: validateEmail,
               decoration: InputDecoration(
                 hintText: 'Masukkan e-mail kamu disini',
                 labelText: 'E-mail',

@@ -65,23 +65,6 @@ class _KelasDetailState extends State<KelasDetail> {
     } on FirebaseAuthException catch (error) {}
   }
 
-  // late YoutubePlayerController _controller;
-
-  // final videoURL =
-  //     'https://www.youtube.com/watch?v=SJAVdeRIuKA&ab_channel=MattRadiant';
-
-  // @override
-  // void initState() {
-  //   final videoID = YoutubePlayer.convertUrlToId(videoURL);
-  //   _controller = YoutubePlayerController(
-  //     initialVideoId: videoID!,
-  //     flags: const YoutubePlayerFlags(
-  //       autoPlay: false,
-  //     ),
-  //   );
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
@@ -945,22 +928,6 @@ class _KelasDetailState extends State<KelasDetail> {
                         ],
                       ),
                       SizedBox(height: bodyHeight * 0.024),
-                      // YoutubePlayer(
-                      //   controller: _controller,
-                      //   showVideoProgressIndicator: true,
-                      //   onReady: () => debugPrint('Ready'),
-                      //   bottomActions: [
-                      //     CurrentPosition(),
-                      //     ProgressBar(
-                      //       isExpanded: true,
-                      //       colors: const ProgressBarColors(
-                      //         playedColor: Colors.amber,
-                      //         handleColor: Colors.amberAccent,
-                      //       ),
-                      //     ),
-                      //     const PlaybackSpeedButton(),
-                      //   ],
-                      // ),
                       SizedBox(height: bodyHeight * 0.024),
                       Text(
                         'Key Points',
@@ -1614,9 +1581,6 @@ class _KelasDetailState extends State<KelasDetail> {
                                     Color.fromARGB(255, 62, 137, 99),
                               ),
                             },
-                            // onTap: () {
-                            //   Get.toNamed('/enrol');
-                            // },
                             child: Container(
                               padding: EdgeInsets.only(
                                   top: 8, bottom: 8, right: 16, left: 16),
@@ -1662,7 +1626,6 @@ class CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Padding(
       padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0),
       child: Container(
@@ -1688,8 +1651,6 @@ class CustomListTile extends StatelessWidget {
                     )
                   ],
                 ),
-                // Icon(Icons.logout_outlined),
-                // Text('Logout'),
                 Icon(Icons.arrow_right_outlined)
               ],
             ),

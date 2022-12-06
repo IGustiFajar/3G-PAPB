@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:anim_search_bar/anim_search_bar.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
 
 class PanduanPage extends StatefulWidget {
   const PanduanPage({super.key});
