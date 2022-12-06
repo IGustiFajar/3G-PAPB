@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cool_alert/cool_alert.dart';
+import 'package:edutech/Database/get_users.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -11,16 +13,80 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:get/get.dart';
 import 'dart:io';
 
+import 'package:video_player/video_player.dart';
+
 class ProfilePage extends StatefulWidget {
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  final user = FirebaseAuth.instance.currentUser!;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  User? user = FirebaseAuth.instance.currentUser;
+  String _uid = '';
+  String _firstname = '';
+  String _lastname = '';
+  String _email = '';
+  String _age = '';
+  String _telepon = '';
+  String _image = '';
+
+  final userdetail = '';
   String errorMessage = '';
   String ImageUrl = " ";
   bool isObscurePassword = true;
+
+  // late VideoPlayerController _controller;
+
+  @override
+  void initState() {
+    // _controller = VideoPlayerController.network(
+    //     'https://www.youtube.com/embed/SJAVdeRIuKA.mp4')
+    //   ..initialize().then((_) {});
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
+  void getData() async {
+    _uid = user!.uid;
+    // print('user.email ${user!.email}');
+    final DocumentSnapshot userDoc =
+        await FirebaseFirestore.instance.collection('users').doc(_uid).get();
+    setState(() {
+      _firstname = userDoc.get('first_name');
+      _lastname = userDoc.get('last_name');
+      _email = user!.email!;
+      _age = userDoc.get('age');
+      _telepon = userDoc.get('telepon');
+      // _image = userDoc.get('image');
+    });
+
+    // print('nama : $_firstname');
+  }
+
+  // // Document ID
+  // List<String> docIDs = [];
+
+  // // Get DocIDS
+  // Future getDocIDs() async {
+  //   await FirebaseFirestore.instance
+  //       .collection('users')
+  //       .where('email', isEqualTo: user?.email)
+  //       .get()
+  //       .then(
+  //         (snapshot) => snapshot.docs.forEach((document) {
+  //           print(document.reference);
+  //           docIDs.add(document.reference.id);
+  //         }),
+  //       );
+  // }
+
+  // @override
+  // void initState() {
+  //   getDocIDs();
+  //   super.initState();
+  // }
 
   void pickUploadImage() async {
     final image = await ImagePicker().pickImage(
@@ -89,26 +155,17 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Column(
                     children: <Widget>[
                       Material(
-                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                          elevation: 10,
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Image.asset(
-                              'images/rehan.jpg',
-                              height: 80,
-                              width: 80,
-                            ),
-                          )),
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          user.email!,
-                          style: TextStyle(
-                              fontFamily: "InterSemiBold",
-                              fontSize: 20,
-                              color: Colors.white),
+                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                        elevation: 10,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'images/rehan.jpg',
+                            height: 80,
+                            width: 80,
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -179,14 +236,30 @@ class _ProfilePageState extends State<ProfilePage> {
                     height: bodyHeight * 0.01,
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      user.email!,
-                      style: TextStyle(
-                        fontFamily: "InterSemiBold",
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 62, 137, 99),
-                      ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          _firstname ?? '',
+                          style: TextStyle(
+                            fontFamily: "InterSemiBold",
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 62, 137, 99),
+                          ),
+                        ),
+                        SizedBox(
+                          width: bodyHeight * 0.004,
+                        ),
+                        Text(
+                          _lastname ?? '',
+                          style: TextStyle(
+                            fontFamily: "InterSemiBold",
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 62, 137, 99),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -205,12 +278,27 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: Colors.black,
                     ),
                     Text(
-                      'User Admin Geming',
+                      _email,
                       style: TextStyle(
                         fontSize: 12,
                         fontFamily: 'InterSemiBold',
                       ),
                     ),
+
+                    // FutureBuilder(
+                    //   future: getDocIDs(),
+                    //   builder: (context, snapshot) {
+                    //     return ListView.builder(
+                    //         scrollDirection: Axis.vertical,
+                    //         shrinkWrap: true,
+                    //         itemCount: docIDs.length,
+                    //         itemBuilder: (context, index) {
+                    //           return ListTile(
+                    //             title: GetUsersName(documentID: docIDs[index]),
+                    //           );
+                    //         });
+                    //   },
+                    // ),
                   ],
                 ),
               ),
@@ -227,12 +315,26 @@ class _ProfilePageState extends State<ProfilePage> {
                       thickness: 5,
                       color: Colors.black,
                     ),
-                    Text(
-                      '28 Juli 2000',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'InterSemiBold',
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          _age ?? '',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'InterSemiBold',
+                          ),
+                        ),
+                        SizedBox(
+                          width: bodyHeight * 0.004,
+                        ),
+                        Text(
+                          'Tahun',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'InterSemiBold',
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -253,12 +355,23 @@ class _ProfilePageState extends State<ProfilePage> {
                       thickness: 5,
                       color: Colors.black,
                     ),
-                    Text(
-                      '+628123456789',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'InterSemiBold',
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          '+62',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'InterSemiBold',
+                          ),
+                        ),
+                        Text(
+                          _telepon,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'InterSemiBold',
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

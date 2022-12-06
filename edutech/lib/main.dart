@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/NotificationPage.dart';
 import 'package:edutech/pages/lihatMateriPage.dart';
@@ -23,6 +24,8 @@ import 'package:firebase_core/firebase_core.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
+  CachedNetworkImage.logLevel = CacheManagerLogLevel.debug;
 
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   runApp(const MyApp());
