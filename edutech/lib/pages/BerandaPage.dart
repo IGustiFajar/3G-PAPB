@@ -132,8 +132,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 253, 237, 220),
                         border: Border.all(
-                            color: Color.fromARGB(255, 239, 144, 100),
-                            width: 1),
+                            color: Color.fromARGB(50, 239, 144, 100)),
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                       child: Row(
@@ -158,11 +157,7 @@ class _BerandaPageState extends State<BerandaPage> {
                           TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.02,
-                    ),
-                    Container(height: bodyHeight * 0.6),
-                    SizedBox(
-                      height: bodyHeight * 0.03,
+                      height: bodyHeight * 0.012,
                     ),
                     Row(
                       children: [
@@ -243,8 +238,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 253, 237, 220),
                         border: Border.all(
-                            color: Color.fromARGB(255, 239, 144, 100),
-                            width: 1),
+                            color: Color.fromARGB(50, 239, 144, 100), width: 1),
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                       child: Column(
@@ -305,8 +299,10 @@ class _BerandaPageState extends State<BerandaPage> {
                                 padding: EdgeInsets.all(8),
                                 width: 255,
                                 decoration: BoxDecoration(
+                                    color: Colors.white,
                                     border: Border.all(
-                                        color: Colors.grey, width: 1),
+                                        color:
+                                            Color.fromARGB(50, 158, 158, 158)),
                                     borderRadius: BorderRadius.circular(8)),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -393,8 +389,10 @@ class _BerandaPageState extends State<BerandaPage> {
                                 padding: EdgeInsets.all(8),
                                 width: 255,
                                 decoration: BoxDecoration(
+                                    color: Colors.white,
                                     border: Border.all(
-                                        color: Colors.grey, width: 1),
+                                      color: Color.fromARGB(50, 158, 158, 158),
+                                    ),
                                     borderRadius: BorderRadius.circular(8)),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -481,8 +479,10 @@ class _BerandaPageState extends State<BerandaPage> {
                                 padding: EdgeInsets.all(8),
                                 width: 255,
                                 decoration: BoxDecoration(
+                                    color: Colors.white,
                                     border: Border.all(
-                                        color: Colors.grey, width: 1),
+                                        color:
+                                            Color.fromARGB(50, 158, 158, 158)),
                                     borderRadius: BorderRadius.circular(8)),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -584,7 +584,9 @@ class _BerandaPageState extends State<BerandaPage> {
                           child: Container(
                             padding: EdgeInsets.all(6),
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey, width: 1),
+                              color: Colors.white,
+                              border: Border.all(
+                                  color: Color.fromARGB(50, 158, 158, 158)),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
@@ -608,7 +610,10 @@ class _BerandaPageState extends State<BerandaPage> {
                           Container(
                             width: 285,
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
+                                color: Colors.white,
+                                border: Border.all(
+                                  color: Color.fromARGB(50, 158, 158, 158),
+                                ),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(8))),
                             child: Column(
@@ -687,7 +692,9 @@ class _BerandaPageState extends State<BerandaPage> {
                           Container(
                             width: 285,
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
+                                color: Colors.white,
+                                border: Border.all(
+                                    color: Color.fromARGB(50, 158, 158, 158)),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(8))),
                             child: Column(
@@ -764,7 +771,9 @@ class _BerandaPageState extends State<BerandaPage> {
                           Container(
                             width: 285,
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
+                                color: Colors.white,
+                                border: Border.all(
+                                    color: Color.fromARGB(50, 158, 158, 158)),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(8))),
                             child: Column(
@@ -883,7 +892,7 @@ class _BerandaPageState extends State<BerandaPage> {
                           decoration: new BoxDecoration(
                             color: Color.fromARGB(50, 62, 137, 99),
                             border: Border.all(
-                                color: Color.fromARGB(255, 62, 137, 99)),
+                                color: Color.fromARGB(100, 62, 137, 99)),
                             borderRadius: BorderRadius.circular(32),
                           ),
                         ),
@@ -898,8 +907,9 @@ class _BerandaPageState extends State<BerandaPage> {
                           ),
                           alignment: Alignment.center,
                           decoration: new BoxDecoration(
+                            color: Colors.white,
                             border: Border.all(
-                                color: Color.fromARGB(200, 158, 158, 158)),
+                                color: Color.fromARGB(100, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(32),
                           ),
                         ),
@@ -912,7 +922,9 @@ class _BerandaPageState extends State<BerandaPage> {
                       }),
                       child: Container(
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Color.fromARGB(50, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(8)),
                         child: Row(
                           children: [
@@ -936,7 +948,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         color: Color.fromARGB(50, 62, 137, 99),
                                         border: Border.all(
                                             color: Color.fromARGB(
-                                                255, 62, 137, 99)),
+                                                50, 62, 137, 99)),
                                         borderRadius: BorderRadius.circular(6)),
                                     child: Text(
                                       'UI/UX',
@@ -1017,7 +1029,9 @@ class _BerandaPageState extends State<BerandaPage> {
                       }),
                       child: Container(
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            color: Colors.white,
+                            border: Border.all(
+                                color: Color.fromARGB(50, 158, 158, 158)),
                             borderRadius: BorderRadius.circular(8)),
                         child: Row(
                           children: [
