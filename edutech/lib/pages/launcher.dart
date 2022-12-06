@@ -16,7 +16,7 @@ class _LauncherPageState extends State<LauncherPage> {
   }
 
   startLaunching() async {
-    var duration = const Duration(seconds: 1);
+    var duration = const Duration(seconds: 3);
     return new Timer(duration, () {
       Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (_) {
         return new MainPage();
@@ -30,38 +30,52 @@ class _LauncherPageState extends State<LauncherPage> {
       statusBarColor: Color.fromARGB(255, 62, 137, 99),
     ));
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  color: Colors.grey.shade200,
-                  offset: Offset(2, 4),
-                  blurRadius: 5,
-                  spreadRadius: 2)
-            ],
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromARGB(255, 62, 137, 99),
-                  Color.fromARGB(255, 31, 71, 51)
-                ])),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Center(
-              child: new Image.asset(
-                "images/Logo2.png",
-                height: 70.0,
-                width: 200.0,
-              ),
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      color: Colors.grey.shade200,
+                      offset: Offset(2, 4),
+                      blurRadius: 5,
+                      spreadRadius: 2)
+                ],
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.fromARGB(255, 62, 137, 99),
+                      Color.fromARGB(255, 62, 137, 99),
+                    ])),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Center(
+                  child: new Image.asset(
+                    "images/splash.gif",
+                    height: 200.0,
+                    width: 200.0,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'Tutor dong jadi Mahasiswa Paling Berprestasi 🥱',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'InterSemiBold',
+                      fontSize: 14),
+                )
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
