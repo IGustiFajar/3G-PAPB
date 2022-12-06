@@ -1,3 +1,4 @@
+import 'package:cool_alert/cool_alert.dart';
 import 'package:edutech/pages/enrolKelas.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -56,6 +57,12 @@ class _KelasDetailState extends State<KelasDetail> {
         ),
       ),
     );
+  }
+
+  Future Enrol() async {
+    try {
+      Get.offNamed('/enrol');
+    } on FirebaseAuthException catch (error) {}
   }
 
   // late YoutubePlayerController _controller;
@@ -1605,26 +1612,15 @@ class _KelasDetailState extends State<KelasDetail> {
                           ),
                           GestureDetector(
                             onTap: () => {
-                              Alert(
+                              CoolAlert.show(
                                 context: context,
-                                type: AlertType.success,
-                                title: "Pendaftaran Berhasil",
-                                desc: "Selamat! Anda Telah Terdaftar.",
-                                buttons: [
-                                  DialogButton(
-                                    child: Text(
-                                      "Lanjutkan",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 20),
-                                    ),
-                                    onPressed: () {
-                                      Get.off(EnrolKelas());
-                                    },
-                                    color: Color.fromRGBO(0, 179, 134, 1.0),
-                                    radius: BorderRadius.circular(0.0),
-                                  ),
-                                ],
-                              ).show()
+                                type: CoolAlertType.success,
+                                text: 'Selamat kamu telah terdaftar',
+                                confirmBtnText: 'Lanjutkan',
+                                onConfirmBtnTap: Enrol,
+                                confirmBtnColor:
+                                    Color.fromARGB(255, 62, 137, 99),
+                              ),
                             },
                             // onTap: () {
                             //   Get.toNamed('/enrol');

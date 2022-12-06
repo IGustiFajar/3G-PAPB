@@ -60,7 +60,7 @@ class _ProfilePageState extends State<ProfilePage> {
       _email = user!.email!;
       _age = userDoc.get('age').toString();
       _telepon = userDoc.get('telepon').toString();
-      _image = userDoc.get('imageURL');
+      // _image = userDoc.get('imageURL');
     });
 
     // print('nama : $_firstname');

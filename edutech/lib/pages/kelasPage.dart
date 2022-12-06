@@ -32,16 +32,15 @@ class _kelasPageState extends State<kelasPage> {
         backgroundColor: Color.fromARGB(255, 62, 137, 99),
         elevation: 5,
         actions: <Widget>[
-          AnimSearchBar(
-            width: 300,
-            style: TextStyle(color: Colors.white),
-            color: Color.fromARGB(255, 62, 137, 99),
-            textController: _searchController,
-            onSuffixTap: () {
-              setState(() {
-                _searchController.clear();
-              });
-            },
+          IconButton(
+            onPressed: (() {
+              Get.toNamed('/search');
+            }),
+            icon: SvgPicture.asset(
+              'images/search.svg',
+              color: Colors.white,
+              alignment: Alignment.center,
+            ),
           ),
           IconButton(
             onPressed: (() {
