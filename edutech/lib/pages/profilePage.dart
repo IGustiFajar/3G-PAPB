@@ -58,9 +58,9 @@ class _ProfilePageState extends State<ProfilePage> {
       _firstname = userDoc.get('first_name');
       _lastname = userDoc.get('last_name');
       _email = user!.email!;
-      _age = userDoc.get('age');
-      _telepon = userDoc.get('telepon');
-      // _image = userDoc.get('image');
+      _age = userDoc.get('age').toString();
+      _telepon = userDoc.get('telepon').toString();
+      _image = userDoc.get('imageURL');
     });
 
     // print('nama : $_firstname');
@@ -202,7 +202,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: ClipOval(
                         child: ImageUrl == " "
                             ? Image.asset('images/rehan.jpg')
-                            : Image.network(ImageUrl,
+                            : Image.network(_image,
                                 height: 200, width: 200, fit: BoxFit.fill),
                       ),
                     ),

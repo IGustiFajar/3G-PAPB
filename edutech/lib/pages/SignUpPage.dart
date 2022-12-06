@@ -41,6 +41,8 @@ class _SignUpPageState extends State<SignUpPage> {
 
   // Authentitcate Users
   Future signUp() async {
+    final User? user = FirebaseAuth.instance.currentUser;
+    final uid = user?.uid;
     if (_formkey.currentState!.validate()) {
       try {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -82,7 +84,10 @@ class _SignUpPageState extends State<SignUpPage> {
     int Telepon,
     String Email,
   ) async {
+    final User? user = FirebaseAuth.instance.currentUser;
+    final uid = user?.uid;
     await FirebaseFirestore.instance.collection('users').add({
+      'uid': uid,
       'first_name': FirstName,
       'last_name': LastName,
       'age': Age,
