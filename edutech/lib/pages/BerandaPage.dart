@@ -1,4 +1,3 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -42,16 +41,15 @@ class _BerandaPageState extends State<BerandaPage> {
         backgroundColor: Color.fromARGB(255, 62, 137, 99),
         elevation: 5,
         actions: <Widget>[
-          AnimSearchBar(
-            width: 300,
-            style: TextStyle(color: Colors.white),
-            color: Color.fromARGB(255, 62, 137, 99),
-            textController: _searchController,
-            onSuffixTap: () {
-              setState(() {
-                _searchController.clear();
-              });
-            },
+          IconButton(
+            onPressed: (() {
+              Get.toNamed('/search');
+            }),
+            icon: SvgPicture.asset(
+              'images/search.svg',
+              color: Colors.white,
+              alignment: Alignment.center,
+            ),
           ),
           IconButton(
             onPressed: (() {

@@ -12,6 +12,7 @@ import 'package:edutech/pages/kelasPage.dart';
 import 'package:edutech/pages/SignUpPage.dart';
 import 'package:edutech/pages/loginPage.dart';
 import 'package:edutech/pages/lihatMateriPage.dart';
+import 'package:edutech/pages/searchPage.dart';
 import 'package:edutech/pages/detailKelasPage.dart';
 import 'package:edutech/pages/sertifikatPage.dart';
 import 'package:edutech/pages/panduanPage.dart';
@@ -114,6 +115,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/lihatmaterienrol',
           page: () => const LihatMateriPage(),
+        ),
+        GetPage(
+          name: '/search',
+          page: () => const SearchPage(),
         ),
       ],
       home: LauncherPage(),
