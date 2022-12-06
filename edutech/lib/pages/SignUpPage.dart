@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:edutech/pages/BerandaPage.dart';
 import 'package:edutech/pages/loginPage.dart';
@@ -19,6 +20,10 @@ class _SignUpPageState extends State<SignUpPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmController = TextEditingController();
+  final _firstnameController = TextEditingController();
+  final _lastnameController = TextEditingController();
+  final _ageController = TextEditingController();
+  final _numberController = TextEditingController();
   final _formkey = GlobalKey<FormState>();
   String errorMessage = '';
 
@@ -27,9 +32,14 @@ class _SignUpPageState extends State<SignUpPage> {
     _emailController.dispose();
     _passwordController.dispose();
     _confirmController.dispose();
+    _firstnameController.dispose();
+    _lastnameController.dispose();
+    _ageController.dispose();
+    _numberController.dispose();
     super.dispose();
   }
 
+  // Authentitcate Users
   Future signUp() async {
     if (_formkey.currentState!.validate()) {
       try {
@@ -42,7 +52,7 @@ class _SignUpPageState extends State<SignUpPage> {
           type: CoolAlertType.success,
           text: "Berhasil Membuat Akun!",
           onConfirmBtnTap: () {
-            Get.off(LoginPage());
+            Get.offAll(LoginPage());
           },
         );
       } on FirebaseAuthException catch (error) {
@@ -53,7 +63,32 @@ class _SignUpPageState extends State<SignUpPage> {
         );
       }
       setState(() {});
+
+      // Add Users Details
+      addUsersDetails(
+        _firstnameController.text.trim(),
+        _lastnameController.text.trim(),
+        int.parse(_ageController.text.trim()),
+        int.parse(_numberController.text.trim()),
+        _emailController.text.trim(),
+      );
     }
+  }
+
+  Future addUsersDetails(
+    String FirstName,
+    String LastName,
+    int Age,
+    int Telepon,
+    String Email,
+  ) async {
+    await FirebaseFirestore.instance.collection('users').add({
+      'first_name': FirstName,
+      'last_name': LastName,
+      'age': Age,
+      'telepon': Telepon,
+      'email': Email,
+    });
   }
 
   bool passwordConfirmed() {
@@ -223,7 +258,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 : Column(
                     children: [
                       SizedBox(
-                        height: 60,
+                        height: 40,
                       ),
                       Image.asset(
                         'images/Thumbnail2.png',
@@ -231,7 +266,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         height: 200,
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 0.5,
                       ),
                       Container(
                         alignment: Alignment.centerLeft,
@@ -242,7 +277,79 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 10,
+                      ),
+                      TextFormField(
+                        validator: validateFirstName,
+                        controller: _firstnameController,
+                        decoration: InputDecoration(
+                          hintText: 'Masukkan Nama Depan Anda',
+                          labelText: 'Nama Depan',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'InterRegular'),
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.people_alt_outlined),
+                        ),
+                        obscureText: false,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        validator: validateLastName,
+                        controller: _lastnameController,
+                        decoration: InputDecoration(
+                          hintText: 'Masukkan Nama Belakang',
+                          labelText: 'Nama Belakang',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'InterRegular'),
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.people_alt_outlined),
+                        ),
+                        obscureText: false,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        validator: validateAge,
+                        controller: _ageController,
+                        decoration: InputDecoration(
+                          hintText: 'Masukkan Umur',
+                          labelText: 'Umur',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'InterRegular'),
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.people_alt_outlined),
+                        ),
+                        obscureText: false,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        validator: validateNumber,
+                        controller: _numberController,
+                        decoration: InputDecoration(
+                          hintText: 'Masukkan Nomor Telepon',
+                          labelText: 'Nomor Telepon',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'InterRegular'),
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.people_alt_outlined),
+                        ),
+                        obscureText: false,
+                      ),
+                      SizedBox(
+                        height: 10,
                       ),
                       TextFormField(
                         validator: validateEmail,
@@ -261,7 +368,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         obscureText: false,
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 10,
                       ),
                       TextFormField(
                         validator: validatePassword,
@@ -316,7 +423,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       //   obscureText: _secureText,
                       // ),
                       SizedBox(
-                        height: 20,
+                        height: 5,
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -340,7 +447,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 25),
+                      SizedBox(height: 1),
                       Row(
                         children: <Widget>[
                           const Text(
@@ -393,6 +500,32 @@ String? validatePassword(String? formPassword) {
       Password minimal 8 karakter,
       Termasuk huruf kapital.
       ''';
+
+  return null;
+}
+
+String? validateFirstName(String? formFirstName) {
+  if (formFirstName == null || formFirstName.isEmpty)
+    return 'Password Harus Diisi!';
+
+  return null;
+}
+
+String? validateLastName(String? formLastName) {
+  if (formLastName == null || formLastName.isEmpty)
+    return 'Password Harus Diisi!';
+
+  return null;
+}
+
+String? validateAge(String? formAge) {
+  if (formAge == null || formAge.isEmpty) return 'Password Harus Diisi!';
+
+  return null;
+}
+
+String? validateNumber(String? formNumber) {
+  if (formNumber == null || formNumber.isEmpty) return 'Password Harus Diisi!';
 
   return null;
 }
