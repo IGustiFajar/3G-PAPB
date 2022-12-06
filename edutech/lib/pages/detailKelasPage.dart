@@ -1,7 +1,9 @@
+import 'package:edutech/pages/enrolKelas.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class KelasDetail extends StatefulWidget {
@@ -1602,9 +1604,31 @@ class _KelasDetailState extends State<KelasDetail> {
                             width: bodyHeight * 0.04,
                           ),
                           GestureDetector(
-                            onTap: (() {
-                              Get.toNamed('/enrol');
-                            }),
+                            onTap: () => {
+                              Alert(
+                                context: context,
+                                type: AlertType.success,
+                                title: "Pendaftaran Berhasil",
+                                desc: "Selamat! Anda Telah Terdaftar.",
+                                buttons: [
+                                  DialogButton(
+                                    child: Text(
+                                      "Lanjutkan",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 20),
+                                    ),
+                                    onPressed: () {
+                                      Get.off(EnrolKelas());
+                                    },
+                                    color: Color.fromRGBO(0, 179, 134, 1.0),
+                                    radius: BorderRadius.circular(0.0),
+                                  ),
+                                ],
+                              ).show()
+                            },
+                            // onTap: () {
+                            //   Get.toNamed('/enrol');
+                            // },
                             child: Container(
                               padding: EdgeInsets.only(
                                   top: 8, bottom: 8, right: 16, left: 16),
