@@ -1,11 +1,7 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:get/get.dart';
-
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class kelasPage extends StatefulWidget {
@@ -451,7 +447,6 @@ class _kelasPageState extends State<kelasPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         GestureDetector(
-                          //UI/UX Course
                           onTap: () {
                             final data = Get.toNamed('/kelas-detail');
                             print(data);
@@ -586,7 +581,6 @@ class _kelasPageState extends State<kelasPage> {
                           height: bodyHeight * 0.01,
                         ),
                         GestureDetector(
-                          //Intermediate
                           onTap: () {},
                           child: Container(
                             child: Row(
@@ -1375,7 +1369,6 @@ class CustomListTile extends StatefulWidget {
 class _CustomListTileState extends State<CustomListTile> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Padding(
       padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0),
       child: Container(
@@ -1431,8 +1424,6 @@ class _CustomListTileState extends State<CustomListTile> {
                     )
                   ],
                 ),
-                // Icon(Icons.logout_outlined),
-                // Text('Logout'),
                 Icon(Icons.arrow_right_outlined)
               ],
             ),

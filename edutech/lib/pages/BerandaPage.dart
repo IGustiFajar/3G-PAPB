@@ -118,7 +118,7 @@ class _BerandaPageState extends State<BerandaPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'Halo ' + user.email!,
+                      'Halo ' + user.email! + '👋',
                       style:
                           TextStyle(fontSize: 16, fontFamily: "InterSemiBold"),
                     ),
@@ -185,7 +185,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       ],
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.02,
+                      height: bodyHeight * 0.012,
                     ),
                     Container(
                       height: bodyHeight * 0.3,
@@ -224,12 +224,12 @@ class _BerandaPageState extends State<BerandaPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'Halo ' + user.email!,
+                      'Halo ' + user.email! + ' 👋',
                       style:
                           TextStyle(fontSize: 16, fontFamily: "InterSemiBold"),
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.01,
+                      height: bodyHeight * 0.012,
                     ),
                     Container(
                       padding: EdgeInsets.all(14),
@@ -273,7 +273,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       ),
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.02,
+                      height: bodyHeight * 0.024,
                     ),
                     Text(
                       'Kelas Berlangsung',
@@ -281,7 +281,7 @@ class _BerandaPageState extends State<BerandaPage> {
                           TextStyle(fontSize: 16, fontFamily: 'InterSemiBold'),
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.01,
+                      height: bodyHeight * 0.012,
                     ),
                     GestureDetector(
                       onTap: (() {
@@ -564,7 +564,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       ),
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.02,
+                      height: bodyHeight * 0.024,
                     ),
                     Row(
                       children: [
@@ -597,7 +597,7 @@ class _BerandaPageState extends State<BerandaPage> {
                       ],
                     ),
                     SizedBox(
-                      height: bodyHeight * 0.03,
+                      height: bodyHeight * 0.012,
                     ),
                     Container(
                       height: bodyHeight * 0.48,

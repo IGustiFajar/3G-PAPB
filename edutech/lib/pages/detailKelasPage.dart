@@ -98,14 +98,6 @@ class _KelasDetailState extends State<KelasDetail> {
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
-              'images/search.svg',
-              color: Colors.white,
-              alignment: Alignment.center,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
               'images/bell.svg',
               color: Colors.white,
               alignment: Alignment.center,

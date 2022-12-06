@@ -37,45 +37,63 @@ class _SearchPageState extends State<SearchPage> {
           )
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
-            child: TextField(
-              controller: controller,
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search),
-                hintText: 'Nama Kelas',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(color: Colors.white10),
-                ),
-              ),
-              onChanged: searchKelas,
-            ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.all(8.0),
-              itemCount: Kelas.length,
-              itemBuilder: ((context, index) {
-                final kelas = Kelas[index];
-                return ListTile(
-                  leading: Image.asset(
-                    kelas.UrlImage,
-                    fit: BoxFit.cover,
-                    width: 50,
-                    height: 50,
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              child: TextField(
+                controller: controller,
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.search),
+                  hintText: 'Nama Kelas',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(6),
+                    borderSide: const BorderSide(
+                        color: Color.fromARGB(50, 158, 158, 158)),
                   ),
-                  title: Text(kelas.judul),
-                  onTap: () {
-                    Get.toNamed('/kelas-detail');
-                  },
-                );
-              }),
+                ),
+                onChanged: searchKelas,
+              ),
             ),
-          )
-        ],
+            SizedBox(height: bodyHeight * 0.024),
+            Text(
+              'Pencarian populer ❤️',
+              style: TextStyle(fontSize: 16, color: Colors.black87),
+            ),
+            Expanded(
+              child: ListView.builder(
+                padding: EdgeInsets.all(8.0),
+                itemCount: Kelas.length,
+                itemBuilder: ((context, index) {
+                  final kelas = Kelas[index];
+                  return Container(
+                    margin: EdgeInsets.all(2),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                            color: Color.fromARGB(50, 158, 158, 158)),
+                        borderRadius: BorderRadius.circular(6)),
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: Image.asset(
+                        kelas.UrlImage,
+                        fit: BoxFit.cover,
+                        width: bodyHeight * 0.050,
+                        height: bodyHeight * 0.050,
+                      ),
+                      title: Text(kelas.judul),
+                      onTap: () {
+                        Get.toNamed('/kelas-detail');
+                      },
+                    ),
+                  );
+                }),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
