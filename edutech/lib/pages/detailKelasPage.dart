@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class KelasDetail extends StatefulWidget {
   const KelasDetail({super.key});
@@ -54,6 +55,23 @@ class _KelasDetailState extends State<KelasDetail> {
       ),
     );
   }
+
+  // late YoutubePlayerController _controller;
+
+  // final videoURL =
+  //     'https://www.youtube.com/watch?v=SJAVdeRIuKA&ab_channel=MattRadiant';
+
+  // @override
+  // void initState() {
+  //   final videoID = YoutubePlayer.convertUrlToId(videoURL);
+  //   _controller = YoutubePlayerController(
+  //     initialVideoId: videoID!,
+  //     flags: const YoutubePlayerFlags(
+  //       autoPlay: false,
+  //     ),
+  //   );
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -925,7 +943,22 @@ class _KelasDetailState extends State<KelasDetail> {
                         ],
                       ),
                       SizedBox(height: bodyHeight * 0.024),
-                      Image(image: AssetImage('images/Thumbnailmateri1.png')),
+                      // YoutubePlayer(
+                      //   controller: _controller,
+                      //   showVideoProgressIndicator: true,
+                      //   onReady: () => debugPrint('Ready'),
+                      //   bottomActions: [
+                      //     CurrentPosition(),
+                      //     ProgressBar(
+                      //       isExpanded: true,
+                      //       colors: const ProgressBarColors(
+                      //         playedColor: Colors.amber,
+                      //         handleColor: Colors.amberAccent,
+                      //       ),
+                      //     ),
+                      //     const PlaybackSpeedButton(),
+                      //   ],
+                      // ),
                       SizedBox(height: bodyHeight * 0.024),
                       Text(
                         'Key Points',

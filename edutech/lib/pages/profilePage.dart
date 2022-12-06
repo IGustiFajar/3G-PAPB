@@ -14,6 +14,7 @@ import 'package:get/get.dart';
 import 'dart:io';
 
 import 'package:video_player/video_player.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
