@@ -78,86 +78,94 @@ class _sertifikatPageState extends State<sertifikatPage> {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                    width: 260,
-                    child: Text(
-                      "Capaian",
-                      style:
-                          TextStyle(fontFamily: 'InterSemiBold', fontSize: 16),
-                    )),
-              ],
-            ),
-            SizedBox(height: bodyHeight * 0.024),
-            Text(
-              'Sertifikat kelulusan kelas 📜',
-              style: TextStyle(fontFamily: 'InterSemiBold', fontSize: 20),
-            ),
-            SizedBox(
-              height: bodyHeight * 0.008,
-            ),
-            Text(
-              'Silahkan unduh untuk melihat detail sertifikat',
-              style: TextStyle(
-                  fontFamily: 'InterSemiBold',
-                  fontSize: 12,
-                  color: Colors.grey),
-            ),
-            SizedBox(height: bodyHeight * 0.024),
-            Align(
-              alignment: Alignment.center,
-              child: Image.asset(
-                'images/certificate.png',
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                      width: 260,
+                      child: Text(
+                        "Capaian",
+                        style: TextStyle(
+                            fontFamily: 'InterSemiBold', fontSize: 16),
+                      )),
+                ],
               ),
-            ),
-            FutureBuilder<ListResult>(
-              future: futureFiles,
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  final files = snapshot.data!.items;
-                  return ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    itemCount: files.length,
-                    itemBuilder: (context, index) {
-                      final file = files[index];
-                      return Card(
-                        child: ListTile(
-                          title: Text(file.name),
-                          subtitle: Text('Certificate'),
-                          trailing: GestureDetector(
-                            child: Image.asset('images/download.png'),
-                            onTap: () => downloadFile(file),
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                } else if (snapshot.hasError) {
-                  return const Center(
-                    child: Text('Error nih'),
-                  );
-                } else {
-                  return const Center(
-                      child: CircularProgressIndicator(
-                    backgroundColor: Colors.white,
-                    valueColor: AlwaysStoppedAnimation(
-                      Color.fromARGB(255, 62, 137, 99),
-                    ),
-                  ));
-                }
-              },
-            ),
-            SizedBox(
-              height: bodyHeight * 0.024,
-            ),
-          ],
+              SizedBox(height: bodyHeight * 0.024),
+              Text(
+                'Sertifikat kelulusan kelas 📜',
+                style: TextStyle(fontFamily: 'InterSemiBold', fontSize: 20),
+              ),
+              SizedBox(
+                height: bodyHeight * 0.008,
+              ),
+              Text(
+                'Silahkan unduh untuk melihat detail sertifikat',
+                style: TextStyle(
+                    fontFamily: 'InterSemiBold',
+                    fontSize: 12,
+                    color: Colors.grey),
+              ),
+              SizedBox(height: bodyHeight * 0.024),
+              Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  'images/certificate.png',
+                ),
+              ),
+              FutureBuilder<ListResult>(
+                future: futureFiles,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    final files = snapshot.data!.items;
+                    return ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      itemCount: files.length,
+                      itemBuilder: (context, index) {
+                        final file = files[index];
+                        return Card(
+                            color: Color.fromARGB(255, 62, 137, 99),
+                            child: ExpansionTile(
+                              title: Text(
+                                file.name,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              children: [
+                                Container(
+                                  color: Colors.black12,
+                                  padding: EdgeInsets.all(20),
+                                  width: double.infinity,
+                                  child: Image.asset('images/sertifikat.png'),
+                                )
+                              ],
+                            ));
+                      },
+                    );
+                  } else if (snapshot.hasError) {
+                    return const Center(
+                      child: Text('Error nih'),
+                    );
+                  } else {
+                    return const Center(
+                        child: CircularProgressIndicator(
+                      backgroundColor: Colors.white,
+                      valueColor: AlwaysStoppedAnimation(
+                        Color.fromARGB(255, 62, 137, 99),
+                      ),
+                    ));
+                  }
+                },
+              ),
+              SizedBox(
+                height: bodyHeight * 0.024,
+              ),
+            ],
+          ),
         ),
       ),
     );
