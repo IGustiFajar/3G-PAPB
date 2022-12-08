@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:get/get.dart';
+import 'package:edutech/pages/kelas.dart';
 import 'package:path_provider/path_provider.dart';
 
 class sertifikatPage extends StatefulWidget {
@@ -15,6 +16,8 @@ class sertifikatPage extends StatefulWidget {
 
 class _sertifikatPageState extends State<sertifikatPage> {
   late Future<ListResult> futureFiles;
+  final controller = TextEditingController();
+  List<kelas> Kelas = allkelas;
 
   @override
   void initState() {
@@ -42,32 +45,6 @@ class _sertifikatPageState extends State<sertifikatPage> {
           },
         ),
         actions: <Widget>[
-          IconButton(
-            onPressed: () {
-              Get.bottomSheet(
-                Container(
-                  color: Colors.white,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Cari Sesuatu',
-                      // labelText: 'Cari Sesuatu',
-                      labelStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontFamily: 'InterRegular'),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.search),
-                    ),
-                  ),
-                ),
-              );
-            },
-            icon: SvgPicture.asset(
-              'images/search.svg',
-              color: Colors.white,
-              alignment: Alignment.center,
-            ),
-          ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
@@ -129,18 +106,72 @@ class _sertifikatPageState extends State<sertifikatPage> {
                       itemBuilder: (context, index) {
                         final file = files[index];
                         return Card(
-                            color: Color.fromARGB(255, 62, 137, 99),
+                            color: Colors.white,
                             child: ExpansionTile(
+                              // childrenPadding: EdgeInsets.all(16.0),
+
+                              leading: Icon(Icons.image_outlined),
+                              // leading: Image.asset(file.
+
+                              //   fit: BoxFit.cover,
+                              //   width: bodyHeight * 0.050,
+                              //   height: bodyHeight * 0.050,
+                              // ),
+                              // leading: Image.asset(file.bucket),
+                              // trailing: Icon(Icons.download),
                               title: Text(
                                 file.name,
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 32, 32, 32),
+                                    fontFamily: 'InterRegular'),
                               ),
                               children: [
                                 Container(
                                   color: Colors.black12,
-                                  padding: EdgeInsets.all(20),
+                                  padding: EdgeInsets.all(8.0),
                                   width: double.infinity,
-                                  child: Image.asset('images/sertifikat.png'),
+                                  child: Column(
+                                    children: [
+                                      Image.asset('images/sertifikat.png'),
+                                      // SizedBox(
+                                      //   height: bodyHeight * 0.012,
+                                      // ),
+                                      GestureDetector(
+                                        child: Container(
+                                          padding: EdgeInsets.all(8.0),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(6),
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color: Color.fromARGB(
+                                                      50, 158, 158, 158))),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                'Unduh',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontFamily: 'InterSemiBold',
+                                                  color: Color.fromARGB(
+                                                      255, 62, 137, 99),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                  width: bodyHeight * 0.008),
+                                              Icon(
+                                                  color: Color.fromARGB(
+                                                      255, 62, 137, 99),
+                                                  Icons.download),
+                                            ],
+                                          ),
+                                        ),
+                                        onTap: () => downloadFile(file),
+                                      ),
+                                    ],
+                                  ),
                                 )
                               ],
                             ));
